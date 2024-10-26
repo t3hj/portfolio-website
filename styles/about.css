@@ -21,7 +21,7 @@
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
-.about-details h3, .employment h3, .hobbies-interests h3 {
+.about-text h3, .about-details h3, .employment h3, .hobbies-interests h3 {
     color: #ffdd57;
     margin-bottom: 1rem;
     font-size: 1.4rem;
