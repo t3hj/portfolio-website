@@ -1,0 +1,82 @@
+/* Hero Section Styles */
+.hero-section {
+    padding: 120px 0 60px;
+    text-align: center;
+    min-height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+    background: linear-gradient(rgba(10, 26, 51, 0.9), rgba(10, 26, 51, 0.95));
+}
+
+.hero-section h2 {
+    font-size: 2.5rem;
+    color: #ffdd57;
+    margin-bottom: 1rem;
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Social Links */
+.social-links {
+    margin-bottom: 2rem;
+}
+
+.social-icon {
+    font-size: 1.5rem;
+    color: #ffdd57;
+    margin: 0 1rem;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #1a73e8;
+    transform: translateY(-3px) rotate(10deg);
+}
+
+/* CTA Buttons */
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.cta-button {
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.cta-button:first-child {
+    background-color: #ffdd57;
+    color: #0a1a33;
+}
+
+.cta-button.secondary {
+    background-color: transparent;
+    border: 2px solid #ffdd57;
+    color: #ffdd57;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button:first-child:hover {
+    background-color: #1a73e8;
+    color: white;
+}
+
+.cta-button.secondary:hover {
+    background-color: #ffdd57;
+    color: #0a1a33;
+}

@@ -1,0 +1,77 @@
+/* About Page Specific Styles */
+.about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem 0;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-text, .about-details, .employment, .hobbies-interests {
+    background: rgba(13, 59, 102, 0.8);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-text:hover, .about-details:hover, .employment:hover, .hobbies-interests:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.about-details h3, .employment h3, .hobbies-interests h3 {
+    color: #ffdd57;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+
+.about-details ul, .hobbies-interests ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.about-details li, .hobbies-interests li {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    position: relative;
+}
+
+.corner-image {
+    position: absolute;
+    top: -30px; /* Adjusted to move the image higher */
+    right: 0;
+    margin: 10px;
+    width: 100px;
+    height: 150px;
+}
+
+.education-modules {
+    display: flex;
+    justify-content: space-between;
+}
+
+.education-modules div {
+    width: 48%;
+}
+
+/* Animation delays for staggered effect */
+.about-text { animation-delay: 0.1s; }
+.about-details { animation-delay: 0.2s; }
+.employment { animation-delay: 0.3s; }
+.hobbies-interests { animation-delay: 0.4s; }
+
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+    }
+
+    .education-modules {
+        flex-direction: column;
+    }
+
+    .education-modules div {
+        width: 100%;
+    }
+}

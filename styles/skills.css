@@ -1,0 +1,65 @@
+/* Skills Page Specific Styles */
+.skills-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    padding: 2rem 0;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.skill-category {
+    background: rgba(13, 59, 102, 0.8);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.skill-category h3 {
+    color: #ffdd57;
+    margin-bottom: 1.5rem;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.skill-category h3 i {
+    font-size: 1.2em;
+}
+
+.skill-category ul {
+    list-style: none;
+}
+
+.skill-category li {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 1.1rem;
+}
+
+.skill-category li i {
+    color: #ffdd57;
+    width: 20px;
+    text-align: center;
+}
+
+/* Animation delays for staggered effect */
+.skill-category:nth-child(1) { animation-delay: 0.1s; }
+.skill-category:nth-child(2) { animation-delay: 0.2s; }
+.skill-category:nth-child(3) { animation-delay: 0.3s; }
+.skill-category:nth-child(4) { animation-delay: 0.4s; }
+
+@media (max-width: 768px) {
+    .skills-content {
+        grid-template-columns: 1fr;
+    }
+}

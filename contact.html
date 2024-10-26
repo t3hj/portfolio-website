@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Tehj Patel</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        (function(){
+            emailjs.init("GwXp9-6E_l3NrER8V"); // Replace with your EmailJS user ID
+        })();
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <h1>Tehj Patel</h1>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="projects.html">Projects</a>
+                <a href="skills.html">Skills</a>
+                <a href="contact.html" class="active">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="hero-section">
+        <div class="container">
+            <h2 class="animate-fade-in">Contact Me</h2>
+            <div class="contact-content">
+                <p class="contact-text animate-fade-in">
+                    I'm always interested in new opportunities and collaborations. Feel free to reach out!
+                </p>
+
+                <div class="contact-form animate-fade-in">
+                    <h3>Get in Touch</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message:</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
+
+                <div class="social-links animate-fade-in">
+                    <h3>Connect With Me</h3>
+                    <ul>
+                        <li><a href="https://github.com/t3hj">GitHub: github.com/Tehj</a></li>
+                        <li><a href="https://www.linkedin.com/in/tehj-patel-56a5562a2/">LinkedIn: linkedin.com/in/Tehj</a></li>
+                        <li><a href="mailto:tehjpatel@gmail.com">Email: tehjpatel@gmail.com</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2024 Tehj Patel</p>
+    </footer>
+
+    <script src="scripts/contact.js"></script>
+</body>
+</html>
