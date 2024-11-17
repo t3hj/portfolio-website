@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stanmore College App - Tehj Patel</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/projects.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #f5f5f5;
+            background-color: #0a1a33;
+        }
+        .navbar {
+            background-color: #0d3b66;
+            color: #f5f5f5;
+            padding: 10px 0;
+        }
+        .navbar h1 {
+            margin: 0;
+            padding: 0 20px;
+        }
+        .navbar .nav-links a {
+            color: #f5f5f5;
+            text-decoration: none;
+            padding: 10px 20px;
+            display: inline-block;
+        }
+        .navbar .nav-links a.active {
+            background-color: rgba(255, 221, 87, 0.1);
+            color: #ffdd57;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #0d3b66; /* Dark background */
+            color: #f5f5f5; /* Light text */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .project-detail h2 {
+            color: #ffdd57; /* Yellow text */
+            border-bottom: 2px solid #ffdd57; /* Yellow border */
+            padding-bottom: 10px;
+        }
+        .project-detail img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .project-detail h3 {
+            color: #ffdd57; /* Yellow text */
+            margin-top: 30px;
+        }
+        .project-detail ul, .project-detail ol {
+            margin: 20px 0;
+            padding-left: 20px;
+        }
+        .project-detail ul li, .project-detail ol li {
+            margin-bottom: 10px;
+        }
+        .cta-button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: #0d3b66; /* Dark background */
+            color: #ffdd57; /* Yellow text */
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .cta-button:hover {
+            background-color: #1a73e8;
+            color: white;
+        }
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #0d3b66;
+            color: #f5f5f5;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <h1>Tehj Patel</h1>
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="../about.html">About</a>
+                <a href="../projects.html" class="active">Projects</a>
+                <a href="../skills.html">Skills</a>
+                <a href="../contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="project-detail">
+        <div class="container">
+            <h2>Stanmore College App</h2>
+            <p>An app for Stanmore College built with React.js.</p>
+            <img src="images/stanmore-college-app.png" alt="Stanmore College App Screenshot">
+
+            <h3>Project Overview</h3>
+            <p>This Stanmore College App project is a web application built using React.js. The app provides various functionalities for students and staff of Stanmore College, including accessing course materials, schedules, and announcements. The project demonstrates the use of React.js for building dynamic and interactive web applications.</p>
+            
+            <h3>Welcome Screen</h3>
+            <p>The app starts with a welcome screen where users can log in to access their personalized dashboard. The interface is designed to be user-friendly and intuitive.</p>
+            <img src="images/stanmore-college-app-welcome.png" alt="Welcome Screen" />
+
+            <h3>Dashboard</h3>
+            <p>Once logged in, users can access their dashboard, which provides an overview of their courses, schedules, and recent announcements. The dashboard is designed to be informative and easy to navigate.</p>
+            <img src="images/stanmore-college-app-dashboard.png" alt="Dashboard Screen" />
+
+            <h4>Key Features</h4>
+            <ul>
+                <li><strong>Interactive Dashboard:</strong> The app features an interactive dashboard that provides an overview of the user's courses and schedules.</li>
+                <li><strong>Course Materials:</strong> Users can access and download course materials directly from the app.</li>
+                <li><strong>Announcements:</strong> The app displays recent announcements and updates from the college.</li>
+                <li><strong>Responsive Design:</strong> The app is designed to be responsive and works well on different devices.</li>
+            </ul>
+
+            <h3>Technical Details</h3>
+            <h4>React.js</h4>
+            <p>The core logic of the app is implemented in React.js. It handles user input, data fetching, and rendering.</p>
+            <ul>
+                <li><strong>Component-based Architecture:</strong> The app is built using a component-based architecture, which makes it modular and easy to maintain.</li>
+                <li><strong>State Management:</strong> The app uses React's state management to handle user data and interactions.</li>
+                <li><strong>API Integration:</strong> The app fetches data from various APIs to provide real-time information to the users.</li>
+                <li><strong>Responsive Design:</strong> The app is designed to be responsive and works well on different devices.</li>
+            </ul>
+
+            <h3>How to Use</h3>
+            <ol>
+                <li>Open the app and log in with your credentials on the welcome screen.</li>
+                <li>Access your dashboard to view your courses, schedules, and announcements.</li>
+                <li>Navigate through the app to access course materials and other features.</li>
+            </ol>
+
+            <a href="../projects.html" class="cta-button">Back to Projects</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 Tehj Patel</p>
+    </footer>
+</body>
+</html>

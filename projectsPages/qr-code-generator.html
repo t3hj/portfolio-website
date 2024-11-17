@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator - Tehj Patel</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/projects.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #f5f5f5;
+            background-color: #0a1a33;
+        }
+        .navbar {
+            background-color: #0d3b66;
+            color: #f5f5f5;
+            padding: 10px 0;
+            
+            width: 100%;
+            top: 0;
+            z-index: 1000;          
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+        }
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .navbar h1 {
+            margin: 0;
+            padding: 0 20px;
+        }
+        .navbar .nav-links a {
+            color: #f5f5f5;
+            text-decoration: none;
+            padding: 10px 20px;
+            display: inline-block;
+        }
+        .navbar .nav-links a.active {
+            background-color: rgba(255, 221, 87, 0.1);
+            color: #ffdd57;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            margin-top: 98px; /* Adjust based on navbar height */
+            padding: 20px;
+            background-color: #0d3b66; /* Dark background */
+            color: #f5f5f5; /* Light text */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .project-detail h2 {
+            color: #ffdd57; /* Yellow text */
+            border-bottom: 2px solid #ffdd57; /* Yellow border */
+            padding-bottom: 10px;
+        }
+        .project-detail img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .project-detail h3 {
+            color: #ffdd57; /* Yellow text */
+            margin-top: 30px;
+        }
+        .project-detail ul, .project-detail ol {
+            margin: 20px 0;
+            padding-left: 20px;
+        }
+        .project-detail ul li, .project-detail ol li {
+            margin-bottom: 10px;
+        }
+        .cta-button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: #0d3b66; /* Dark background */
+            color: #ffdd57; /* Yellow text */
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .cta-button:hover {
+            background-color: #1a73e8;
+            color: white;
+        }
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #0d3b66;
+            color: #f5f5f5;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <h1>Tehj Patel</h1>
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="../about.html">About</a>
+                <a href="../projects.html" class="active">Projects</a>
+                <a href="../skills.html">Skills</a>
+                <a href="../contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-section">
+        <div class="container">
+            
+            <h2 class="animate-fade-in">QR Code Generator</h2>
+            
+            <div class="project-details animate-fade-in">
+
+                <h3>Project Overview</h3>
+                <p>This QR Code Generator project is a Python-based application that allows users to create QR codes with various customizable options. The project demonstrates the use of the <code>qrcode</code> and <code>PIL</code> libraries for generating and manipulating QR code images.</p>
+                
+                <h3>Key Features</h3>
+                <ul>
+                    <li>Customizable QR code generation with different error correction levels.</li>
+                    <li>Option to add logos to the QR codes.</li>
+                    <li>Customizable colors for the QR code and background.</li>
+                    <li>Frame text option for adding text around the QR code.</li>
+                </ul>
+                
+                <h3>Technical Details</h3>
+                <p>The QR Code Generator uses the <code>qrcode</code> library for generating QR codes and the <code>PIL</code> library for image manipulation. The script includes functionalities for adding logos and frame text to the QR codes.</p>
+                
+                <h3>How to Use</h3>
+                <ol>
+                    <li>Run the script and enter the URL to encode in the QR code.</li>
+                    <li>Customize the QR code by setting the fill color, background color, and other options.</li>
+                    <li>Save the generated QR code image.</li>
+                </ol>
+                <h3>Code Snippet</h3>
+                <pre><code>
+import qrcode
+from PIL import Image, ImageDraw, ImageFont
+
+def create_qr_code(url, filename='qr_code.png', box_size=10, border=4, fill_color='black', back_color='white', version=1, error_correction='L', logo_path=None, output_format='PNG', frame_text=None):
+    # QR code generation logic here
+                </code></pre>
+                
+                <h3>Screenshots</h3>
+                <img src="../images/qr-code-generator-screenshot.png" alt="QR Code Generator Screenshot">
+                
+                <h3>GitHub Repository</h3>
+                <p>For the full code and more details, visit the <a href="https://github.com/your-repo/qr-code-generator" target="_blank">GitHub repository</a>.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 Tehj Patel</p>
+    </footer>
+</body>
+</html>

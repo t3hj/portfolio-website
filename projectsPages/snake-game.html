@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game - Tehj Patel</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/projects.css">
+    
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #f5f5f5;
+            background-color: #0a1a33;
+        }
+        .navbar {
+            background-color: #0d3b66;
+            color: #f5f5f5;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .navbar h1 {
+            margin: 0;
+            padding: 0 20px;
+        }
+        .navbar .nav-links a {
+            color: #f5f5f5;
+            text-decoration: none;
+            padding: 10px 20px;
+            display: inline-block;
+        }
+        .navbar .nav-links a.active {
+            background-color: rgba(255, 221, 87, 0.1);
+            color: #ffdd57;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            margin-top: 98px; /* Adjust based on navbar height */
+            padding: 20px;
+            background-color: #0d3b66; /* Dark background */
+            color: #f5f5f5; /* Light text */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .project-detail h2 {
+            color: #ffdd57; /* Yellow text */
+            border-bottom: 2px solid #ffdd57; /* Yellow border */
+            padding-bottom: 10px;
+        }
+        .project-detail img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .project-detail h3 {
+            color: #ffdd57; /* Yellow text */
+            margin-top: 30px;
+        }
+        .project-detail ul, .project-detail ol {
+            margin: 20px 0;
+            padding-left: 20px;
+        }
+        .project-detail ul li, .project-detail ol li {
+            margin-bottom: 10px;
+        }
+        .cta-button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: #0d3b66; /* Dark background */
+            color: #ffdd57; /* Yellow text */
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .cta-button:hover {
+            background-color: #1a73e8;
+            color: white;
+        }
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #0d3b66;
+            color: #f5f5f5;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <h1>Tehj Patel</h1>
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="../about.html">About</a>
+                <a href="../projects.html" class="active">Projects</a>
+                <a href="../skills.html">Skills</a>
+                <a href="../contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="project-detail">
+        <div class="container">
+            <h2>Snake Game</h2>
+            <p>A classic Snake game built with Java.</p>
+            <img src="images\SnakeGame\Play.png" alt="Snake Game Screenshot">
+
+            <h3>Project Overview</h3>
+            <p>This Snake Game project is a simple yet engaging game where the player controls a snake that moves around the screen, eating food to grow longer. The game ends if the snake runs into the screen edges or itself. The project is built using Java and the Swing library for the graphical user interface (GUI).</p>
+            
+            <h3>Welcome Screen</h3>
+            <p>The game starts with a colourful welcome screen where you can select the snake's colour and initiate the game. It provides a friendly, interactive start to the game.</p>
+            <img src="images\SnakeGame\ColourPicker.png" alt="Welcome Screen with Colour Picker" />
+
+            <h3>Gameplay</h3>
+            <p>Once the game starts, you control the snake using the arrow keys. The snake eats red food blocks to grow longer and increase your score. Be careful to avoid collisions with the edges of the screen or the snake's own body!</p>
+            <img src="images\SnakeGame\snakeGame.png" alt="Gameplay Screen with High Score Display" />
+
+            <h4>Key Features</h4>
+            <ul>
+                <li><strong>Pause Functionality:</strong> Use the 'P' key to pause and resume the game at any time.</li>
+                <li><strong>Snake Colour Selection:</strong> Choose your snake's colour before starting, adding a layer of personalisation.</li>
+                <li><strong>Score Tracking:</strong> Your current score is displayed during the game, motivating you to beat your own high scores.</li>
+                <li><strong>Restart Button:</strong> If the game ends, you can restart easily.</li>
+                <li><strong>Dynamic Game Over Screen:</strong> When the game ends, a "Game Over" screen appears with options to restart or quit.</li>
+            </ul>
+
+            <h3>Game Over Screen</h3>
+            <p>When the game ends, you’re presented with a Game Over screen displaying your score and offering a restart button.</p>
+            <img src="images\SnakeGame\GameOver.png" alt="Game Over Screen" />
+
+            <h3>Technical Details</h3>
+            <h4>GamePanel.java</h4>
+            <p>This file contains the core logic of the game:</p>
+            <ul>
+                <li><strong>Game State Management:</strong> Handles transitions between Welcome, Playing, and Game Over states.</li>
+                <li><strong>Snake Movement:</strong> Implements the logic for the snake's direction and position updates.</li>
+                <li><strong>Food Spawning:</strong> Randomly places food on the grid for the snake to eat.</li>
+                <li><strong>Collision Detection:</strong> Checks for collisions with the screen edges or the snake’s body.</li>
+                <li><strong>Rendering:</strong> Draws the game elements dynamically on the screen.</li>
+            </ul>
+
+            <h4>Main.java</h4>
+            <p>This file sets up the game window and integrates the GamePanel into a JFrame for user interaction. It handles the game's overall appearance and window properties.</p>
+
+            <h3>How to Play</h3>
+            <ol>
+                <li>Open the game and choose the snake colour on the welcome screen.</li>
+                <li>Click "Start Game" to begin.</li>
+                <li>Use the arrow keys to guide the snake and eat food to score points.</li>
+                <li>Avoid running into walls or the snake’s body.</li>
+                <li>If the game ends, restart from the Game Over screen or quit.</li>
+            </ol>
+
+            <a href="../projects.html" class="cta-button">Back to Projects</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 Tehj Patel</p>
+    </footer>
+</body>
+</html>
