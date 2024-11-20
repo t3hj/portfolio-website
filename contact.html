@@ -3,16 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Tehj Patel</title>
-    <link rel="stylesheet" href="styles/main.css">
+    <title>Contact - Tehj Patel </title>
     <link rel="stylesheet" href="styles/contact.css">
+    <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <script>
-        (function(){
-            emailjs.init("GwXp9-6E_l3NrER8V"); // Replace with your EmailJS user ID
-        })();
-    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -28,52 +22,95 @@
         </div>
     </nav>
 
-    <main class="hero-section">
+    <section class="hero-section">
         <div class="container">
-            <h2 class="animate-fade-in">Contact Me</h2>
+            <h2 id="contact-me" class="animate-fade-in">Contact Me</h2>
+            
             <div class="contact-content">
-                <p class="contact-text animate-fade-in">
-                    I'm always interested in new opportunities and collaborations. Feel free to reach out!
-                </p>
-
-                <div class="contact-form animate-fade-in">
+                <div class="contact-text animate-fade-in">
                     <h3>Get in Touch</h3>
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Name:</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email">Email:</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="message">Message:</label>
-                            <textarea id="message" name="message" required></textarea>
-                        </div>
-                        
-                        <button type="submit">Send Message</button>
-                    </form>
+                    <p>I'm always interested in new opportunities and collaborations. Feel free to reach out!</p>
                 </div>
+                
+                <form id="contact-form" class="contact-form animate-fade-in" action="https://formspree.io/f/xwpkqrkn" method="POST">
+                    <h3>Send a Message</h3>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z]{2,}$" 
+                        title="Please enter a valid email address (e.g., johndoe@example.com)">
+                      </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    
+                    <div id="form-status"></div>
+                    <button type="submit">Send Message</button>
+                </form>
 
                 <div class="social-links animate-fade-in">
                     <h3>Connect With Me</h3>
                     <ul>
-                        <li><a href="https://github.com/t3hj">GitHub: github.com/Tehj</a></li>
-                        <li><a href="https://www.linkedin.com/in/tehj-patel-56a5562a2/">LinkedIn: linkedin.com/in/Tehj</a></li>
-                        <li><a href="mailto:tehjpatel@gmail.com">Email: tehjpatel@gmail.com</a></li>
+                        <li><a href="https://github.com/t3hj" target="_blank">GitHub</a></li>
+                        <li><a href="https://www.linkedin.com/in/tehj-patel-56a5562a2/" target="_blank">LinkedIn</a></li>
+                        <li><a href="mailto:tehjpatel@gmail.com">Email</a></li>
                     </ul>
                 </div>
             </div>
         </div>
-    </main>
+    </section>
 
     <footer>
-        <p>© 2024 Tehj Patel</p>
+        © 2024 Tehj Patel
     </footer>
 
-    <script src="scripts/contact.js"></script>
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const form = event.target;
+            const formStatus = document.getElementById('form-status');
+            const submitButton = form.querySelector('button');
+
+            // Disable button during submission
+            submitButton.disabled = true;
+            submitButton.textContent = 'Sending...';
+            formStatus.innerHTML = '';
+
+            fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    formStatus.innerHTML = '<p style="color: green;">Thanks for your message! I\'ll get back to you soon.</p>';
+                    form.reset();
+                } else {
+                    return response.json().then(data => {
+                        if (Object.keys(data.errors).length > 0) {
+                            formStatus.innerHTML = '<p style="color: red;">Oops! There was an error submitting the form.</p>';
+                        }
+                    });
+                }
+            })
+            .catch(error => {
+                formStatus.innerHTML = '<p style="color: red;">Submission failed. Please try again.</p>';
+                console.error('Error:', error);
+            })
+            .finally(() => {
+                // Re-enable button
+                submitButton.disabled = false;
+                submitButton.textContent = 'Send Message';
+            });
+        });
+    </script>
 </body>
 </html>
