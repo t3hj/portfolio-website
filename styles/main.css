@@ -1,3 +1,4 @@
+/* General Reset */
 * {
     margin: 0;
     padding: 0;
@@ -28,6 +29,7 @@ body {
     top: 0;
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .nav-content {
@@ -35,23 +37,35 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
 }
 
 .nav-links a {
     color: #f5f5f5;
-    margin: 0 1rem;
     text-decoration: none;
-    transition: color 0.3s ease;
     padding: 0.5rem 1rem;
     border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
     color: #ffdd57;
     background-color: rgba(255, 221, 87, 0.1);
+}
+
+.hamburger-menu {
+    display: none;
+    background: none;
+    border: none;
+    color: #f5f5f5;
+    font-size: 1.5rem;
+    cursor: pointer;
 }
 
 /* Footer */
@@ -62,35 +76,42 @@ footer {
     margin-top: auto;
 }
 
-/* Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: #ffdd57;
+    border: none;
+    padding: 1rem;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: none;
 }
 
-.animate-fade-in {
-    animation: fadeIn 1s ease-out;
+.back-to-top:hover {
+    background-color: #1a73e8;
+    color: white;
 }
 
-/* Responsive Design */
+/* Responsive */
 @media (max-width: 768px) {
-    .nav-content {
-        flex-direction: column;
-        text-align: center;
+    .hamburger-menu {
+        display: block;
     }
 
     .nav-links {
-        margin-top: 1rem;
+        display: none;
+        flex-direction: column;
+        background-color: #0d3b66;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
     }
 
-    .nav-links a {
-        display: block;
-        margin: 0.5rem 0;
+    .nav-links.show {
+        display: flex;
     }
 }
+

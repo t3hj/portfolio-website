@@ -5,7 +5,9 @@
     min-height: calc(100vh - 80px);
     display: flex;
     align-items: center;
-    background: linear-gradient(rgba(10, 26, 51, 0.9), rgba(10, 26, 51, 0.95));
+    background: radial-gradient(circle, rgba(255, 221, 87, 0.2), rgba(10, 26, 51, 1));
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 .hero-content {
@@ -30,12 +32,20 @@
     margin-bottom: 2rem;
 }
 
-.hero-image img {
-    border-radius: 50%;
+.hero-image {
+    display: inline-block;
     width: 150px;
     height: 150px;
+    perspective: 1000px; /* Adding perspective to create the 3D effect */
+    overflow: hidden; /* Hide any content that moves outside the container */
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    border: 3px solid #ffdd57;
+    transition: transform 0.1s ease-out; /* Smooth transition for rotation */
+    will-change: transform; /* Optimizes performance during transformation */
 }
 
 .social-links {
@@ -47,10 +57,31 @@
     color: #ffdd57;
     margin: 0 1rem;
     transition: all 0.3s ease;
+    position: relative;
+}
+
+.social-icon::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background-color: #ffdd57;
+    opacity: 0;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover::after {
+    width: 120%;
+    height: 120%;
+    opacity: 0.2;
 }
 
 .social-icon:hover {
-    color: #1a73e8;
+    color: #0a1a33;
     transform: translateY(-3px) rotate(10deg);
 }
 
@@ -69,24 +100,52 @@
     transition: all 0.3s ease;
 }
 
+/* Slide-in animations */
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(-100%);  /* Start off-screen to the left */
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);  /* End at the center */
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(100%);  /* Start off-screen to the right */
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);  /* End at the center */
+        opacity: 1;
+    }
+}
+
+/* Apply animation to the View Projects button (slide from left to center) */
 .cta-button:first-child {
     background-color: #ffdd57;
     color: #0a1a33;
+    animation: slideInFromLeft 1s ease-out forwards; /* Slide in from the left */
 }
 
+/* Apply animation to the Get in Touch button (slide from right to center) */
 .cta-button.secondary {
     background-color: transparent;
     border: 2px solid #ffdd57;
     color: #ffdd57;
+    animation: slideInFromRight 1s ease-out forwards; /* Slide in from the right */
 }
 
+/* Hover Effects */
 .cta-button:hover {
     transform: translateY(-3px);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .cta-button:first-child:hover {
-    background-color: #1a73e8;
+    background-color: #0a1a33;
     color: white;
 }
 
@@ -95,6 +154,41 @@
     color: #0a1a33;
 }
 
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Typewriter Animation */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+.typewriter {
+    overflow: hidden;
+    border-right: 3px solid #ffdd57;
+    white-space: nowrap;
+    margin: 0 auto;
+    animation: typing 4s steps(40, end), blink 0.75s step-end infinite;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
     .hero-content {
         flex-direction: column;
