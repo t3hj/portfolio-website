@@ -7,66 +7,110 @@
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body[data-theme="light"] {
+            background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 100%);
+            color: #000000;
+        }
+        body[data-theme="custom"] {
+            background: linear-gradient(135deg, #0a1a33 0%, #1a3a63 100%);
+            color: #f5f5f5;
+        }
+    </style>
 </head>
-<body>
-    <!-- Navigation -->
+<body data-theme="custom">
+    <script>
+        document.body.setAttribute('data-theme', localStorage.getItem('theme') || 'custom');
+    </script>
     <nav class="navbar">
         <div class="nav-content">
-            <h1>Tehj Patel</h1>
-            <button class="hamburger-menu" aria-label="Menu">
-                <i class="fas fa-bars"></i>
-            </button>
             <div class="nav-links">
-                <a href="index.html" class="active">Home</a>
-                <a href="about.html">About</a>
-                <a href="projects.html">Projects</a>
-                <a href="skills.html">Skills</a>
-                <a href="contact.html">Contact</a>
+                <div class="navbar-left">
+                    <a href="index.html" class="active">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="projects.html">Projects</a>
+                    <a href="skills.html">Skills</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
+            <div class="navbar-right">
+                <div class="theme-toggle custom">
+                    <div class="toggle-thumb"></div>
+                </div>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text fade-in">
-                    <h2 class="typewriter">Welcome to My Portfolio</h2>
-                    <p>Aspiring Software Developer with a passion for cybersecurity and innovation.</p>
-                    <div class="social-links fade-in">
-                        <a href="https://github.com/t3hj" class="social-icon" data-tooltip="GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/tehj-patel-56a5562a2/" class="social-icon" data-tooltip="LinkedIn">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="https://discord.com/users/nightslash" class="social-icon" data-tooltip="Discord">
-                            <i class="fab fa-discord"></i>
-                        </a>
-                        <a href="https://www.instagram.com/t3hj_p/profilecard/" class="social-icon" data-tooltip="Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
+    <main>
+        <section class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text fade-in">
+                        <div class="cursor-container">
+                            <h1 class="main-title" id="typing-text"></h1>
+                            <div class="cursor"></div>
+                        </div>
+                        <p>Aspiring Software Developer with a passion for cybersecurity and innovation.</p>
                     </div>
+
+                    <div class="hero-image fade-in">
+                        <div class="profile-card">
+                            <img src="images/Me.jpg" alt="Tehj Patel" width="300" height="300">
+                            <div class="social-overlay">
+                                <div class="social-links">
+                                    <a href="https://github.com/t3hj" class="social-icon" data-tooltip="GitHub">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                    <a href="https://www.linkedin.com/in/tehj-patel-56a5562a2/" class="social-icon" data-tooltip="LinkedIn">
+                                        <i class="fab fa-linkedin"></i>
+                                    </a>
+                                    <a href="https://discord.com/users/nightslash" class="social-icon" data-tooltip="Discord">
+                                        <i class="fab fa-discord"></i>
+                                    </a>
+                                    <a href="https://www.instagram.com/t3hj_p/profilecard/" class="social-icon" data-tooltip="Instagram">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="cta-buttons fade-in">
-                        <a href="projects.html" class="cta-button">View Projects</a>
+                        <a href="projects.html" class="cta-button">Explore My Projects</a>
                         <a href="contact.html" class="cta-button secondary">Get in Touch</a>
                     </div>
                 </div>
-                <div class="hero-image fade-in">
-                    <img src="images/Me.jpg" alt="Tehj Patel">
-                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- Footer -->
     <footer>
-        <p>© 2024 Tehj Patel</p>
-        <button class="back-to-top" aria-label="Back to top">
-            <i class="fas fa-arrow-up"></i>
-        </button>
+        <div class="footer-content">
+            <div>© 2024 Tehj Patel Crafting code with passion and precision.</div>
+            <div class="footer-social">
+                <a href="https://github.com/t3hj" class="social-icon" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/tehj-patel-56a5562a2/" class="social-icon" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://discord.com/users/nightslash" class="social-icon" aria-label="Discord">
+                    <i class="fab fa-discord"></i>
+                </a>
+                <a href="https://www.instagram.com/t3hj_p/profilecard/" class="social-icon" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+            <button class="back-to-top" aria-label="Back to top">
+                <i class="fas fa-arrow-up"></i>
+            </button>
+        </div>
     </footer>
 
+    <script>
+        document.body.setAttribute('data-theme', localStorage.getItem('theme') || 'custom');
+    </script>
+    <script src="scripts/global.js"></script>
     <script src="scripts/main.js"></script>
 </body>
 </html>

@@ -8,10 +8,12 @@
     <link rel="stylesheet" href="styles/skills.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-<body>
+<body data-theme="custom">
     <nav class="navbar">
         <div class="nav-content">
-            <h1>Tehj Patel</h1>
+            <button class="hamburger-menu" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>            
             <div class="nav-links">
                 <a href="index.html">Home</a>
                 <a href="about.html">About</a>
@@ -19,69 +21,161 @@
                 <a href="skills.html" class="active">Skills</a>
                 <a href="contact.html">Contact</a>
             </div>
+            <div class="theme-toggle custom">
+                <div class="toggle-thumb"></div>
+            </div>
         </div>
     </nav>
 
-    <section class="hero-section">
-        <div class="container">
+    <div class="container">
+        <section class="hero-section">
             <h2 class="animate-fade-in">My Skills</h2>
-            <div class="skills-content">
-                <div class="skill-category animate-fade-in">
-                    <h3><i class="fas fa-code"></i> Programming Languages</h3>
-                    <ul>
-                        <li><i class="fab fa-python"></i> Python (Advanced)</li>
-                        <li><i class="fab fa-java"></i> Java (Intermediate)</li>
-                        <li><i class="fab fa-js"></i> JavaScript (Intermediate)</li>
-                        <li><i class="fas fa-plus-square"></i> C++ (Basic)</li>
-                        <li><i class="fab fa-c"></i> C (Basic)</li>
-                    </ul>
-                </div>
+            <div class="container">
+                <div class="skills-content">
+                    <div class="skill-category animate-fade-in" style="animation-delay: 0.1s;">
+                        <h3><i class="fas fa-code"></i> Programming Languages</h3>
+                        <ul>
+                            <li>
+                                <i class="fab fa-python"></i> Python
+                                <span class="skill-level">Advanced</span>
+                            </li>
+                            <li>
+                                <i class="fab fa-java"></i> Java
+                                <span class="skill-level">Intermediate</span>
+                            </li>
+                            <li>
+                                <i class="fab fa-js"></i> JavaScript
+                                <span class="skill-level">Intermediate</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-plus-square"></i> C++
+                                <span class="skill-level">Basic</span>
+                            </li>
+                            <li>
+                                <i class="fab fa-cuttlefish"></i> C
+                                <span class="skill-level">Basic</span>
+                            </li>
+                        </ul>
+                    </div>
 
-                <div class="skill-category animate-fade-in">
-                    <h3><i class="fas fa-globe"></i> Web Technologies</h3>
-                    <ul>
-                        <li><i class="fab fa-html5"></i> HTML5 & <i class="fab fa-css3-alt"></i> CSS3</li>
-                        <li><i class="fab fa-react"></i> React.js</li>
-                        <li><i class="fab fa-node-js"></i> Node.js</li>
-                        <li><i class="fas fa-server"></i> RESTful APIs</li>
-                        <li><i class="fab fa-typescript"></i> TypeScript</li>
-                    </ul>
-                </div>
+                    <div class="skill-category animate-fade-in" style="animation-delay: 0.2s;">
+                        <h3><i class="fas fa-globe"></i> Web Technologies</h3>
+                        <ul>
+                            <li>
+                                <i class="fab fa-html5"></i> HTML5 & CSS3
+                                <span class="skill-level">Advanced</span>
+                            </li>
+                            <li>
+                                <i class="fab fa-react"></i> React.js
+                                <span class="skill-level">Intermediate</span>
+                            </li>
+                            <li>
+                                <i class="fab fa-node-js"></i> Node.js
+                                <span class="skill-level">Intermediate</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-server"></i> RESTful APIs
+                                <span class="skill-level">Intermediate</span>
+                            </li>
+                            <li>
+                                <i class="fab fa-js"></i> TypeScript
+                                <span class="skill-level">Basic</span>
+                            </li>
+                        </ul>
+                    </div>
 
-                <div class="skill-category animate-fade-in">
-                    <h3><i class="fas fa-tools"></i> Tools & Platforms</h3>
-                    <ul>
-                        <li><i class="fab fa-github"></i> Git & GitHub</li>
-                        <li><i class="fas fa-code"></i> Visual Studio Code</li>
-                        <li><i class="fab fa-docker"></i> Docker</li>
-                        <li><i class="fab fa-linux"></i> Linux/Unix</li>
-                        <li><i class="fab fa-canva"></i> Canva</li>
-                    </ul>
-                </div>
+                    <div class="skill-category animate-fade-in" style="animation-delay: 0.3s;">
+                        <h3><i class="fas fa-tools"></i> Tools & Platforms</h3>
+                        <ul>
+                            <li>
+                                <i class="fab fa-github"></i> Git & GitHub
+                                <span class="skill-level">Advanced</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-code"></i> Visual Studio Code
+                                <span class="skill-level">Advanced</span>
+                            </li>
+                            <li>
+                                <i class="fab fa-docker"></i> Docker
+                                <span class="skill-level">Intermediate</span>
+                            </li>
+                            <li>
+                                <i class="fab fa-linux"></i> Linux/Unix
+                                <span class="skill-level">Intermediate</span>
+                            </li>
+                            <li>
+                                <i class="fab fa-canva"></i> Canva
+                                <span class="skill-level">Intermediate</span>
+                            </li>
+                        </ul>
+                    </div>
 
-                <div class="skill-category animate-fade-in">
-                    <h3><i class="fas fa-database"></i> Databases</h3>
-                    <ul>
-                        <li><i class="fas fa-database"></i> SQLite</li>
-                        <li><i class="fas fa-database"></i> SPSS</li>
-                    </ul>
-                </div>
+                    <div class="skill-category animate-fade-in" style="animation-delay: 0.4s;">
+                        <h3><i class="fas fa-database"></i> Databases</h3>
+                        <ul>
+                            <li>
+                                <i class="fas fa-database"></i> SQLite
+                                <span class="skill-level">Intermediate</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-chart-bar"></i> SPSS
+                                <span class="skill-level">Basic</span>
+                            </li>
+                        </ul>
+                    </div>
 
-                <div class="skill-category animate-fade-in">
-                    <h3><i class="fas fa-shield-alt"></i> Cybersecurity</h3>
-                    <ul>
-                        <li><i class="fas fa-network-wired"></i> Network Security</li>
-                        <li><i class="fas fa-lock"></i> Encryption Protocols</li>
-                        <li><i class="fas fa-search"></i> Vulnerability Assessment</li>
-                        <li><i class="fas fa-clipboard-check"></i> Security Auditing</li>
-                    </ul>
+                    <div class="skill-category animate-fade-in" style="animation-delay: 0.5s;">
+                        <h3><i class="fas fa-shield-alt"></i> Cybersecurity</h3>
+                        <ul>
+                            <li>
+                                <i class="fas fa-network-wired"></i> Network Security
+                                <span class="skill-level">Intermediate</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-lock"></i> Encryption Protocols
+                                <span class="skill-level">Intermediate</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-search"></i> Vulnerability Assessment
+                                <span class="skill-level">Basic</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-clipboard-check"></i> Security Auditing
+                                <span class="skill-level">Basic</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
     <footer>
-        <p>© 2024 Tehj Patel</p>
+        <div class="footer-content">
+            <div>© 2024 Tehj Patel Crafting code with passion and precision.</div>
+            <div class="footer-social">
+                <a href="https://github.com/t3hj" class="social-icon" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/tehj-patel-56a5562a2/" class="social-icon" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://discord.com/users/nightslash" class="social-icon" aria-label="Discord">
+                    <i class="fab fa-discord"></i>
+                </a>
+                <a href="https://www.instagram.com/t3hj_p/profilecard/" class="social-icon" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+            <button class="back-to-top" aria-label="Back to top">
+                <i class="fas fa-arrow-up"></i>
+            </button>
+        </div>
     </footer>
+
+    <script>
+        document.body.setAttribute('data-theme', localStorage.getItem('theme') || 'custom');
+    </script>
+    <script src="scripts/global.js"></script>
 </body>
 </html>

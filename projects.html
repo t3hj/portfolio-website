@@ -8,10 +8,12 @@
     <link rel="stylesheet" href="styles/projects.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-<body>
+<body data-theme="custom">
     <nav class="navbar">
         <div class="nav-content">
-            <h1>Tehj Patel</h1>
+            <button class="hamburger-menu" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>            
             <div class="nav-links">
                 <a href="index.html">Home</a>
                 <a href="about.html">About</a>
@@ -19,12 +21,15 @@
                 <a href="skills.html">Skills</a>
                 <a href="contact.html">Contact</a>
             </div>
+            <div class="theme-toggle custom">
+                <div class="toggle-thumb"></div>
+            </div>
         </div>
     </nav>
 
     <section class="hero-section">
+        <h2 class="animate-fade-in">My Projects</h2>
         <div class="container">
-            <h2 class="animate-fade-in">My Projects</h2>
             <div class="projects-content">
                 <div class="project-category animate-fade-in">
                     <h3><i class="fas fa-gamepad"></i> Snake Game</h3>
@@ -91,7 +96,31 @@
     </section>
 
     <footer>
-        <p>© 2024 Tehj Patel</p>
+        <div class="footer-content">
+            <div>© 2024 Tehj Patel Crafting code with passion and precision.</div>
+            <div class="footer-social">
+                <a href="https://github.com/t3hj" class="social-icon" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/tehj-patel-56a5562a2/" class="social-icon" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://discord.com/users/nightslash" class="social-icon" aria-label="Discord">
+                    <i class="fab fa-discord"></i>
+                </a>
+                <a href="https://www.instagram.com/t3hj_p/profilecard/" class="social-icon" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+            <button class="back-to-top" aria-label="Back to top">
+                <i class="fas fa-arrow-up"></i>
+            </button>
+        </div>
     </footer>
+
+    <script>
+        document.body.setAttribute('data-theme', localStorage.getItem('theme') || 'custom');
+    </script>
+    <script src="scripts/global.js"></script>
 </body>
 </html>
