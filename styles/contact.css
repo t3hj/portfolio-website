@@ -6,6 +6,14 @@
     justify-content: center;
     background-color: #0a1a33;
     color: #f5f5f5;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.hero-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #ffdd57;
 }
 
 .contact-content {
@@ -130,4 +138,50 @@
     .social-links {
         padding: 1.5rem;
     }
+}
+
+body[data-theme="light"] .hero-section {
+    background-color: #ffffff;
+    color: #0a1a33;
+}
+
+body[data-theme="dark"] .hero-section {
+    background-color: #0a1a33;
+    color: #f5f5f5;
+}
+
+body[data-theme="light"] .contact-content,
+body[data-theme="light"] .contact-text,
+body[data-theme="light"] .contact-form,
+body[data-theme="light"] .social-links {
+    background: rgba(255, 255, 255, 0.8);
+    color: #0a1a33;
+}
+
+body[data-theme="dark"] .contact-content,
+body[data-theme="dark"] .contact-text,
+body[data-theme="dark"] .contact-form,
+body[data-theme="dark"] .social-links {
+    background: rgba(13, 59, 102, 0.8);
+    color: #f5f5f5;
+}
+
+body[data-theme="dark"] .container {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+}
+
+body[data-theme="dark"] .contact-content, body[data-theme="dark"] .contact-form, body[data-theme="dark"] .social-links {
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+}
+
+body[data-theme="dark"] .contact-text {
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+}
+
+body[data-theme="light"] .contact-content, body[data-theme="light"] .contact-text, body[data-theme="light"] .contact-form, body[data-theme="light"] .social-links {
+    background-color: #f5f5f5;
+    color: #0a1a33;
 }

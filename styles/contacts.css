@@ -1,3 +1,5 @@
+/* contacts.css */
+
 /* General Reset */
 * {
     margin: 0;
@@ -15,7 +17,7 @@
 body {
     line-height: 1.6;
     color: #f5f5f5;
-    background-color: #0a1a33;
+    background-color: #0a1a33; /* This should be updated */
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -26,12 +28,12 @@ body {
 
 body[data-theme="light"] {
     background-color: #ffffff;
-    color: #000000;
+    color: #0a1a33;
 }
 
 body[data-theme="dark"] {
-    background-color: #121212;
-    color: #e0e0e0;
+    background-color: #000000;
+    color: #ffffff;
 }
 
 body[data-theme="light"] .container {
@@ -40,7 +42,7 @@ body[data-theme="light"] .container {
 }
 
 body[data-theme="dark"] .container {
-    background-color: #1e1e1e;
+    background-color: #000000; /* Ensure container background is black */
     color: #e0e0e0;
 }
 
@@ -75,6 +77,7 @@ body[data-theme="light"] .navbar {
 body[data-theme="dark"] .navbar {
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
 }
 
 .nav-links a {
@@ -201,6 +204,7 @@ body[data-theme="dark"] footer {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    color: #ffffff;
 }
 
 .footer-social {
@@ -222,7 +226,7 @@ body[data-theme="light"] .footer-social .social-icon {
 }
 
 body[data-theme="dark"] .footer-social .social-icon {
-    color: #e0e0e0;
+    color: #ffffff;
 }
 
 .footer-social .social-icon:hover {
@@ -388,16 +392,6 @@ body[data-theme="light"] .social-icon:hover {
     background: rgba(0, 0, 0, 0.2);
 }
 
-body[data-theme="dark"] h1,
-body[data-theme="dark"] h2,
-body[data-theme="dark"] h3,
-body[data-theme="dark"] h4,
-body[data-theme="dark"] h5,
-body[data-theme="dark"] h6,
-body[data-theme="dark"] p,
-body[data-theme="dark"] a,
-body[data-theme="dark"] span,
-body[data-theme="dark"] div,
 body[data-theme="dark"] .main-title,
 body[data-theme="dark"] .cta-button,
 body[data-theme="dark"] .navbar,
@@ -406,20 +400,30 @@ body[data-theme="dark"] .footer-social .social-icon {
     color: #ffffff;
 }
 
-body[data-theme="light"] h1,
-body[data-theme="light"] h2,
-body[data-theme="light"] h3,
-body[data-theme="light"] h4,
-body[data-theme="light"] h5,
-body[data-theme="light"] h6,
-body[data-theme="light"] p,
-body[data-theme="light"] a,
-body[data-theme="light"] span,
-body[data-theme="light"] div,
 body[data-theme="light"] .main-title,
 body[data-theme="light"] .cta-button,
 body[data-theme="light"] .navbar,
 body[data-theme="light"] .footer-content,
 body[data-theme="light"] .footer-social .social-icon {
+    color: #000000;
+}
+
+body[data-theme="dark"] .cta-button {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+body[data-theme="dark"] .cta-button:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+body[data-theme="light"] .cta-button {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+body[data-theme="light"] .cta-button:hover {
+    background-color: #ffffff;
     color: #000000;
 }

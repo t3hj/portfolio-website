@@ -46,14 +46,14 @@
     font-weight: bold;
     transition: all 0.3s ease;
     background-color: #ffdd57;
-    color: #0a1a33;
+    color: #0a1a33; /* Ensure text color is dark initially */
 }
 
 .cta-button:hover {
     transform: translateY(-3px);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     background-color: #1a73e8;
-    color: white;
+    color: white; /* Ensure text color is white on hover */
 }
 
 /* Animation delays for staggered effect */
@@ -69,3 +69,162 @@
         grid-template-columns: 1fr;
     }
 }
+
+.hero-section {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.hero-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #ffdd57;
+}
+
+body[data-theme="dark"] .project-category {
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+}
+
+body[data-theme="light"] .project-category {
+    background-color: #f5f5f5;
+    color: #0a1a33;
+}
+
+body[data-theme="light"] {
+    background: #ffffff;
+    color: #000000;
+}
+
+body[data-theme="dark"] {
+    background: #000000;
+    color: #ffffff;
+}
+
+body[data-theme="dark"] .main-title,
+body[data-theme="dark"] .cta-button,
+body[data-theme="dark"] .project-category h3,
+body[data-theme="dark"] .hero-section h2 {
+    color: #ffffff;
+}
+
+body[data-theme="dark"] .main-title {
+    color: #ffffff;
+}
+
+body[data-theme="dark"] .cta-button:first-child {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+body[data-theme="dark"] .cta-button.secondary {
+    background-color: transparent;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+}
+
+body[data-theme="dark"] .cta-button:first-child:hover {
+    background-color: transparent;
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+body[data-theme="dark"] .cta-button.secondary:hover {
+    background-color: #ffffff;
+    color: #000000;
+    border-color: #ffffff;
+}
+
+body[data-theme="light"] .main-title {
+    color: #000000;
+}
+
+body[data-theme="light"] .cta-button:first-child {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+body[data-theme="light"] .cta-button.secondary {
+    background-color: transparent;
+    border: 2px solid #000000;
+    color: #000000;
+}
+
+body[data-theme="light"] .cta-button:first-child:hover {
+    background-color: transparent;
+    color: #000000;
+    border-color: #000000;
+}
+
+body[data-theme="light"] .cta-button.secondary:hover {
+    background-color: #000000;
+    color: #ffffff;
+    border-color: #000000;
+}
+
+body[data-theme="dark"] .project-category h3 {
+    color: #ffffff;
+}
+
+body[data-theme="light"] .project-category h3 {
+    color: #000000;
+}
+
+body[data-theme="dark"] .cta-button {
+    background-color: #ffffff; /* Ensure button background is white in dark mode */
+    color: #000000; /* Ensure text color is dark in dark mode */
+}
+
+body[data-theme="dark"] .cta-button:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+body[data-theme="light"] .cta-button {
+    background-color: #000000;
+    color: #ffffff; /* Ensure text is white initially */
+}
+
+body[data-theme="light"] .cta-button:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+body[data-theme="light"] .cta-button {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+body[data-theme="light"] .cta-button:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+body[data-theme="light"] .cta-button {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+body[data-theme="light"] .cta-button:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+body[data-theme="light"] .main-title,
+body[data-theme="light"] .cta-button,
+body[data-theme="light"] .project-category h3,
+body[data-theme="light"] .hero-section h2 {
+    color: #000000;
+}
+
+/* ...existing code... */
+.navbar {
+    /* ...existing code... */
+    content: "Tehj Patel"; /* Re-add the name "Tehj Patel" */
+}
+
+/* Remove the name "Tehj Patel" */
+.navbar h1 {
+    display: block; /* Show the h1 heading "Tehj Patel" */
+}
+/* ...existing code... */
