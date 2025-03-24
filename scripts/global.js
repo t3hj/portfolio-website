@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Hamburger Menu for Mobile
     const hamburgerMenu = document.querySelector(".hamburger-menu");
     const navLinks = document.querySelector(".nav-links");
-
+    
     if (hamburgerMenu) {
         hamburgerMenu.addEventListener("click", () => {
             navLinks.classList.toggle("show");
@@ -37,27 +37,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Theme Toggle Functionality
     const themeToggle = document.querySelector('.theme-toggle');
-    let currentTheme = localStorage.getItem('theme') || 'custom'; // Default theme
+    if (themeToggle) {
+        let currentTheme = localStorage.getItem('theme') || 'custom'; // Default theme
 
-    // Set the initial theme
-    document.body.setAttribute('data-theme', currentTheme);
-    themeToggle.className = `theme-toggle ${currentTheme}`;
-
-    themeToggle.addEventListener('click', () => {
-        // Toggle themes in sequence
-        if (currentTheme === 'custom') {
-            currentTheme = 'light';
-        } else if (currentTheme === 'light') {
-            currentTheme = 'dark';
-        } else {
-            currentTheme = 'custom';
-        }
-
-        // Apply the theme
+        // Set the initial theme
         document.body.setAttribute('data-theme', currentTheme);
         themeToggle.className = `theme-toggle ${currentTheme}`;
-        localStorage.setItem('theme', currentTheme); // Save the theme
-    });
+
+        themeToggle.addEventListener('click', () => {
+            // Toggle themes in sequence
+            if (currentTheme === 'dark') {
+                currentTheme = 'custom';
+            } else if (currentTheme === 'light') {
+                currentTheme = 'dark';
+            } else {
+                currentTheme = 'light';
+            }
+
+            // Apply the theme
+            document.body.setAttribute('data-theme', currentTheme);
+            themeToggle.className = `theme-toggle ${currentTheme}`;
+            localStorage.setItem('theme', currentTheme); // Save the theme
+        });
+    }
 
     // Smooth scrolling for internal links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {

@@ -1,7 +1,7 @@
 /* Projects Page Specific Styles */
 .projects-content {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-wrap: wrap;
     gap: 2rem;
     padding: 2rem 0;
     max-width: 1000px;
@@ -9,11 +9,14 @@
 }
 
 .project-category {
+    flex: 1 1 calc(33.333% - 2rem);
     background: rgba(13, 59, 102, 0.8);
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fade-in 0.6s ease forwards;
+    opacity: 0;
 }
 
 .project-category:hover {
@@ -64,9 +67,20 @@
 .project-category:nth-child(5) { animation-delay: 0.5s; }
 .project-category:nth-child(6) { animation-delay: 0.6s; }
 
-@media (max-width: 768px) {
-    .projects-content {
-        grid-template-columns: 1fr;
+@keyframes fade-in {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 900px) {
+    .project-category {
+        flex: 1 1 calc(50% - 2rem);
+    }
+}
+
+@media (max-width: 600px) {
+    .project-category {
+        flex: 1 1 100%;
     }
 }
 
@@ -190,34 +204,20 @@ body[data-theme="light"] .cta-button:hover {
     color: #000000;
 }
 
-body[data-theme="light"] .cta-button {
-    background-color: #000000;
-    color: #ffffff;
+body[data-theme="light"] .projects-content {
+    color: #333;
 }
 
-body[data-theme="light"] .cta-button:hover {
-    background-color: #ffffff;
-    color: #000000;
+body[data-theme="light"] .project-category {
+    background: rgba(240, 240, 240, 0.9);
 }
 
-body[data-theme="light"] .cta-button {
-    background-color: #000000;
-    color: #ffffff;
-}
-
-body[data-theme="light"] .cta-button:hover {
-    background-color: #ffffff;
-    color: #000000;
-}
-
-body[data-theme="light"] .main-title,
-body[data-theme="light"] .cta-button,
 body[data-theme="light"] .project-category h3,
 body[data-theme="light"] .hero-section h2 {
     color: #000000;
 }
 
-/* ...existing code... */
+/* CONFLICT 2: Contradictory navbar comments and styles */
 .navbar {
     /* ...existing code... */
     content: "Tehj Patel"; /* Re-add the name "Tehj Patel" */
@@ -227,4 +227,3 @@ body[data-theme="light"] .hero-section h2 {
 .navbar h1 {
     display: block; /* Show the h1 heading "Tehj Patel" */
 }
-/* ...existing code... */

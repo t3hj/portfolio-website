@@ -18,12 +18,11 @@
             background-color: #0d3b66;
             color: #f5f5f5;
             padding: 10px 0;
-            
+            position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;          
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-
         }
         .nav-content {
             display: flex;
@@ -101,6 +100,304 @@
             color: #f5f5f5;
             margin-top: 40px;
         }
+
+        /* Currency Converter specific styles */
+        .converter-demo {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid #ffdd57;
+        }
+        
+        .converter-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        @media (max-width: 600px) {
+            .converter-form {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        
+        .form-group label {
+            font-weight: bold;
+            color: #ffdd57;
+        }
+        
+        .form-group input, .form-group select {
+            padding: 8px;
+            border-radius: 4px;
+            border: none;
+            background-color: rgba(255, 255, 255, 0.9);
+            color: #333;
+        }
+        
+        .form-row {
+            grid-column: span 2;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        
+        @media (max-width: 600px) {
+            .form-row {
+                grid-column: span 1;
+                flex-direction: column;
+                align-items: stretch;
+            }
+        }
+        
+        .convert-btn {
+            padding: 10px 20px;
+            background-color: #1a73e8;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            margin: 10px 0;
+            transition: background-color 0.3s;
+            width: fit-content;
+        }
+        
+        .convert-btn:hover {
+            background-color: #0d47a1;
+        }
+        
+        .result-display {
+            grid-column: span 2;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: rgba(255, 221, 87, 0.1);
+            margin-top: 15px;
+            min-height: 60px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border: 1px solid #ffdd57;
+        }
+        
+        @media (max-width: 600px) {
+            .result-display {
+                grid-column: span 1;
+            }
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .feature-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 15px;
+            border: 1px solid rgba(255, 221, 87, 0.3);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .feature-card i {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #ffdd57;
+        }
+        
+        .feature-card h4 {
+            color: #ffdd57;
+            margin: 10px 0;
+        }
+        
+        .feature-card p {
+            margin-top: 5px;
+        }
+        
+        .tabs {
+            display: flex;
+            margin-bottom: 15px;
+        }
+        
+        .tab {
+            padding: 10px 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-top: 2px solid transparent;
+        }
+        
+        .tab.active {
+            background-color: rgba(255, 221, 87, 0.1);
+            border-top: 2px solid #ffdd57;
+        }
+        
+        .tab-content {
+            display: none;
+            padding: 15px 0;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .graph-container {
+            position: relative;
+            height: 300px;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+            overflow: hidden;
+        }
+        
+        .graph-line {
+            position: absolute;
+            left: 40px;
+            right: 20px;
+            bottom: 40px;
+            top: 20px;
+            stroke: #1a73e8;
+            stroke-width: 2;
+            fill: none;
+            transition: all 0.5s ease;
+        }
+        
+        .graph-axis {
+            position: absolute;
+            stroke: #f5f5f5;
+            stroke-width: 1;
+        }
+        
+        .x-axis {
+            left: 40px;
+            right: 20px;
+            bottom: 40px;
+            stroke-width: 1;
+        }
+        
+        .y-axis {
+            left: 40px;
+            bottom: 40px;
+            top: 20px;
+            stroke-width: 1;
+        }
+        
+        .graph-label {
+            position: absolute;
+            color: #f5f5f5;
+            font-size: 0.8rem;
+        }
+        
+        .x-label {
+            bottom: 10px;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .y-label {
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%) rotate(-90deg);
+            transform-origin: left center;
+        }
+        
+        .graph-point {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: #1a73e8;
+            transform: translate(-3px, -3px);
+        }
+        
+        .graph-value {
+            position: absolute;
+            font-size: 0.7rem;
+            color: #ffdd57;
+            transform: translate(-50%, -15px);
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 4px;
+            background-color: rgba(255, 255, 255, 0.1);
+            margin-top: 10px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 2px;
+            display: none;
+        }
+        
+        .progress-fill {
+            position: absolute;
+            height: 100%;
+            background-color: #1a73e8;
+            width: 0;
+            animation: indeterminate 1.5s infinite linear;
+            transform-origin: 0% 50%;
+        }
+        
+        @keyframes indeterminate {
+            0% {
+                transform:  translateX(0) scaleX(0);
+            }
+            40% {
+                transform:  translateX(0) scaleX(0.4);
+            }
+            100% {
+                transform:  translateX(100%) scaleX(0.5);
+            }
+        }
+        
+        .code-section {
+            background-color: #1e1e1e;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            overflow-x: auto;
+            font-family: monospace;
+            border-left: 3px solid #ffdd57;
+            color: #d4d4d4;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        .comment { color: #6a9955; }
+        .keyword { color: #569cd6; }
+        .string { color: #ce9178; }
+        .function { color: #dcdcaa; }
+        .class { color: #4ec9b0; }
+        
+        .date-inputs {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            grid-column: span 2;
+        }
+        
+        @media (max-width: 600px) {
+            .date-inputs {
+                flex-direction: column;
+                grid-column: span 1;
+            }
+        }
+        
+        .date-input {
+            flex: 1;
+        }
     </style>
 </head>
 <body>
@@ -119,44 +416,587 @@
 
     <section class="project-detail">
         <div class="container">
-            <h2 class="animate-fade-in">Currency Converter</h2>
-            <div class="project-details animate-fade-in">
-                <p>This project is a Python-based currency converter that fetches real-time exchange rates and plots historical data. It allows users to convert between different currencies and visualize exchange rate trends over time.</p>
-                <h3>Features</h3>
-                <ul>
-                    <li>Real-time exchange rate fetching using an API.</li>
-                    <li>Conversion between multiple currencies.</li>
-                    <li>Historical exchange rate plotting for trend analysis.</li>
-                    <li>Cache mechanism to store and reuse exchange rates.</li>
-                </ul>
-                <h3>Technical Details</h3>
-                <p>The Currency Converter uses the <code>requests</code> library to fetch exchange rates from an API and <code>matplotlib</code> for plotting historical data. It also includes a caching mechanism to reduce API calls and improve performance.</p>
-                <h3>How to Use</h3>
-                <ol>
-                    <li>Run the application and enter the amount to convert.</li>
-                    <li>Select the currencies to convert from and to.</li>
-                    <li>Optionally, enter a date to fetch historical exchange rates.</li>
-                    <li>Click the "Convert" button to see the result.</li>
-                    <li>Use the plotting feature to visualize exchange rate trends over a specified date range.</li>
-                </ol>
-                <h3>Code Snippet</h3>
-                <pre><code>
-import requests
-from datetime import datetime, timedelta
-import matplotlib.pyplot as plt
+            <h2>Currency Converter</h2>
+            <img src="images/currency-converter.png" alt="Currency Converter Screenshot">
 
-def get_exchange_rate(api_key, from_currency, date=None):
-    # Exchange rate fetching logic here
-                </code></pre>
-                <p>For the full code and more details, visit the <a href="https://github.com/your-repo/currency-converter" target="_blank">GitHub repository</a>.</p>
+            <h3>Project Overview</h3>
+            <p>This Currency Converter is a comprehensive Python application that provides real-time and historical currency exchange rates. Built with a user-friendly Tkinter interface, the app enables users to convert between different currencies, visualize historical exchange rate trends through interactive graphs, and efficiently manages API requests through a smart caching system.</p>
+            
+            <h3>Interactive Demo</h3>
+            <p>Try out a simplified version of the Currency Converter below. You can convert between currencies and see historical exchange rate trends.</p>
+            
+            <div class="converter-demo">
+                <div class="tabs">
+                    <div class="tab active" data-tab="conversion">Currency Conversion</div>
+                    <div class="tab" data-tab="graph">Exchange Rate Graph</div>
+                </div>
                 
-                <a href="../projects.html" class="cta-button">Back to Projects</a>
+                <div class="tab-content active" id="conversion-tab">
+                    <div class="converter-form">
+                        <div class="form-group">
+                            <label for="amount">Amount:</label>
+                            <input type="number" id="amount" placeholder="Enter amount" value="100">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="date">Date (Optional):</label>
+                            <input type="date" id="date">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="from-currency">From Currency:</label>
+                            <select id="from-currency">
+                                <option value="USD">USD - US Dollar</option>
+                                <option value="EUR">EUR - Euro</option>
+                                <option value="GBP">GBP - British Pound</option>
+                                <option value="JPY">JPY - Japanese Yen</option>
+                                <option value="AUD">AUD - Australian Dollar</option>
+                                <option value="CAD">CAD - Canadian Dollar</option>
+                                <option value="CHF">CHF - Swiss Franc</option>
+                                <option value="CNY">CNY - Chinese Yuan</option>
+                                <option value="SEK">SEK - Swedish Krona</option>
+                                <option value="NZD">NZD - New Zealand Dollar</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="to-currency">To Currency:</label>
+                            <select id="to-currency">
+                                <option value="EUR">EUR - Euro</option>
+                                <option value="USD">USD - US Dollar</option>
+                                <option value="GBP">GBP - British Pound</option>
+                                <option value="JPY">JPY - Japanese Yen</option>
+                                <option value="AUD">AUD - Australian Dollar</option>
+                                <option value="CAD">CAD - Canadian Dollar</option>
+                                <option value="CHF">CHF - Swiss Franc</option>
+                                <option value="CNY">CNY - Chinese Yuan</option>
+                                <option value="SEK">SEK - Swedish Krona</option>
+                                <option value="NZD">NZD - New Zealand Dollar</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-row">
+                            <button class="convert-btn" id="convert-btn">Convert Currency</button>
+                            <div class="progress-bar" id="conversion-progress">
+                                <div class="progress-fill"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="result-display" id="result">
+                            Enter an amount and select currencies to see the conversion result
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="graph-tab">
+                    <div class="converter-form">
+                        <div class="form-group">
+                            <label for="graph-from-currency">From Currency:</label>
+                            <select id="graph-from-currency">
+                                <option value="USD">USD - US Dollar</option>
+                                <option value="EUR">EUR - Euro</option>
+                                <option value="GBP">GBP - British Pound</option>
+                                <option value="JPY">JPY - Japanese Yen</option>
+                                <option value="AUD">AUD - Australian Dollar</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="graph-to-currency">To Currency:</label>
+                            <select id="graph-to-currency">
+                                <option value="EUR">EUR - Euro</option>
+                                <option value="USD">USD - US Dollar</option>
+                                <option value="GBP">GBP - British Pound</option>
+                                <option value="JPY">JPY - Japanese Yen</option>
+                                <option value="AUD">AUD - Australian Dollar</option>
+                            </select>
+                        </div>
+                        
+                        <div class="date-inputs">
+                            <div class="form-group date-input">
+                                <label for="start-date">Start Date:</label>
+                                <input type="date" id="start-date" value="2023-01-01">
+                            </div>
+                            
+                            <div class="form-group date-input">
+                                <label for="end-date">End Date:</label>
+                                <input type="date" id="end-date">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <button class="convert-btn" id="plot-btn">Generate Graph</button>
+                            <div class="progress-bar" id="graph-progress">
+                                <div class="progress-fill"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="graph-container" id="graph-container">
+                        <div class="graph-axis x-axis"></div>
+                        <div class="graph-axis y-axis"></div>
+                        <div class="graph-label x-label">Date</div>
+                        <div class="graph-label y-label">Exchange Rate</div>
+                        <svg class="graph-line" preserveAspectRatio="none" viewBox="0 0 100 100" id="graph-line">
+                            <polyline points="" id="graph-polyline"></polyline>
+                        </svg>
+                    </div>
+                </div>
             </div>
+            
+            <h3>Features</h3>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <i class="fas fa-sync-alt"></i>
+                    <h4>Real-time Exchange Rates</h4>
+                    <p>Fetches the latest exchange rates from a reliable API for up-to-date currency conversions.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-history"></i>
+                    <h4>Historical Data</h4>
+                    <p>Access exchange rates from specific dates to compare historical currency values.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h4>Trend Visualization</h4>
+                    <p>Plot exchange rate trends over custom date ranges to identify patterns and make informed decisions.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-database"></i>
+                    <h4>Smart Caching</h4>
+                    <p>Implements a caching system to store previously fetched rates, reducing API calls and improving performance.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-globe"></i>
+                    <h4>Multiple Currencies</h4>
+                    <p>Support for a wide range of international currencies with ISO 4217 standard codes.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h4>Exponential Backoff</h4>
+                    <p>Implements exponential backoff strategy for handling API rate limits and ensuring reliable data retrieval.</p>
+                </div>
+            </div>
+
+            <h3>Application Interface</h3>
+            <p>The Currency Converter provides a clean, intuitive interface for performing conversions and visualizing exchange rate trends:</p>
+            <img src="images/currency-converter-ui.png" alt="Currency Converter Interface">
+
+            <h3>Technical Implementation</h3>
+            <p>The Currency Converter is built with Python and leverages several key libraries:</p>
+            
+            <h4>Core Components</h4>
+            <ul>
+                <li><strong>requests:</strong> For making HTTP requests to the exchange rate API</li>
+                <li><strong>matplotlib:</strong> For generating visual charts of historical exchange rates</li>
+                <li><strong>Tkinter:</strong> For creating the graphical user interface</li>
+                <li><strong>tkcalendar:</strong> For providing date picker widgets</li>
+                <li><strong>json:</strong> For managing the exchange rate cache data</li>
+            </ul>
+            
+            <h4>Key Functions</h4>
+            <p>The application implements several important functions for currency conversion:</p>
+            <div class="code-section">
+<span class="keyword">def</span> <span class="function">get_exchange_rate</span>(api_key, from_currency, date=<span class="keyword">None</span>, retries=5, delay=10):
+    cache = load_cache()
+    cache_key = f<span class="string">"{from_currency}_{date}"</span>
+    
+    <span class="keyword">if</span> cache_key <span class="keyword">in</span> cache:
+        <span class="keyword">return</span> cache[cache_key]
+    
+    <span class="keyword">if</span> date:
+        url = f<span class="string">"https://api.apilayer.com/exchangerates_data/{date}?base={from_currency}"</span>
+    <span class="keyword">else</span>:
+        url = f<span class="string">"https://api.apilayer.com/exchangerates_data/latest?base={from_currency}"</span>
+    
+    headers = {
+        <span class="string">'apikey'</span>: api_key
+    }
+    
+    <span class="keyword">for</span> attempt <span class="keyword">in</span> range(retries):
+        <span class="keyword">try</span>:
+            response = requests.get(url, headers=headers)
+            response.raise_for_status()  <span class="comment"># Raise an HTTPError for bad responses</span>
+            data = response.json()
+            rates = data.get(<span class="string">'rates'</span>)
+            cache[cache_key] = rates
+            save_cache(cache)
+            <span class="keyword">return</span> rates
+        <span class="keyword">except</span> requests.exceptions.RequestException <span class="keyword">as</span> e:
+            logging.error(f<span class="string">"Error fetching exchange rates: {e}"</span>)
+            <span class="keyword">if</span> response.status_code == 429:
+                delay = min(delay * 2, 60)  <span class="comment"># Exponential backoff with a max delay of 60 seconds</span>
+            <span class="keyword">if</span> attempt < retries - 1:
+                time.sleep(delay)  <span class="comment"># Wait before retrying</span>
+            <span class="keyword">else</span>:
+                <span class="keyword">return</span> <span class="keyword">None</span>
+            </div>
+            
+            <p>The plotting functionality generates visual representations of exchange rate trends:</p>
+            <div class="code-section">
+<span class="keyword">def</span> <span class="function">plot_exchange_rate</span>(api_key, from_currency, to_currency, start_date, end_date):
+    dates = []
+    rates = []
+    current_date = start_date
+
+    <span class="keyword">while</span> current_date <= end_date:
+        rate = get_exchange_rate(api_key, from_currency, current_date)
+        <span class="keyword">if</span> rate <span class="keyword">and</span> to_currency <span class="keyword">in</span> rate:
+            dates.append(current_date)
+            rates.append(rate[to_currency])
+        current_date += timedelta(days=1)
+
+    plt.figure(figsize=(10, 5))
+    plt.plot(dates, rates, marker=<span class="string">'o'</span>)
+    plt.title(f<span class="string">'Exchange Rate from {from_currency} to {to_currency}'</span>)
+    plt.xlabel(<span class="string">'Date'</span>)
+    plt.ylabel(f<span class="string">'Exchange Rate ({to_currency})'</span>)
+    plt.grid(<span class="keyword">True</span>)
+    plt.show()
+            </div>
+
+            <h3>How to Use</h3>
+            <ol>
+                <li>Enter the amount you want to convert in the "Amount" field</li>
+                <li>Select the currency to convert from using the "From Currency" dropdown</li>
+                <li>Select the currency to convert to using the "To Currency" dropdown</li>
+                <li>Optionally, select a specific date to get historical exchange rates</li>
+                <li>Click the "Convert" button to perform the conversion</li>
+                <li>To visualize exchange rate trends:
+                    <ul>
+                        <li>Select the currencies to compare</li>
+                        <li>Choose a date range for the graph</li>
+                        <li>Click "Plot Exchange Rate" to generate the graph</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <h3>Advanced Features</h3>
+            <p>The Currency Converter implements several advanced features for optimal performance and user experience:</p>
+            <ul>
+                <li><strong>API Cache:</strong> Stores previously fetched exchange rates in a local cache file to minimize API requests</li>
+                <li><strong>Date Range Validation:</strong> Ensures that selected dates are valid and within available historical data ranges</li>
+                <li><strong>Error Handling:</strong> Robust error handling for API failures, network issues, and input validation</li>
+                <li><strong>Rate Limiting:</strong> Implements exponential backoff to handle API rate limits gracefully</li>
+                <li><strong>Progress Indicators:</strong> Visual feedback during API requests and data processing</li>
+            </ul>
+
+            <a href="../projects.html" class="cta-button">Back to Projects</a>
         </div>
     </section>
 
     <footer>
         <p>© 2024 Tehj Patel</p>
     </footer>
+
+    <script>
+        // Interactive Currency Converter Demo
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set default end date to today
+            const today = new Date();
+            const endDateInput = document.getElementById('end-date');
+            endDateInput.valueAsDate = today;
+            
+            // Tab switching functionality
+            const tabs = document.querySelectorAll('.tab');
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    // Remove active class from all tabs
+                    tabs.forEach(t => t.classList.remove('active'));
+                    // Add active class to clicked tab
+                    this.classList.add('active');
+                    
+                    // Hide all tab content
+                    const tabContents = document.querySelectorAll('.tab-content');
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    
+                    // Show the selected tab content
+                    const tabId = this.getAttribute('data-tab') + '-tab';
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+            
+            // Exchange rate data for demo
+            const exchangeRates = {
+                'USD': {
+                    'EUR': 0.92,
+                    'GBP': 0.79,
+                    'JPY': 149.45,
+                    'AUD': 1.52,
+                    'CAD': 1.36,
+                    'CHF': 0.89,
+                    'CNY': 7.24,
+                    'SEK': 10.46,
+                    'NZD': 1.62
+                },
+                'EUR': {
+                    'USD': 1.08,
+                    'GBP': 0.86,
+                    'JPY': 161.84,
+                    'AUD': 1.65,
+                    'CAD': 1.47,
+                    'CHF': 0.97,
+                    'CNY': 7.84,
+                    'SEK': 11.33,
+                    'NZD': 1.76
+                },
+                'GBP': {
+                    'USD': 1.26,
+                    'EUR': 1.17,
+                    'JPY': 188.70,
+                    'AUD': 1.92,
+                    'CAD': 1.72,
+                    'CHF': 1.13,
+                    'CNY': 9.14,
+                    'SEK': 13.21,
+                    'NZD': 2.05
+                },
+                'JPY': {
+                    'USD': 0.0067,
+                    'EUR': 0.0062,
+                    'GBP': 0.0053,
+                    'AUD': 0.0102,
+                    'CAD': 0.0091,
+                    'CHF': 0.0060,
+                    'CNY': 0.0485,
+                    'SEK': 0.0701,
+                    'NZD': 0.0108
+                },
+                'AUD': {
+                    'USD': 0.66,
+                    'EUR': 0.61,
+                    'GBP': 0.52,
+                    'JPY': 98.36,
+                    'CAD': 0.90,
+                    'CHF': 0.59,
+                    'CNY': 4.76,
+                    'SEK': 6.88,
+                    'NZD': 1.07
+                }
+            };
+            
+            // Historical exchange rate data for graph (USD to EUR example)
+            const historicalRates = [
+                { date: '2023-01-01', rate: 0.94 },
+                { date: '2023-02-01', rate: 0.92 },
+                { date: '2023-03-01', rate: 0.94 },
+                { date: '2023-04-01', rate: 0.91 },
+                { date: '2023-05-01', rate: 0.92 },
+                { date: '2023-06-01', rate: 0.93 },
+                { date: '2023-07-01', rate: 0.91 },
+                { date: '2023-08-01', rate: 0.90 },
+                { date: '2023-09-01', rate: 0.94 },
+                { date: '2023-10-01', rate: 0.95 },
+                { date: '2023-11-01', rate: 0.92 },
+                { date: '2023-12-01', rate: 0.92 },
+                { date: '2024-01-01', rate: 0.91 },
+                { date: '2024-02-01', rate: 0.93 },
+                { date: '2024-03-01', rate: 0.92 }
+            ];
+            
+            // Conversion functionality
+            document.getElementById('convert-btn').addEventListener('click', function() {
+                const amount = parseFloat(document.getElementById('amount').value);
+                const fromCurrency = document.getElementById('from-currency').value;
+                const toCurrency = document.getElementById('to-currency').value;
+                const date = document.getElementById('date').value;
+                const resultDisplay = document.getElementById('result');
+                const progressBar = document.getElementById('conversion-progress');
+                
+                if (isNaN(amount)) {
+                    resultDisplay.textContent = 'Please enter a valid amount';
+                    return;
+                }
+                
+                // Show progress bar
+                progressBar.style.display = 'block';
+                
+                // Simulate API call
+                setTimeout(() => {
+                    // Hide progress bar
+                    progressBar.style.display = 'none';
+                    
+                    // Get exchange rate and calculate conversion
+                    let rate;
+                    
+                    if (fromCurrency in exchangeRates && toCurrency in exchangeRates[fromCurrency]) {
+                        rate = exchangeRates[fromCurrency][toCurrency];
+                    } else {
+                        // If direct rate not available, use USD as intermediate
+                        const usdToFrom = fromCurrency === 'USD' ? 1 : (exchangeRates['USD'][fromCurrency] ? 1/exchangeRates['USD'][fromCurrency] : 1);
+                        const usdToTo = exchangeRates['USD'][toCurrency] || 1;
+                        rate = usdToFrom * usdToTo;
+                    }
+                    
+                    // Apply a small random variation for the historical date if selected
+                    let historicalRate = rate;
+                    if (date) {
+                        // Add a small random variation for demonstration
+                        const variation = (Math.random() - 0.5) * 0.1; // +/- 5%
+                        historicalRate = rate * (1 + variation);
+                        
+                        const formattedDate = new Date(date).toLocaleDateString();
+                        const todayValue = (amount * rate).toFixed(2);
+                        const dateValue = (amount * historicalRate).toFixed(2);
+                        const change = (amount * (rate - historicalRate)).toFixed(2);
+                        
+                        resultDisplay.innerHTML = `<p>On ${formattedDate}, ${amount} ${fromCurrency} was equal to ${dateValue} ${toCurrency}</p>
+                                                 <p>Today, ${amount} ${fromCurrency} is equal to ${todayValue} ${toCurrency}</p>
+                                                 <p>The change in value from ${formattedDate} to today is ${change} ${toCurrency}</p>`;
+                    } else {
+                        const convertedAmount = (amount * rate).toFixed(2);
+                        resultDisplay.textContent = `${amount} ${fromCurrency} = ${convertedAmount} ${toCurrency}`;
+                    }
+                }, 1000);
+            });
+            
+            // Graph functionality
+            document.getElementById('plot-btn').addEventListener('click', function() {
+                const fromCurrency = document.getElementById('graph-from-currency').value;
+                const toCurrency = document.getElementById('graph-to-currency').value;
+                const startDate = new Date(document.getElementById('start-date').value);
+                const endDate = new Date(document.getElementById('end-date').value);
+                const progressBar = document.getElementById('graph-progress');
+                
+                if (isNaN(startDate) || isNaN(endDate)) {
+                    alert('Please select valid dates');
+                    return;
+                }
+                
+                if (startDate > endDate) {
+                    alert('Start date must be before end date');
+                    return;
+                }
+                
+                // Show progress bar
+                progressBar.style.display = 'block';
+                
+                // Simulate API call
+                setTimeout(() => {
+                    // Hide progress bar
+                    progressBar.style.display = 'none';
+                    
+                    // Generate the graph
+                    generateGraph(fromCurrency, toCurrency, startDate, endDate);
+                }, 1500);
+            });
+            
+            function generateGraph(fromCurrency, toCurrency, startDate, endDate) {
+                // Filter historical data based on date range
+                const filteredData = historicalRates.filter(item => {
+                    const date = new Date(item.date);
+                    return date >= startDate && date <= endDate;
+                });
+                
+                if (filteredData.length === 0) {
+                    // Generate synthetic data if no data in range
+                    const daysDiff = Math.round((endDate - startDate) / (1000 * 60 * 60 * 24));
+                    const baseRate = exchangeRates[fromCurrency][toCurrency] || 1;
+                    
+                    for (let i = 0; i <= daysDiff; i += Math.max(1, Math.floor(daysDiff / 10))) {
+                        const currentDate = new Date(startDate);
+                        currentDate.setDate(startDate.getDate() + i);
+                        
+                        // Generate a random rate with small variations
+                        const randomVariation = (Math.random() - 0.5) * 0.2; // +/- 10%
+                        const rate = baseRate * (1 + randomVariation);
+                        
+                        filteredData.push({
+                            date: currentDate.toISOString().split('T')[0],
+                            rate: rate
+                        });
+                    }
+                }
+                
+                // Sort data by date
+                filteredData.sort((a, b) => new Date(a.date) - new Date(b.date));
+                
+                // Find min and max rates for scaling
+                const rates = filteredData.map(item => item.rate);
+                const minRate = Math.min(...rates);
+                const maxRate = Math.max(...rates);
+                const range = maxRate - minRate;
+                
+                // Generate SVG points
+                let points = '';
+                filteredData.forEach((item, index) => {
+                    // Scale to fit the SVG viewbox (0-100)
+                    const x = (index / (filteredData.length - 1)) * 100;
+                    const y = 100 - (((item.rate - minRate) / (range || 1)) * 80 + 10); // 10% margin top and bottom
+                    points += `${x},${y} `;
+                    
+                    // Add data points to the graph
+                    const pointElement = document.createElement('div');
+                    pointElement.className = 'graph-point';
+                    pointElement.style.left = `${40 + ((index / (filteredData.length - 1)) * (document.getElementById('graph-container').clientWidth - 60))}px`;
+                    pointElement.style.bottom = `${40 + ((item.rate - minRate) / (range || 1)) * (document.getElementById('graph-container').clientHeight - 60)}px`;
+                    
+                    // Add value label
+                    const valueElement = document.createElement('div');
+                    valueElement.className = 'graph-value';
+                    valueElement.textContent = item.rate.toFixed(2);
+                    valueElement.style.left = `${40 + ((index / (filteredData.length - 1)) * (document.getElementById('graph-container').clientWidth - 60))}px`;
+                    valueElement.style.bottom = `${40 + ((item.rate - minRate) / (range || 1)) * (document.getElementById('graph-container').clientHeight - 60) + 15}px`;
+                    
+                    document.getElementById('graph-container').appendChild(pointElement);
+                    document.getElementById('graph-container').appendChild(valueElement);
+                });
+                
+                // Update polyline points
+                document.getElementById('graph-polyline').setAttribute('points', points);
+                document.getElementById('graph-polyline').setAttribute('stroke', '#1a73e8');
+                document.getElementById('graph-polyline').setAttribute('stroke-width', '2');
+                document.getElementById('graph-polyline').setAttribute('fill', 'none');
+                
+                // Add axis labels
+                const firstDate = new Date(filteredData[0].date).toLocaleDateString();
+                const lastDate = new Date(filteredData[filteredData.length - 1].date).toLocaleDateString();
+                
+                // Remove previous labels
+                document.getElementById('graph-container').querySelectorAll('.x-tick, .y-tick').forEach(el => el.remove());
+                
+                // Add x-axis ticks
+                const startTickElement = document.createElement('div');
+                startTickElement.className = 'graph-label x-tick';
+                startTickElement.style.left = '40px';
+                startTickElement.style.bottom = '10px';
+                startTickElement.textContent = firstDate;
+                
+                const endTickElement = document.createElement('div');
+                endTickElement.className = 'graph-label x-tick';
+                endTickElement.style.right = '20px';
+                endTickElement.style.bottom = '10px';
+                endTickElement.textContent = lastDate;
+                
+                // Add y-axis ticks
+                const minTickElement = document.createElement('div');
+                minTickElement.className = 'graph-label y-tick';
+                minTickElement.style.left = '10px';
+                minTickElement.style.bottom = '40px';
+                minTickElement.textContent = minRate.toFixed(2);
+                
+                const maxTickElement = document.createElement('div');
+                maxTickElement.className = 'graph-label y-tick';
+                maxTickElement.style.left = '10px';
+                maxTickElement.style.top = '20px';
+                maxTickElement.textContent = maxRate.toFixed(2);
+                
+                document.getElementById('graph-container').appendChild(startTickElement);
+                document.getElementById('graph-container').appendChild(endTickElement);
+                document.getElementById('graph-container').appendChild(minTickElement);
+                document.getElementById('graph-container').appendChild(maxTickElement);
+            }
+            
+            // Set default values for the form
+            document.getElementById('amount').value = '100';
+            document.getElementById('from-currency').value = 'USD';
+            document.getElementById('to-currency').value = 'EUR';
+        });
+    </script>
 </body>
 </html>

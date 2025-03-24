@@ -18,12 +18,11 @@
             background-color: #0d3b66;
             color: #f5f5f5;
             padding: 10px 0;
-            
+            position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;          
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-
         }
         .nav-content {
             display: flex;
@@ -101,6 +100,283 @@
             color: #f5f5f5;
             margin-top: 40px;
         }
+        
+        /* File Organizer specific styles */
+        .organizer-demo {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid #ffdd57;
+        }
+        
+        .file-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .file-item {
+            background-color: rgba(255, 255, 255, 0.15);
+            border-radius: 5px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .file-item:hover {
+            background-color: rgba(255, 255, 255, 0.25);
+        }
+        
+        .file-icon {
+            font-size: 2rem;
+            margin-bottom: 8px;
+            color: #ffdd57;
+        }
+        
+        .file-name {
+            font-size: 0.75rem;
+            word-break: break-word;
+        }
+        
+        .file-type-indicator {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+        
+        .images { background-color: #3a86ff; }
+        .documents { background-color: #38b000; }
+        .audio { background-color: #ff006e; }
+        .video { background-color: #fb5607; }
+        .archives { background-color: #8338ec; }
+        .others { background-color: #ffbe0b; }
+        
+        .organize-controls {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .controls-row {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-left: auto;
+        }
+        
+        .organize-btn {
+            padding: 10px 20px;
+            background-color: #1a73e8;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .organize-btn:hover {
+            background-color: #0d47a1;
+        }
+        
+        .reset-btn {
+            padding: 10px 20px;
+            background-color: #6c757d;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .reset-btn:hover {
+            background-color: #5a6268;
+        }
+        
+        .folder-view {
+            margin-top: 20px;
+            background-color: rgba(255, 221, 87, 0.1);
+            border-radius: 8px;
+            padding: 15px;
+            border: 1px solid #ffdd57;
+            min-height: 200px;
+        }
+        
+        .folder-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .folder-item {
+            background-color: rgba(255, 255, 255, 0.15);
+            border-radius: 5px;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            cursor: pointer;
+        }
+        
+        .folder-item:hover {
+            background-color: rgba(255, 255, 255, 0.25);
+        }
+        
+        .folder-icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #ffdd57;
+        }
+        
+        .folder-name {
+            font-weight: bold;
+        }
+        
+        .folder-info {
+            margin-top: 5px;
+            font-size: 0.75rem;
+            color: #ddd;
+        }
+        
+        .progress-bar-container {
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            height: 20px;
+            margin-top: 15px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            background-color: #38b000;
+            width: 0%;
+            transition: width 0.5s ease;
+            position: relative;
+        }
+        
+        .progress-text {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .feature-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 15px;
+            border: 1px solid rgba(255, 221, 87, 0.3);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .feature-card i {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #ffdd57;
+        }
+        
+        .feature-card h4 {
+            color: #ffdd57;
+            margin: 10px 0;
+        }
+        
+        .code-section {
+            background-color: #1e1e1e;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            overflow-x: auto;
+            font-family: monospace;
+            border-left: 3px solid #ffdd57;
+            color: #d4d4d4;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        .comment { color: #6a9955; }
+        .keyword { color: #569cd6; }
+        .string { color: #ce9178; }
+        .function { color: #dcdcaa; }
+        .class { color: #4ec9b0; }
+        
+        .breadcrumb {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+        
+        .breadcrumb a {
+            color: #ffdd57;
+            text-decoration: none;
+            margin: 0 5px;
+        }
+        
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        
+        .breadcrumb-separator {
+            color: #ddd;
+        }
+        
+        .back-button {
+            background-color: rgba(255, 255, 255, 0.15);
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            color: white;
+            cursor: pointer;
+            font-size: 0.85rem;
+        }
+        
+        .back-button:hover {
+            background-color: rgba(255, 255, 255, 0.25);
+        }
+        
+        @media (max-width: 768px) {
+            .file-container, .folder-container {
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            }
+        }
     </style>
 </head>
 <body>
@@ -119,44 +395,654 @@
 
     <section class="project-detail">
         <div class="container">
-            <h2 class="animate-fade-in">File Organizer</h2>
-            <div class="project-details animate-fade-in">
-                <p>This project is a Python script designed to organize files into categorized folders based on their types and modification dates. It helps in keeping the file system tidy and easily navigable.</p>
-                <h3>Features</h3>
-                <ul>
-                    <li>Automatically categorizes files into folders such as images, documents, audio, video, and more.</li>
-                    <li>Organizes files based on their modification dates into year, month, and week folders.</li>
-                    <li>Handles duplicate files by moving them to a separate 'duplicates' folder.</li>
-                    <li>Supports a wide range of file types and extensions.</li>
-                </ul>
-                <h3>Technical Details</h3>
-                <p>The File Organizer uses Python's <code>os</code> and <code>shutil</code> libraries for file operations and <code>datetime</code> for handling dates. The script also uses <code>tqdm</code> for displaying a progress bar during the file organization process.</p>
-                <h3>How to Use</h3>
-                <ol>
-                    <li>Run the script and specify the directory to organize.</li>
-                    <li>The script will create necessary folders and move files accordingly.</li>
-                    <li>Check the 'duplicates' and 'others' folders for any files that couldn't be categorized.</li>
-                </ol>
-                <h3>Code Snippet</h3>
-                <pre><code>
-import os
-import shutil
-from datetime import datetime
-from tqdm import tqdm
+            <h2>File Organizer</h2>
+            <img src="images/file-organizer.png" alt="File Organizer Screenshot">
 
-def organize_files(directory):
-    # File organization logic here
-                </code></pre>
-                <p>For the full code and more details, visit the <a href="https://github.com/your-repo/file-organizer" target="_blank">GitHub repository</a>.</p>
-
-                <a href="../projects.html" class="cta-button">Back to Projects</a>
-
+            <h3>Project Overview</h3>
+            <p>The File Organizer is a powerful Python application designed to automatically sort and organize files based on their types and modification dates. Built with a user-friendly Tkinter interface, this tool helps maintain a clean and structured file system by categorizing files into appropriate folders, handling duplicates intelligently, and providing visual feedback through progress tracking.</p>
+            
+            <h3>Interactive Demo</h3>
+            <p>Try out a simulation of the File Organizer below. Click "Organize Files" to see how different file types would be sorted into folders.</p>
+            
+            <div class="organizer-demo">
+                <div class="organize-controls">
+                    <div class="controls-row">
+                        <button class="organize-btn" id="organize-button">Organize Files</button>
+                        <button class="reset-btn" id="reset-button">Reset</button>
+                        <div class="checkbox-container">
+                            <input type="checkbox" id="delete-empty-folders">
+                            <label for="delete-empty-folders">Delete empty folders</label>
+                        </div>
+                    </div>
+                    <div class="progress-bar-container" id="progress-container" style="display: none;">
+                        <div class="progress-bar" id="progress-bar">
+                            <div class="progress-text" id="progress-text">0%</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="current-view">
+                    <h4>Unorganized Files</h4>
+                    <div class="file-container" id="file-container">
+                        <!-- Files will be generated by JavaScript -->
+                    </div>
+                </div>
+                
+                <div class="folder-view" id="folder-view" style="display: none;">
+                    <div class="breadcrumb" id="breadcrumb">
+                        <button class="back-button" id="back-button">← Back</button>
+                        <span>Home</span>
+                    </div>
+                    <div class="folder-container" id="folder-container">
+                        <!-- Folders will be generated by JavaScript -->
+                    </div>
+                </div>
             </div>
+            
+            <h3>Features</h3>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <i class="fas fa-folder-tree"></i>
+                    <h4>Date-Based Organization</h4>
+                    <p>Organizes files into year, month, and week folders based on their modification dates for a chronological structure.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-file-signature"></i>
+                    <h4>Type-Based Classification</h4>
+                    <p>Categorizes files into folders by type (images, documents, audio, video, archives, etc.) for easy access.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-code-branch"></i>
+                    <h4>Duplicate Handling</h4>
+                    <p>Intelligently identifies and handles duplicate files to prevent overwrites and data loss.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-desktop"></i>
+                    <h4>Graphical Interface</h4>
+                    <p>User-friendly Tkinter GUI makes the tool accessible to users of all technical backgrounds.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-spinner"></i>
+                    <h4>Progress Tracking</h4>
+                    <p>Visual progress indicators keep you informed about the organization process and completion status.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-trash-alt"></i>
+                    <h4>Empty Folder Cleanup</h4>
+                    <p>Optional removal of empty folders after organization to maintain a clean directory structure.</p>
+                </div>
+            </div>
+
+            <h3>How It Works</h3>
+            <p>The File Organizer processes files through several key steps:</p>
+            <ol>
+                <li><strong>Scanning:</strong> First, it scans the specified directory to identify all files for organization.</li>
+                <li><strong>Classification:</strong> Each file is classified based on its extension type (image, document, audio, etc.).</li>
+                <li><strong>Date Analysis:</strong> The modification date of each file is examined to determine its chronological placement.</li>
+                <li><strong>Folder Creation:</strong> Required folder structures are automatically created based on file types and dates.</li>
+                <li><strong>File Movement:</strong> Files are moved to their appropriate destination folders while checking for duplicates.</li>
+                <li><strong>Cleanup:</strong> Optionally, empty folders are removed from the directory structure.</li>
+            </ol>
+
+            <h3>Technical Implementation</h3>
+            <p>The File Organizer is built with Python and leverages several key libraries:</p>
+            
+            <h4>Core Components</h4>
+            <ul>
+                <li><strong>os and shutil:</strong> For file system operations and file movement</li>
+                <li><strong>datetime:</strong> For handling file dates and temporal organization</li>
+                <li><strong>tqdm:</strong> For visual progress tracking with a progress bar</li>
+                <li><strong>Tkinter:</strong> For creating the graphical user interface</li>
+                <li><strong>re:</strong> For regular expression pattern matching to identify duplicates</li>
+            </ul>
+            
+            <h4>Key Functions</h4>
+            <p>The <code>organize_files</code> function handles the core organization logic:</p>
+            <div class="code-section">
+<span class="keyword">def</span> <span class="function">organize_files</span>(directory, delete_empty_folders=<span class="keyword">False</span>, progress_callback=<span class="keyword">None</span>):
+    <span class="comment"># Define the folder names for each file type</span>
+    folders = {
+        <span class="string">'images'</span>: [<span class="string">'.jpg'</span>, <span class="string">'.jpeg'</span>, <span class="string">'.png'</span>, <span class="string">'.gif'</span>, <span class="string">'.bmp'</span>],
+        <span class="string">'documents'</span>: {
+            <span class="string">'word'</span>: [<span class="string">'.doc'</span>, <span class="string">'.docx'</span>],
+            <span class="string">'excel'</span>: [<span class="string">'.xls'</span>, <span class="string">'.xlsx'</span>],
+            <span class="string">'pdf'</span>: [<span class="string">'.pdf'</span>],
+            <span class="string">'text'</span>: [<span class="string">'.txt'</span>],
+            <span class="string">'ppt'</span>: [<span class="string">'.ppt'</span>, <span class="string">'.pptx'</span>]
+        },
+        <span class="string">'audio'</span>: [<span class="string">'.mp3'</span>, <span class="string">'.wav'</span>, <span class="string">'.aac'</span>],
+        <span class="string">'video'</span>: [<span class="string">'.mp4'</span>, <span class="string">'.mov'</span>, <span class="string">'.avi'</span>],
+        <span class="string">'archives'</span>: [<span class="string">'.zip'</span>, <span class="string">'.rar'</span>, <span class="string">'.tar'</span>, <span class="string">'.gz'</span>],
+        <span class="string">'scripts'</span>: [<span class="string">'.py'</span>, <span class="string">'.js'</span>, <span class="string">'.sh'</span>],
+        <span class="string">'installers'</span>: [<span class="string">'.exe'</span>, <span class="string">'.msi'</span>, <span class="string">'.dmg'</span>],
+        <span class="string">'setups'</span>: [<span class="string">'setup.exe'</span>, <span class="string">'setup.msi'</span>]
+    }
+
+    <span class="comment"># Create folders if they do not exist</span>
+    <span class="keyword">for</span> folder <span class="keyword">in</span> folders:
+        folder_path = os.path.join(directory, folder)
+        <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(folder_path):
+            os.makedirs(folder_path)
+            </div>
+            
+            <p>The duplicate detection function uses regular expressions to identify common duplicate patterns:</p>
+            <div class="code-section">
+<span class="keyword">def</span> <span class="function">is_duplicate</span>(file1, file2):
+    <span class="comment"># Remove common duplicate suffixes like (1), (2), etc.</span>
+    base1 = re.sub(<span class="string">r'\(\d+\)'</span>, <span class="string">''</span>, file1)
+    base2 = re.sub(<span class="string">r'\(\d+\)'</span>, <span class="string">''</span>, file2)
+    <span class="keyword">return</span> base1.strip() == base2.strip()
+            </div>
+
+            <h3>How to Use</h3>
+            <ol>
+                <li>Launch the application by running the Python script</li>
+                <li>Click "Select Directory" to choose the folder you want to organize</li>
+                <li>Choose whether to delete empty folders after organization</li>
+                <li>Wait for the organization process to complete</li>
+                <li>Explore your newly organized file system</li>
+            </ol>
+            
+            <h3>Applications</h3>
+            <p>The File Organizer is ideal for various scenarios:</p>
+            <ul>
+                <li>Organizing cluttered Downloads folders</li>
+                <li>Sorting large photo collections by date</li>
+                <li>Managing document libraries</li>
+                <li>Cleaning up project directories</li>
+                <li>Preparing file systems for archiving or backup</li>
+                <li>Maintaining well-structured shared folders in team environments</li>
+            </ul>
+
+            <a href="../projects.html" class="cta-button">Back to Projects</a>
         </div>
     </section>
 
     <footer>
         <p>© 2024 Tehj Patel</p>
     </footer>
+
+    <script>
+        // Interactive File Organizer Demo
+        document.addEventListener('DOMContentLoaded', function() {
+            const fileContainer = document.getElementById('file-container');
+            const folderContainer = document.getElementById('folder-container');
+            const organizeButton = document.getElementById('organize-button');
+            const resetButton = document.getElementById('reset-button');
+            const deleteEmptyCheckbox = document.getElementById('delete-empty-folders');
+            const progressContainer = document.getElementById('progress-container');
+            const progressBar = document.getElementById('progress-bar');
+            const progressText = document.getElementById('progress-text');
+            const currentView = document.getElementById('current-view');
+            const folderView = document.getElementById('folder-view');
+            const breadcrumb = document.getElementById('breadcrumb');
+            const backButton = document.getElementById('back-button');
+            
+            // File types and their corresponding icons
+            const fileTypes = {
+                'jpg': { icon: 'fa-image', category: 'images' },
+                'jpeg': { icon: 'fa-image', category: 'images' },
+                'png': { icon: 'fa-image', category: 'images' },
+                'gif': { icon: 'fa-image', category: 'images' },
+                'doc': { icon: 'fa-file-word', category: 'documents' },
+                'docx': { icon: 'fa-file-word', category: 'documents' },
+                'pdf': { icon: 'fa-file-pdf', category: 'documents' },
+                'txt': { icon: 'fa-file-alt', category: 'documents' },
+                'xls': { icon: 'fa-file-excel', category: 'documents' },
+                'xlsx': { icon: 'fa-file-excel', category: 'documents' },
+                'ppt': { icon: 'fa-file-powerpoint', category: 'documents' },
+                'pptx': { icon: 'fa-file-powerpoint', category: 'documents' },
+                'mp3': { icon: 'fa-file-audio', category: 'audio' },
+                'wav': { icon: 'fa-file-audio', category: 'audio' },
+                'mp4': { icon: 'fa-file-video', category: 'video' },
+                'mov': { icon: 'fa-file-video', category: 'video' },
+                'avi': { icon: 'fa-file-video', category: 'video' },
+                'zip': { icon: 'fa-file-archive', category: 'archives' },
+                'rar': { icon: 'fa-file-archive', category: 'archives' },
+                'py': { icon: 'fa-file-code', category: 'scripts' },
+                'js': { icon: 'fa-file-code', category: 'scripts' },
+                'exe': { icon: 'fa-file-download', category: 'installers' },
+                'msi': { icon: 'fa-file-download', category: 'installers' },
+                'unknown': { icon: 'fa-file', category: 'others' }
+            };
+            
+            // Sample file names
+            const sampleFiles = [
+                'vacation.jpg', 'document.docx', 'presentation.pptx', 'report.pdf',
+                'song.mp3', 'video.mp4', 'archive.zip', 'script.py',
+                'spreadsheet.xlsx', 'notes.txt', 'family_photo.png', 'tutorial.avi',
+                'recording.wav', 'installer.exe', 'backup.rar', 'webpage.js',
+                'random_file.xyz', 'logo.gif', 'setup.msi', 'screenshot.jpeg'
+            ];
+            
+            // Generate random modification dates for the past year
+            function randomDate() {
+                const end = new Date();
+                const start = new Date(end);
+                start.setFullYear(start.getFullYear() - 1);
+                
+                return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
+            }
+            
+            // Create file objects with metadata
+            let files = sampleFiles.map(filename => {
+                const extension = filename.split('.').pop().toLowerCase();
+                const fileType = fileTypes[extension] || fileTypes.unknown;
+                const modDate = randomDate();
+                
+                return {
+                    name: filename,
+                    extension: extension,
+                    icon: fileType.icon,
+                    category: fileType.category,
+                    modDate: modDate,
+                    year: modDate.getFullYear(),
+                    month: modDate.getMonth(),
+                    week: Math.ceil((modDate.getDate() + new Date(modDate.getFullYear(), modDate.getMonth(), 1).getDay()) / 7)
+                };
+            });
+            
+            // Month names with numeric prefix
+            const monthNames = [
+                "01 - Jan", "02 - Feb", "03 - Mar", "04 - Apr", "05 - May", "06 - Jun", 
+                "07 - Jul", "08 - Aug", "09 - Sep", "10 - Oct", "11 - Nov", "12 - Dec"
+            ];
+            
+            // Generate the initial file display
+            function generateFiles() {
+                fileContainer.innerHTML = '';
+                
+                files.forEach((file, index) => {
+                    const fileElement = document.createElement('div');
+                    fileElement.className = 'file-item';
+                    fileElement.dataset.index = index;
+                    
+                    fileElement.innerHTML = `
+                        <i class="fas ${file.icon} file-icon"></i>
+                        <div class="file-name">${file.name}</div>
+                        <div class="file-type-indicator ${file.category}"></div>
+                    `;
+                    
+                    fileContainer.appendChild(fileElement);
+                });
+                
+                currentView.style.display = 'block';
+                folderView.style.display = 'none';
+            }
+            
+            // Initialize the demo
+            generateFiles();
+            
+            // Organize the files when button is clicked
+            organizeButton.addEventListener('click', function() {
+                // Show progress bar
+                progressContainer.style.display = 'block';
+                
+                // Simulate organization process
+                let progress = 0;
+                const interval = setInterval(() => {
+                    progress += 5;
+                    progressBar.style.width = `${progress}%`;
+                    progressText.textContent = `${progress}%`;
+                    
+                    if (progress >= 100) {
+                        clearInterval(interval);
+                        setTimeout(() => {
+                            // Hide files, show folders
+                            currentView.style.display = 'none';
+                            folderView.style.display = 'block';
+                            generateFolders();
+                        }, 500);
+                    }
+                }, 100);
+            });
+            
+            // Reset the demo
+            resetButton.addEventListener('click', function() {
+                progressContainer.style.display = 'none';
+                progressBar.style.width = '0%';
+                progressText.textContent = '0%';
+                generateFiles();
+            });
+            
+            // Generate folder structure
+            function generateFolders() {
+                folderContainer.innerHTML = '';
+                
+                // Get years from all files
+                const years = [...new Set(files.map(file => file.year))].sort();
+                
+                // Create year folders
+                years.forEach(year => {
+                    const folderElement = document.createElement('div');
+                    folderElement.className = 'folder-item';
+                    folderElement.dataset.path = `/${year}`;
+                    
+                    // Count files in this year
+                    const fileCount = files.filter(file => file.year === year).length;
+                    
+                    folderElement.innerHTML = `
+                        <i class="fas fa-folder folder-icon"></i>
+                        <div class="folder-name">${year}</div>
+                        <div class="folder-info">${fileCount} files</div>
+                    `;
+                    
+                    folderElement.addEventListener('click', () => {
+                        showFolderContents(`/${year}`, year);
+                    });
+                    
+                    folderContainer.appendChild(folderElement);
+                });
+                
+                // Also create category folders
+                const categories = [
+                    {name: 'images', icon: 'fa-images', title: 'Images'},
+                    {name: 'documents', icon: 'fa-file-alt', title: 'Documents'},
+                    {name: 'audio', icon: 'fa-music', title: 'Audio'},
+                    {name: 'video', icon: 'fa-video', title: 'Video'},
+                    {name: 'archives', icon: 'fa-archive', title: 'Archives'},
+                    {name: 'scripts', icon: 'fa-code', title: 'Scripts'},
+                    {name: 'installers', icon: 'fa-download', title: 'Installers'},
+                    {name: 'others', icon: 'fa-question-circle', title: 'Others'}
+                ];
+                
+                categories.forEach(category => {
+                    // Count files in this category
+                    const fileCount = files.filter(file => file.category === category.name).length;
+                    
+                    if (fileCount > 0) {
+                        const folderElement = document.createElement('div');
+                        folderElement.className = 'folder-item';
+                        folderElement.dataset.path = `/by-type/${category.name}`;
+                        
+                        folderElement.innerHTML = `
+                            <i class="fas ${category.icon} folder-icon"></i>
+                            <div class="folder-name">${category.title}</div>
+                            <div class="folder-info">${fileCount} files</div>
+                        `;
+                        
+                        folderElement.addEventListener('click', () => {
+                            showFolderContents(`/by-type/${category.name}`, category.title);
+                        });
+                        
+                        folderContainer.appendChild(folderElement);
+                    }
+                });
+                
+                // Add duplicates folder
+                const folderElement = document.createElement('div');
+                folderElement.className = 'folder-item';
+                folderElement.dataset.path = `/duplicates`;
+                
+                folderElement.innerHTML = `
+                    <i class="fas fa-copy folder-icon"></i>
+                    <div class="folder-name">Duplicates</div>
+                    <div class="folder-info">2 files</div>
+                `;
+                
+                folderElement.addEventListener('click', () => {
+                    showFolderContents(`/duplicates`, 'Duplicates');
+                });
+                
+                folderContainer.appendChild(folderElement);
+                
+                // Update breadcrumb
+                breadcrumb.innerHTML = `
+                    <button class="back-button" id="back-button">← Back</button>
+                    <span>Home</span>
+                `;
+                
+                document.getElementById('back-button').addEventListener('click', () => {
+                    generateFolders();
+                });
+            }
+            
+            // Show contents of a specific folder
+            function showFolderContents(path, title) {
+                folderContainer.innerHTML = '';
+                
+                if (path.startsWith('/by-type/')) {
+                    // Show files by category
+                    const category = path.split('/').pop();
+                    
+                    // Filter files by category
+                    const categoryFiles = files.filter(file => file.category === category);
+                    
+                    // Display files
+                    categoryFiles.forEach(file => {
+                        const fileElement = document.createElement('div');
+                        fileElement.className = 'file-item';
+                        
+                        fileElement.innerHTML = `
+                            <i class="fas ${file.icon} file-icon"></i>
+                            <div class="file-name">${file.name}</div>
+                        `;
+                        
+                        folderContainer.appendChild(fileElement);
+                    });
+                    
+                } else if (path === '/duplicates') {
+                    // Show sample duplicates
+                    const duplicateFiles = [
+                        {name: 'document(1).docx', icon: 'fa-file-word'},
+                        {name: 'photo(1).jpg', icon: 'fa-image'}
+                    ];
+                    
+                    duplicateFiles.forEach(file => {
+                        const fileElement = document.createElement('div');
+                        fileElement.className = 'file-item';
+                        
+                        fileElement.innerHTML = `
+                            <i class="fas ${file.icon} file-icon"></i>
+                            <div class="file-name">${file.name}</div>
+                        `;
+                        
+                        folderContainer.appendChild(fileElement);
+                    });
+                    
+                } else if (path.match(/^\/\d{4}$/)) {
+                    // Show months for the year
+                    const year = parseInt(path.substring(1));
+                    
+                    // Get months that have files in this year
+                    const months = [...new Set(files.filter(file => file.year === year).map(file => file.month))].sort();
+                    
+                    months.forEach(month => {
+                        const folderElement = document.createElement('div');
+                        folderElement.className = 'folder-item';
+                        folderElement.dataset.path = `/${year}/${month}`;
+                        
+                        // Count files in this month
+                        const fileCount = files.filter(file => file.year === year && file.month === month).length;
+                        
+                        folderElement.innerHTML = `
+                            <i class="fas fa-folder folder-icon"></i>
+                            <div class="folder-name">${monthNames[month]}</div>
+                            <div class="folder-info">${fileCount} files</div>
+                        `;
+                        
+                        folderElement.addEventListener('click', () => {
+                            showFolderContents(`/${year}/${month}`, monthNames[month]);
+                        });
+                        
+                        folderContainer.appendChild(folderElement);
+                    });
+                } else if (path.match(/^\/\d{4}\/\d+$/)) {
+                    // Show weeks for the month
+                    const parts = path.substring(1).split('/');
+                    const year = parseInt(parts[0]);
+                    const month = parseInt(parts[1]);
+                    
+                    // Get weeks that have files in this month
+                    const weeks = [...new Set(files.filter(
+                        file => file.year === year && file.month === month
+                    ).map(file => file.week))].sort();
+                    
+                    weeks.forEach(week => {
+                        const folderElement = document.createElement('div');
+                        folderElement.className = 'folder-item';
+                        folderElement.dataset.path = `/${year}/${month}/${week}`;
+                        
+                        // Count files in this week
+                        const fileCount = files.filter(
+                            file => file.year === year && file.month === month && file.week === week
+                        ).length;
+                        
+                        folderElement.innerHTML = `
+                            <i class="fas fa-folder folder-icon"></i>
+                            <div class="folder-name">Week-${week}</div>
+                            <div class="folder-info">${fileCount} files</div>
+                        `;
+                        
+                        folderElement.addEventListener('click', () => {
+                            showFolderContents(`/${year}/${month}/${week}`, `Week-${week}`);
+                        });
+                        
+                        folderContainer.appendChild(folderElement);
+                    });
+                } else if (path.match(/^\/\d{4}\/\d+\/\d+$/)) {
+                    // Show categories in this week
+                    const parts = path.substring(1).split('/');
+                    const year = parseInt(parts[0]);
+                    const month = parseInt(parts[1]);
+                    const week = parseInt(parts[2]);
+                    
+                    // Get categories that have files in this week
+                    const weekFiles = files.filter(
+                        file => file.year === year && file.month === month && file.week === week
+                    );
+                    
+                    const categories = [...new Set(weekFiles.map(file => file.category))];
+                    
+                    categories.forEach(category => {
+                        const folderElement = document.createElement('div');
+                        folderElement.className = 'folder-item';
+                        folderElement.dataset.path = `/${year}/${month}/${week}/${category}`;
+                        
+                        // Count files in this category
+                        const fileCount = weekFiles.filter(file => file.category === category).length;
+                        
+                        // Get appropriate icon for the category
+                        let icon = 'fa-folder';
+                        if (category === 'images') icon = 'fa-images';
+                        else if (category === 'documents') icon = 'fa-file-alt';
+                        else if (category === 'audio') icon = 'fa-music';
+                        else if (category === 'video') icon = 'fa-video';
+                        else if (category === 'archives') icon = 'fa-archive';
+                        else if (category === 'scripts') icon = 'fa-code';
+                        else if (category === 'installers') icon = 'fa-download';
+                        
+                        folderElement.innerHTML = `
+                            <i class="fas ${icon} folder-icon"></i>
+                            <div class="folder-name">${category}</div>
+                            <div class="folder-info">${fileCount} files</div>
+                        `;
+                        
+                        folderElement.addEventListener('click', () => {
+                            showFolderContents(`/${year}/${month}/${week}/${category}`, category);
+                        });
+                        
+                        folderContainer.appendChild(folderElement);
+                    });
+                } else if (path.match(/^\/\d{4}\/\d+\/\d+\/\w+$/)) {
+                    // Show files in this category for this week
+                    const parts = path.substring(1).split('/');
+                    const year = parseInt(parts[0]);
+                    const month = parseInt(parts[1]);
+                    const week = parseInt(parts[2]);
+                    const category = parts[3];
+                    
+                    // Filter files by category and date
+                    const categoryFiles = files.filter(
+                        file => file.year === year && file.month === month && 
+                               file.week === week && file.category === category
+                    );
+                    
+                    // Display files
+                    categoryFiles.forEach(file => {
+                        const fileElement = document.createElement('div');
+                        fileElement.className = 'file-item';
+                        
+                        fileElement.innerHTML = `
+                            <i class="fas ${file.icon} file-icon"></i>
+                            <div class="file-name">${file.name}</div>
+                        `;
+                        
+                        folderContainer.appendChild(fileElement);
+                    });
+                }
+                
+                // Update breadcrumb
+                updateBreadcrumb(path, title);
+            }
+            
+            // Update breadcrumb navigation
+            function updateBreadcrumb(path, currentTitle) {
+                const parts = path.substring(1).split('/');
+                let breadcrumbHtml = `<button class="back-button" id="back-button">← Back</button>`;
+                
+                // Start with Home
+                breadcrumbHtml += `<a href="#" data-path="/">Home</a>`;
+                
+                // Build the breadcrumb
+                let currentPath = '';
+                for (let i = 0; i < parts.length - 1; i++) {
+                    currentPath += '/' + parts[i];
+                    let title = parts[i];
+                    
+                    // Format month names
+                    if (i === 1 && !isNaN(parseInt(title))) {
+                        title = monthNames[parseInt(title)];
+                    }
+                    // Format week names
+                    else if (i === 2 && !isNaN(parseInt(title))) {
+                        title = `Week-${title}`;
+                    }
+                    
+                    breadcrumbHtml += `<span class="breadcrumb-separator"> / </span>`;
+                    breadcrumbHtml += `<a href="#" data-path="${currentPath}">${title}</a>`;
+                }
+                
+                // Add current location
+                breadcrumbHtml += `<span class="breadcrumb-separator"> / </span>`;
+                breadcrumbHtml += `<span>${currentTitle}</span>`;
+                
+                breadcrumb.innerHTML = breadcrumbHtml;
+                
+                // Add event listeners to breadcrumb links
+                document.querySelectorAll('#breadcrumb a').forEach(link => {
+                    link.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const path = this.dataset.path;
+                        
+                        if (path === '/') {
+                            generateFolders();
+                        } else {
+                            const title = this.textContent;
+                            showFolderContents(path, title);
+                        }
+                    });
+                });
+                
+                // Add back button functionality
+                document.getElementById('back-button').addEventListener('click', () => {
+                    const parts = path.substring(1).split('/');
+                    
+                    if (parts.length <= 1) {
+                        generateFolders();
+                    } else {
+                        const parentPath = '/' + parts.slice(0, parts.length - 1).join('/');
+                        const parentTitle = parts[parts.length - 2];
+                        showFolderContents(parentPath, parentTitle);
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>

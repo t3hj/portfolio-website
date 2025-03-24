@@ -6,6 +6,7 @@
     <title>Weather App - Tehj Patel</title>
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/projects.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css">
     
     <style>
         body {
@@ -100,6 +101,100 @@
             color: #f5f5f5;
             margin-top: 40px;
         }
+
+        /* Weather app specific styling */
+        .weather-demo {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid #ffdd57;
+        }
+        
+        .weather-search {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        
+        .weather-search input {
+            flex-grow: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 5px 0 0 5px;
+            font-size: 16px;
+        }
+        
+        .weather-search button {
+            padding: 10px 20px;
+            background-color: #1a73e8;
+            color: white;
+            border: none;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .weather-search button:hover {
+            background-color: #0d47a1;
+        }
+        
+        .weather-display {
+            text-align: center;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: rgba(255, 221, 87, 0.1);
+            margin-top: 20px;
+            min-height: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .weather-icon {
+            font-size: 3rem;
+            margin: 10px 0;
+        }
+        
+        .weather-forecast {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        
+        .forecast-day {
+            flex: 1;
+            min-width: 100px;
+            margin: 5px;
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .icon-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 10px;
+            margin: 20px 0;
+        }
+        
+        .weather-icon-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            border-radius: 5px;
+            cursor: default;
+        }
+        
+        .weather-icon-item i {
+            font-size: 2rem;
+            margin-bottom: 5px;
+        }
     </style>
 </head>
 <body>
@@ -122,38 +217,74 @@
             <img src="images/weather-app.png" alt="Weather App Screenshot">
 
             <h3>Project Overview</h3>
-            <p>This Weather App project is a web application that provides weather forecasts for different locations. The app is built using JavaScript and leverages APIs to fetch real-time weather data. The project demonstrates the use of modern web technologies and API integration.</p>
+            <p>This Weather App is a dynamic web application that provides real-time weather forecasts for locations worldwide. Built with JavaScript, HTML, and CSS, the app integrates with multiple APIs to fetch current weather data, forecast information, and location-based images. The app demonstrates modern web development practices including API integration, asynchronous JavaScript, and responsive design.</p>
             
-            <h3>Welcome Screen</h3>
-            <p>The app starts with a welcome screen where users can enter the name of a city to get the weather forecast. The interface is designed to be simple and user-friendly.</p>
+            <h3>Interactive Demo</h3>
+            <p>Try out a simplified version of the weather app below. Enter a city name to see what weather information would be displayed.</p>
+            
+            <div class="weather-demo">
+                <div class="weather-search">
+                    <input type="text" id="demo-city" placeholder="Enter city name (e.g. London, Tokyo, New York)">
+                    <button id="demo-get-weather">Get Weather</button>
+                </div>
+                <div class="weather-display" id="demo-weather">
+                    <p>Enter a city name and click "Get Weather" to see the forecast.</p>
+                </div>
+            </div>
+            
+            <h3>Features Showcase</h3>
+            <p>The app comes with a clean, intuitive interface where users can search for any city and instantly get detailed weather information.</p>
             <img src="images/weather-app-welcome.png" alt="Welcome Screen" />
 
-            <h3>Weather Forecast</h3>
-            <p>Once the user enters a city name, the app fetches the weather data from an API and displays the current weather, temperature, humidity, and other relevant information. The app also provides a 5-day weather forecast.</p>
+            <h3>Weather Details</h3>
+            <p>When a user searches for a city, the app provides comprehensive weather information including current conditions, temperature, humidity, wind speed, and pressure. The background dynamically changes to reflect the current weather at the searched location.</p>
             <img src="images/weather-app-forecast.png" alt="Weather Forecast Screen" />
 
             <h4>Key Features</h4>
             <ul>
-                <li><strong>Real-time Weather Data:</strong> The app fetches real-time weather data from a weather API.</li>
-                <li><strong>5-day Forecast:</strong> Provides a 5-day weather forecast for the entered location.</li>
-                <li><strong>User-friendly Interface:</strong> The app features a simple and intuitive user interface.</li>
-                <li><strong>Responsive Design:</strong> The app is designed to be responsive and works well on different devices.</li>
+                <li><strong>Real-time Weather Data:</strong> Fetches up-to-date weather information from OpenWeatherMap API.</li>
+                <li><strong>5-day Forecast:</strong> Provides a detailed 5-day weather forecast, helping users plan ahead.</li>
+                <li><strong>Dynamic Background Images:</strong> Backgrounds change based on both the searched location and current weather conditions using Unsplash API.</li>
+                <li><strong>Weather Icons:</strong> Visual weather representations using the Weather Icons library for quick comprehension.</li>
+                <li><strong>Responsive Design:</strong> Optimized for all device sizes from mobile phones to desktop computers.</li>
+                <li><strong>Error Handling:</strong> Robust error handling for invalid searches or API failures.</li>
             </ul>
+            
+            <h3>Weather Icons</h3>
+            <p>The app uses a comprehensive set of weather icons to visually represent different weather conditions:</p>
+            <div class="icon-grid">
+                <div class="weather-icon-item"><i class="wi wi-day-sunny"></i><span>Clear Sky</span></div>
+                <div class="weather-icon-item"><i class="wi wi-cloudy"></i><span>Cloudy</span></div>
+                <div class="weather-icon-item"><i class="wi wi-rain"></i><span>Rain</span></div>
+                <div class="weather-icon-item"><i class="wi wi-snow"></i><span>Snow</span></div>
+                <div class="weather-icon-item"><i class="wi wi-thunderstorm"></i><span>Thunderstorm</span></div>
+                <div class="weather-icon-item"><i class="wi wi-fog"></i><span>Fog</span></div>
+            </div>
 
             <h3>Technical Details</h3>
-            <h4>JavaScript</h4>
-            <p>The core logic of the app is implemented in JavaScript. It handles user input, API requests, and data rendering.</p>
+            <h4>API Integration</h4>
+            <p>The app integrates with multiple external APIs:</p>
             <ul>
-                <li><strong>API Integration:</strong> The app uses the Fetch API to make requests to the weather API and retrieve data.</li>
-                <li><strong>Data Rendering:</strong> The app dynamically updates the DOM to display the fetched weather data.</li>
-                <li><strong>Error Handling:</strong> The app includes error handling to manage cases where the API request fails or the entered city is not found.</li>
+                <li><strong>OpenWeatherMap API:</strong> Provides current weather data and forecasts.</li>
+                <li><strong>Unsplash API:</strong> Supplies high-quality images related to the searched location.</li>
+            </ul>
+            
+            <h4>JavaScript Implementation</h4>
+            <p>The core functionality is implemented in JavaScript:</p>
+            <ul>
+                <li><strong>Asynchronous Fetching:</strong> Uses Fetch API and Promises to handle asynchronous API requests.</li>
+                <li><strong>Dynamic DOM Updates:</strong> Manipulates the DOM to display weather data and update the UI.</li>
+                <li><strong>Weather Mapping:</strong> Maps weather conditions to appropriate icons and background images.</li>
+                <li><strong>Error Handling:</strong> Implements comprehensive error handling for API failures and invalid user inputs.</li>
             </ul>
 
             <h3>How to Use</h3>
             <ol>
-                <li>Open the app and enter the name of a city in the input field.</li>
-                <li>Click the "Get Weather" button to fetch the weather data.</li>
-                <li>The app will display the current weather and a 5-day forecast for the entered city.</li>
+                <li>Open the application in your web browser.</li>
+                <li>Enter a city name in the search field.</li>
+                <li>Click the "Get Weather" button.</li>
+                <li>View the current weather conditions and 5-day forecast for your selected location.</li>
+                <li>Enjoy the dynamic background that changes based on the city and weather conditions.</li>
             </ol>
 
             <a href="../projects.html" class="cta-button">Back to Projects</a>
@@ -163,5 +294,61 @@
     <footer>
         <p>© 2024 Tehj Patel</p>
     </footer>
+    
+    <script>
+        // Demo weather app functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('demo-get-weather').addEventListener('click', function() {
+                const city = document.getElementById('demo-city').value;
+                if (!city) {
+                    document.getElementById('demo-weather').innerHTML = 
+                        '<p>Please enter a city name.</p>';
+                    return;
+                }
+                
+                // Weather conditions to randomly select from
+                const weatherConditions = [
+                    { condition: 'Clear', icon: 'wi-day-sunny', temp: Math.floor(Math.random() * 15) + 20 },
+                    { condition: 'Clouds', icon: 'wi-cloudy', temp: Math.floor(Math.random() * 10) + 15 },
+                    { condition: 'Rain', icon: 'wi-rain', temp: Math.floor(Math.random() * 10) + 10 },
+                    { condition: 'Snow', icon: 'wi-snow', temp: Math.floor(Math.random() * 10) },
+                    { condition: 'Thunderstorm', icon: 'wi-thunderstorm', temp: Math.floor(Math.random() * 8) + 12 }
+                ];
+                
+                // Select random weather condition
+                const weather = weatherConditions[Math.floor(Math.random() * weatherConditions.length)];
+                
+                // Generate forecast days
+                const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+                let forecastHTML = '<div class="weather-forecast">';
+                
+                days.forEach(day => {
+                    const dayWeather = weatherConditions[Math.floor(Math.random() * weatherConditions.length)];
+                    forecastHTML += `
+                        <div class="forecast-day">
+                            <h3>${day}</h3>
+                            <i class="wi ${dayWeather.icon} weather-icon"></i>
+                            <p>${dayWeather.condition}</p>
+                            <p>${dayWeather.temp}°C</p>
+                        </div>
+                    `;
+                });
+                
+                forecastHTML += '</div>';
+                
+                // Display the current weather and forecast
+                document.getElementById('demo-weather').innerHTML = `
+                    <h3>${city}</h3>
+                    <i class="wi ${weather.icon} weather-icon"></i>
+                    <p>${weather.condition}</p>
+                    <p>Temperature: ${weather.temp}°C</p>
+                    <p>Humidity: ${Math.floor(Math.random() * 40) + 40}%</p>
+                    <p>Wind Speed: ${Math.floor(Math.random() * 10) + 2} m/s</p>
+                    <h3>5-Day Forecast</h3>
+                    ${forecastHTML}
+                `;
+            });
+        });
+    </script>
 </body>
 </html>

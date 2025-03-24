@@ -18,12 +18,11 @@
             background-color: #0d3b66;
             color: #f5f5f5;
             padding: 10px 0;
-            
+            position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;          
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-
         }
         .nav-content {
             display: flex;
@@ -101,6 +100,143 @@
             color: #f5f5f5;
             margin-top: 40px;
         }
+
+        /* QR Code Generator specific styles */
+        .qr-demo-container {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid #ffdd57;
+        }
+
+        .qr-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        
+        .form-group label {
+            font-weight: bold;
+            color: #ffdd57;
+        }
+        
+        .form-group input, .form-group select {
+            padding: 8px;
+            border-radius: 4px;
+            border: none;
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .color-preview {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-left: 10px;
+            border: 2px solid white;
+            vertical-align: middle;
+        }
+        
+        .qr-output {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+            min-height: 250px;
+            justify-content: center;
+            background-color: rgba(255, 221, 87, 0.1);
+            border-radius: 8px;
+            padding: 15px;
+            border: 1px solid #ffdd57;
+        }
+        
+        .qr-output canvas {
+            background-color: white;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        
+        .qr-output p {
+            text-align: center;
+            margin-top: 15px;
+        }
+        
+        .generate-btn {
+            padding: 10px 20px;
+            background-color: #1a73e8;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            margin: 10px 0;
+            transition: background-color 0.3s;
+            align-self: center;
+        }
+        
+        .generate-btn:hover {
+            background-color: #0d47a1;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .feature-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 15px;
+            border: 1px solid rgba(255, 221, 87, 0.3);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .feature-card i {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #ffdd57;
+        }
+        
+        .feature-card h4 {
+            color: #ffdd57;
+            margin: 10px 0;
+            text-align: center;
+        }
+        
+        .feature-card p {
+            text-align: center;
+        }
+        
+        .code-section {
+            background-color: #1e1e1e;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            overflow-x: auto;
+            font-family: monospace;
+            border-left: 3px solid #ffdd57;
+            color: #d4d4d4;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        .comment { color: #6a9955; }
+        .keyword { color: #569cd6; }
+        .string { color: #ce9178; }
+        .function { color: #dcdcaa; }
+        .class { color: #4ec9b0; }
     </style>
 </head>
 <body>
@@ -119,54 +255,295 @@
 
     <section class="project-detail">
         <div class="container">
+            <h2>QR Code Generator</h2>
+            <img src="images/qr-code-generator.png" alt="QR Code Generator Screenshot">
+
+            <h3>Project Overview</h3>
+            <p>This QR Code Generator is a feature-rich Python application built with Tkinter that creates customizable QR codes for websites, contact information, Wi-Fi credentials, or any text data. Going beyond basic QR code generation, this tool offers personalization options including custom colors, logo integration, different error correction levels, and even custom framing with text.</p>
             
-            <h2 class="animate-fade-in">QR Code Generator</h2>
-            <div class="project-details animate-fade-in">
-
-                <h3>Project Overview</h3>
-                <p>This QR Code Generator project is a Python-based application that allows users to create QR codes with various customizable options. The project demonstrates the use of the <code>qrcode</code> and <code>PIL</code> libraries for generating and manipulating QR code images.</p>
-                
-                <h3>Key Features</h3>
-                <ul>
-                    <li>Customizable QR code generation with different error correction levels.</li>
-                    <li>Option to add logos to the QR codes.</li>
-                    <li>Customizable colors for the QR code and background.</li>
-                    <li>Frame text option for adding text around the QR code.</li>
-                </ul>
-                
-                <h3>Technical Details</h3>
-                <p>The QR Code Generator uses the <code>qrcode</code> library for generating QR codes and the <code>PIL</code> library for image manipulation. The script includes functionalities for adding logos and frame text to the QR codes.</p>
-                
-                <h3>How to Use</h3>
-                <ol>
-                    <li>Run the script and enter the URL to encode in the QR code.</li>
-                    <li>Customize the QR code by setting the fill color, background color, and other options.</li>
-                    <li>Save the generated QR code image.</li>
-                </ol>
-                <h3>Code Snippet</h3>
-                <pre><code>
-import qrcode
-from PIL import Image, ImageDraw, ImageFont
-
-def create_qr_code(url, filename='qr_code.png', box_size=10, border=4, fill_color='black', back_color='white', version=1, error_correction='L', logo_path=None, output_format='PNG', frame_text=None):
-    # QR code generation logic here
-                </code></pre>
-                
-                <h3>Screenshots</h3>
-                <img src="../images/qr-code-generator-screenshot.png" alt="QR Code Generator Screenshot">
-                
-                <h3>GitHub Repository</h3>
-                <p>For the full code and more details, visit the <a href="https://github.com/your-repo/qr-code-generator" target="_blank">GitHub repository</a>.</p>
-
-                <a href="../projects.html" class="cta-button">Back to Projects</a>
-
-
+            <h3>Interactive Demo</h3>
+            <p>Try the QR Code Generator below. Enter a URL and customize your QR code with different colors and options.</p>
+            
+            <div class="qr-demo-container">
+                <form class="qr-form">
+                    <div class="form-group">
+                        <label for="qr-url">URL or Text:</label>
+                        <input type="text" id="qr-url" placeholder="https://example.com" value="https://tehj-patel.github.io/">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="qr-fill-color">Fill Color:</label>
+                        <input type="text" id="qr-fill-color" value="#000000">
+                        <span class="color-preview" id="fill-preview" style="background-color: #000000;"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="qr-back-color">Background Color:</label>
+                        <input type="text" id="qr-back-color" value="#FFFFFF">
+                        <span class="color-preview" id="back-preview" style="background-color: #FFFFFF;"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="qr-error-level">Error Correction Level:</label>
+                        <select id="qr-error-level">
+                            <option value="L">Low (7%)</option>
+                            <option value="M">Medium (15%)</option>
+                            <option value="Q">Quartile (25%)</option>
+                            <option value="H">High (30%)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="qr-frame-text">Frame Text (optional):</label>
+                        <input type="text" id="qr-frame-text" placeholder="Scan me!">
+                    </div>
+                    
+                    <button type="button" id="generate-qr" class="generate-btn">Generate QR Code</button>
+                </form>
+                <div class="qr-output" id="qr-result">
+                    <p>Your QR code will appear here</p>
+                </div>
             </div>
+            
+            <h3>Features</h3>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <i class="fas fa-palette"></i>
+                    <h4>Custom Colors</h4>
+                    <p>Choose any color combination for your QR code and its background.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-image"></i>
+                    <h4>Logo Integration</h4>
+                    <p>Add your logo or any image to the center of the QR code.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h4>Error Correction</h4>
+                    <p>Select from four levels of error correction to ensure your QR code remains scannable even if partially damaged.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-border-style"></i>
+                    <h4>Custom Framing</h4>
+                    <p>Add a frame with custom text around your QR code for better presentation.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-file-export"></i>
+                    <h4>Multiple Formats</h4>
+                    <p>Export your QR codes in PNG or JPEG format based on your needs.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-user-friendly"></i>
+                    <h4>User-Friendly Interface</h4>
+                    <p>Simple and intuitive Tkinter GUI makes QR code generation accessible to everyone.</p>
+                </div>
+            </div>
+
+            <h3>Application Interface</h3>
+            <p>The application provides a clean user interface with fields for all customization options:</p>
+            <img src="images/qr-generator-ui.png" alt="QR Generator Interface">
+
+            <h3>Technical Implementation</h3>
+            <p>The QR Code Generator is built with Python and leverages several key libraries:</p>
+            
+            <h4>Core Components</h4>
+            <ul>
+                <li><strong>qrcode Library:</strong> For generating the QR code structure and data encoding</li>
+                <li><strong>PIL (Pillow):</strong> For image manipulation, including adding logos and frame text</li>
+                <li><strong>Tkinter:</strong> For creating the graphical user interface</li>
+            </ul>
+            
+            <h4>Code Architecture</h4>
+            <p>The core function responsible for QR code generation:</p>
+            <div class="code-section">
+<span class="keyword">def</span> <span class="function">create_qr_code</span>(url, filename=<span class="string">'qr_code.png'</span>, box_size=10, border=4, fill_color=<span class="string">'black'</span>, back_color=<span class="string">'white'</span>, version=1, error_correction=<span class="string">'L'</span>, logo_path=<span class="keyword">None</span>, output_format=<span class="string">'PNG'</span>, frame_text=<span class="keyword">None</span>):
+    <span class="keyword">try</span>:
+        <span class="comment"># Map error correction level</span>
+        error_correction_levels = {
+            <span class="string">'L'</span>: qrcode.constants.ERROR_CORRECT_L,
+            <span class="string">'M'</span>: qrcode.constants.ERROR_CORRECT_M,
+            <span class="string">'Q'</span>: qrcode.constants.ERROR_CORRECT_Q,
+            <span class="string">'H'</span>: qrcode.constants.ERROR_CORRECT_H
+        }
+        
+        <span class="comment"># Create a QR code instance</span>
+        qr = qrcode.QRCode(
+            version=version,
+            error_correction=error_correction_levels.get(error_correction, qrcode.constants.ERROR_CORRECT_L),
+            box_size=box_size,
+            border=border,
+        )
+        
+        <span class="comment"># Add data to the QR code</span>
+        qr.add_data(url)
+        qr.make(fit=<span class="keyword">True</span>)
+
+        <span class="comment"># Create an image from the QR Code instance</span>
+        img = qr.make_image(fill_color=fill_color, back_color=back_color).convert(<span class="string">'RGB'</span>)
+
+        <span class="comment"># Add logo if provided</span>
+        <span class="keyword">if</span> logo_path:
+            logo = Image.open(logo_path)
+            logo_size = min(img.size) // 5
+            logo = logo.resize((logo_size, logo_size), Image.ANTIALIAS)
+            pos = ((img.size[0] - logo_size) // 2, (img.size[1] - logo_size) // 2)
+            img.paste(logo, pos, mask=logo)
+
+        <span class="comment"># Add a frame around the QR code</span>
+        <span class="keyword">if</span> frame_text:
+            <span class="comment"># Create a new image with extra space for the frame</span>
+            frame_width = img.size[0] + 40
+            frame_height = img.size[1] + 80
+            framed_img = Image.new(<span class="string">'RGB'</span>, (frame_width, frame_height), back_color)
+            draw = ImageDraw.Draw(framed_img)
+
+            <span class="comment"># Paste the QR code onto the framed image</span>
+            qr_x = (frame_width - img.size[0]) // 2
+            qr_y = 40
+            framed_img.paste(img, (qr_x, qr_y))
+
+            <span class="comment"># Add text to the frame</span>
+            font = ImageFont.load_default()
+            text_bbox = draw.textbbox((0, 0), frame_text, font=font)
+            text_width = text_bbox[2] - text_bbox[0]
+            text_height = text_bbox[3] - text_bbox[1]
+            text_x = (frame_width - text_width) // 2
+            text_y = frame_height - text_height - 20
+            draw.text((text_x, text_y), frame_text, fill=fill_color, font=font)
+
+            img = framed_img
+
+        <span class="comment"># Save the image in the specified format</span>
+        img.save(filename, format=output_format)
+        <span class="keyword">print</span>(f<span class="string">"QR code saved as '{filename}' for URL: {url}"</span>)
+    <span class="keyword">except</span> <span class="class">Exception</span> <span class="keyword">as</span> e:
+        <span class="keyword">print</span>(f<span class="string">"An error occurred: {e}"</span>)
+            </div>
+            
+            <p>The UI is built with Tkinter to provide a user-friendly interface for all the customization options:</p>
+            <img src="images/qr-code-example.png" alt="Sample QR Code Output">
+
+            <h3>How to Use</h3>
+            <ol>
+                <li>Enter the URL or text you want to encode in the QR code</li>
+                <li>Customize the appearance:
+                    <ul>
+                        <li>Choose fill and background colors</li>
+                        <li>Select error correction level</li>
+                        <li>Optionally add a logo</li>
+                        <li>Optionally add frame text</li>
+                    </ul>
+                </li>
+                <li>Click "Generate QR Code" button</li>
+                <li>Save the QR code to your desired location in PNG or JPEG format</li>
+            </ol>
+            
+            <h3>Applications</h3>
+            <p>The QR Code Generator is versatile and useful in various scenarios:</p>
+            <ul>
+                <li>Business cards and marketing materials</li>
+                <li>Website and social media links</li>
+                <li>Event tickets and check-ins</li>
+                <li>Wi-Fi network sharing</li>
+                <li>Contact information sharing</li>
+                <li>Product packaging and labeling</li>
+            </ul>
+
+            <a href="../projects.html" class="cta-button">Back to Projects</a>
         </div>
     </section>
 
     <footer>
         <p>© 2024 Tehj Patel</p>
     </footer>
+
+    <script>
+        // Interactive QR Code Generator Demo
+        document.addEventListener('DOMContentLoaded', function() {
+            // QR Code generation script using qrcode.js library
+            const script = document.createElement('script');
+            script.src = 'https://cdn.jsdelivr.net/npm/qrcode@1.5.1/build/qrcode.min.js';
+            document.head.appendChild(script);
+            
+            script.onload = function() {
+                const generateBtn = document.getElementById('generate-qr');
+                const fillColorInput = document.getElementById('qr-fill-color');
+                const backColorInput = document.getElementById('qr-back-color');
+                const fillPreview = document.getElementById('fill-preview');
+                const backPreview = document.getElementById('back-preview');
+                
+                // Update color preview when inputs change
+                fillColorInput.addEventListener('input', function() {
+                    fillPreview.style.backgroundColor = this.value;
+                });
+                
+                backColorInput.addEventListener('input', function() {
+                    backPreview.style.backgroundColor = this.value;
+                });
+                
+                generateBtn.addEventListener('click', function() {
+                    const url = document.getElementById('qr-url').value;
+                    const fillColor = document.getElementById('qr-fill-color').value;
+                    const backColor = document.getElementById('qr-back-color').value;
+                    const errorLevel = document.getElementById('qr-error-level').value;
+                    const frameText = document.getElementById('qr-frame-text').value;
+                    
+                    if (!url) {
+                        alert('Please enter a URL or text to encode');
+                        return;
+                    }
+                    
+                    const resultDiv = document.getElementById('qr-result');
+                    resultDiv.innerHTML = ''; // Clear previous content
+                    
+                    // Create a canvas element for the QR code
+                    const canvas = document.createElement('canvas');
+                    resultDiv.appendChild(canvas);
+                    
+                    // Generate QR code on the canvas
+                    QRCode.toCanvas(canvas, url, {
+                        errorCorrectionLevel: errorLevel,
+                        margin: 4,
+                        width: 200,
+                        color: {
+                            dark: fillColor,
+                            light: backColor
+                        }
+                    }, function(error) {
+                        if (error) {
+                            resultDiv.innerHTML = `<p>Error generating QR Code: ${error}</p>`;
+                        } else {
+                            // Add frame text if provided
+                            if (frameText) {
+                                const frameP = document.createElement('p');
+                                frameP.textContent = frameText;
+                                frameP.style.marginTop = '10px';
+                                frameP.style.color = fillColor;
+                                frameP.style.fontWeight = 'bold';
+                                resultDiv.appendChild(frameP);
+                            }
+                            
+                            // Add info about the generated QR code
+                            const infoP = document.createElement('p');
+                            infoP.innerHTML = `QR Code with <strong>${
+                                {'L': 'Low (7%)', 'M': 'Medium (15%)', 'Q': 'Quartile (25%)', 'H': 'High (30%)'}[errorLevel]
+                            }</strong> error correction`;
+                            resultDiv.appendChild(infoP);
+                        }
+                    });
+                });
+                
+                // Generate a default QR code on page load
+                setTimeout(() => {
+                    generateBtn.click();
+                }, 500);
+            };
+        });
+    </script>
 </body>
 </html>
