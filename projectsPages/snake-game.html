@@ -331,10 +331,15 @@
         }
     </style>
 </head>
-<body>
+<body data-theme="custom">
+    <script>
+        document.body.setAttribute('data-theme', localStorage.getItem('theme') || 'custom');
+    </script>
     <nav class="navbar">
         <div class="nav-content">
-            <h1>Tehj Patel</h1>
+            <button class="hamburger-menu" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
             <div class="nav-links">
                 <a href="../index.html">Home</a>
                 <a href="../about.html">About</a>
@@ -342,45 +347,42 @@
                 <a href="../skills.html">Skills</a>
                 <a href="../contact.html">Contact</a>
             </div>
+            <div class="theme-toggle custom">
+                <div class="toggle-thumb"></div>
+            </div>
         </div>
     </nav>
-
     <section class="project-detail">
         <div class="container">
             <h2>Snake Game</h2>
             <img src="../images/SnakeGame/snakeGame.png" alt="Snake Game Screenshot">
-
+            <p>This Snake Game is a classic arcade-style game implemented in Java using the Swing library. Players control a snake that moves around the screen, eating food to grow longer while avoiding collisions with walls and itself. The game features multiple states including a customizable welcome screen, active gameplay, and a game over screen with high score tracking.</p>
             <h3>Project Overview</h3>
             <p>This Snake Game is a classic arcade-style game implemented in Java using the Swing library. Players control a snake that moves around the screen, eating food to grow longer while avoiding collisions with walls and itself. The game features multiple states including a customizable welcome screen, active gameplay, and a game over screen with high score tracking.</p>
-            
             <h3>Interactive Demo</h3>
             <p>Try out the Snake Game below. Use the arrow keys to control the snake's direction, eat the red food, and avoid hitting the walls or yourself!</p>
-            
             <div class="game-container" id="game-demo-container">
                 <canvas id="game-canvas" class="game-canvas" width="500" height="400"></canvas>
-                
                 <div class="welcome-screen" id="welcome-screen">
                     <div class="welcome-title">Welcome to Snake Game</div>
                     <div class="welcome-options">
                         <p>Select snake color:</p>
                         <div class="color-selection">
                             <div class="color-option selected" style="background-color: #00ff00;" data-color="#00ff00"></div>
-                            <div class="color-option" style="background-color: #ff0000;" data-color="#ff0000"></div>
                             <div class="color-option" style="background-color: #0000ff;" data-color="#0000ff"></div>
+                            <div class="color-option" style="background-color: #ff0000;" data-color="#ff0000"></div>
                             <div class="color-option" style="background-color: #ffff00;" data-color="#ffff00"></div>
                             <div class="color-option" style="background-color: #ff00ff;" data-color="#ff00ff"></div>
                         </div>
                         <button class="control-button" id="start-button">Start Game</button>
                     </div>
                 </div>
-                
                 <div class="game-over" id="game-over-screen">
                     <div class="game-over-text">Game Over!</div>
                     <div class="score-text">Score: <span id="final-score">0</span></div>
                     <div class="score-text">High Score: <span id="high-score">0</span></div>
                     <button class="control-button" id="play-again-button">Play Again</button>
                 </div>
-                
                 <div class="game-stats" id="game-stats">
                     <div class="stat">
                         <span class="stat-label">Score</span>
@@ -391,11 +393,9 @@
                         <span class="stat-value" id="high-score-display">0</span>
                     </div>
                 </div>
-                
                 <div class="game-controls">
                     <button class="control-button" id="pause-button">Pause (P)</button>
                 </div>
-                
                 <div class="direction-buttons">
                     <div class="direction-btn up-btn" id="up-btn"><i class="fas fa-arrow-up"></i></div>
                     <div class="direction-btn right-btn" id="right-btn"><i class="fas fa-arrow-right"></i></div>
@@ -403,7 +403,6 @@
                     <div class="direction-btn left-btn" id="left-btn"><i class="fas fa-arrow-left"></i></div>
                 </div>
             </div>
-            
             <h3>Features</h3>
             <div class="feature-grid">
                 <div class="feature-card">
@@ -411,116 +410,99 @@
                     <h4>Customizable Snake</h4>
                     <p>Choose your snake's color before starting the game for a personalized gaming experience.</p>
                 </div>
-                
                 <div class="feature-card">
                     <i class="fas fa-pause"></i>
                     <h4>Pause Functionality</h4>
                     <p>Pause the game at any time using the 'P' key or pause button for convenient gameplay.</p>
                 </div>
-                
                 <div class="feature-card">
                     <i class="fas fa-trophy"></i>
                     <h4>High Score Tracking</h4>
                     <p>The game saves your highest score, challenging you to beat your own record.</p>
                 </div>
-                
                 <div class="feature-card">
                     <i class="fas fa-volume-up"></i>
                     <h4>Sound Effects</h4>
                     <p>Engaging audio feedback when eating food or when the game ends for an immersive experience.</p>
                 </div>
-                
                 <div class="feature-card">
                     <i class="fas fa-gamepad"></i>
                     <h4>Intuitive Controls</h4>
                     <p>Easy to use arrow key controls with responsive movement for smooth gameplay.</p>
                 </div>
-                
                 <div class="feature-card">
                     <i class="fas fa-desktop"></i>
                     <h4>Multiple Game States</h4>
                     <p>Features welcome screen, active gameplay, and game over states for a complete arcade experience.</p>
                 </div>
             </div>
-
             <h3>Welcome Screen</h3>
             <p>The game starts with a colorful welcome screen where you can select the snake's color and initiate the game. It provides a friendly, interactive start to the game.</p>
             <img src="../images/SnakeGame/StartScreen.png" alt="Welcome Screen" style="width: 50%;" class="float-left">
             <img src="../images/SnakeGame/ColourPicker.png" alt="Welcome Screen with Colour Picker" style="width: 50%;">
-
             <h3>Gameplay</h3>
             <p>Once the game starts, you control the snake using the arrow keys. The snake eats red food blocks to grow longer and increase your score. Be careful to avoid collisions with the edges of the screen or the snake's own body!</p>
             <img src="../images/SnakeGame/PlayingHighScore.png" alt="Gameplay Screen with High Score Display">
-
             <h4>Key Features</h4>
             <ul>
                 <li><strong>Pause Functionality:</strong> Use the 'P' key to pause and resume the game at any time.</li>
-                <li><strong>Snake Color Selection:</strong> Choose your snake's color before starting, adding a layer of personalization.</li>
                 <li><strong>Score Tracking:</strong> Your current score is displayed during the game, motivating you to beat your own high scores.</li>
+                <li><strong>Snake Color Selection:</strong> Choose your snake's color before starting, adding a layer of personalization.</li>
                 <li><strong>Restart Button:</strong> If the game ends, you can restart easily.</li>
                 <li><strong>Dynamic Game Over Screen:</strong> When the game ends, a "Game Over" screen appears with options to restart or quit.</li>
             </ul>
-
             <h3>Game Over Screen</h3>
             <p>When the game ends, you're presented with a Game Over screen displaying your score and offering a restart button.</p>
             <img src="../images/SnakeGame/GameOver.png" alt="Game Over Screen">
-
             <h3>Technical Details</h3>
             <h4>GamePanel.java</h4>
             <p>This file contains the core logic of the game:</p>
             <ul>
                 <li><strong>Game State Management:</strong> Handles transitions between Welcome, Playing, and Game Over states.</li>
-                <li><strong>Snake Movement:</strong> Implements the logic for the snake's direction and position updates.</li>
                 <li><strong>Collision Detection:</strong> Detects collisions with walls, food, and the snake itself.</li>
+                <li><strong>Snake Movement:</strong> Implements the logic for the snake's direction and position updates.</li>
                 <li><strong>Food Spawning:</strong> Randomly places food on the grid, ensuring it doesn't spawn on the snake.</li>
                 <li><strong>Sound Effects:</strong> Plays audio cues for key game events like eating food or game over.</li>
             </ul>
-
             <div class="code-section">
-<span class="keyword">private</span> <span class="keyword">void</span> <span class="function">checkCollision</span>() {
-    <span class="comment">// Check if head collides with body</span>
-    <span class="keyword">for</span> (<span class="keyword">int</span> i = snakeLength; i > 0; i--) {
-        <span class="keyword">if</span> (snakeX[0] == snakeX[i] && snakeY[0] == snakeY[i]) {
-            gameState = GameState.GAME_OVER; <span class="comment">// Update game state to GAME_OVER</span>
-            running = <span class="keyword">false</span>;
-        }
-    }
-
-    <span class="comment">// Check if head collides with walls</span>
-    <span class="keyword">if</span> (snakeX[0] < 0 || snakeX[0] >= WIDTH || snakeY[0] < 0 || snakeY[0] >= HEIGHT) {
-        gameState = GameState.GAME_OVER; <span class="comment">// Update game state to GAME_OVER</span>
-        running = <span class="keyword">false</span>;
-    }
-
-    <span class="keyword">if</span> (!running) {
-        playSound(<span class="string">"/Sounds/gameover.wav"</span>); <span class="comment">// Play sound on game over</span>
-        <span class="keyword">if</span> (snakeLength - 1 > highScore) {
-            highScore = snakeLength - 1; <span class="comment">// Update high score</span>
-        }
-        timer.stop(); <span class="comment">// Stop the timer if the game is over</span>
-    }
-}
+                <span class="keyword">private</span> <span class="keyword">void</span> <span class="function">checkCollision</span>() {
+                    <span class="keyword">for</span> (<span class="keyword">int</span> i = snakeLength; i > 0; i--) {
+                        <span class="comment">// Check if head collides with body</span>
+                        <span class="keyword">if</span> (snakeX[0] == snakeX[i] && snakeY[0] == snakeY[i]) {
+                            gameState = GameState.GAME_OVER; <span class="comment">// Update game state to GAME_OVER</span>
+                            running = <span class="keyword">false</span>;
+                        }
+                    }
+                    <span class="comment">// Check if head collides with walls</span>
+                    <span class="keyword">if</span> (snakeX[0] < 0 || snakeX[0] >= WIDTH || snakeY[0] < 0 || snakeY[0] >= HEIGHT) {
+                        gameState = GameState.GAME_OVER; <span class="comment">// Update game state to GAME_OVER</span>
+                        running = <span class="keyword">false</span>;
+                    }
+                    <span class="keyword">if</span> (!running) {
+                        playSound(<span class="string">"/Sounds/gameover.wav"</span>); <span class="comment">// Play sound on game over</span>
+                        <span class="keyword">if</span> (snakeLength - 1 > highScore) {
+                            highScore = snakeLength - 1; <span class="comment">// Update high score</span>
+                        }
+                        timer.stop(); <span class="comment">// Stop the timer if the game is over</span>
+                    }
+                }
             </div>
-            
             <h4>Main.java</h4>
             <p>This file sets up the game window and integrates the GamePanel into a JFrame for user interaction. It handles the game's overall appearance and window properties.</p>
-            
             <div class="code-section">
-<span class="keyword">public</span> <span class="keyword">class</span> <span class="class">Main</span> {
-    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="function">main</span>(String[] args) {
-        JFrame frame = <span class="keyword">new</span> JFrame(<span class="string">"Snake Game"</span>);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setResizable(<span class="keyword">false</span>);
-        
-        GamePanel gamePanel = <span class="keyword">new</span> GamePanel();
-        frame.add(gamePanel);
-        frame.pack();
-        frame.setLocationRelativeTo(<span class="keyword">null</span>); <span class="comment">// Center the window</span>
-        frame.setVisible(<span class="keyword">true</span>);
-    }
-}
+                <span class="keyword">public</span> <span class="keyword">class</span> <span class="class">Main</span> {
+                    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="function">main</span>(String[] args) {
+                        JFrame frame = <span class="keyword">new</span> JFrame(<span class="string">"Snake Game"</span>);
+                        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                        frame.setResizable(<span class="keyword">false</span>);
+                        GamePanel gamePanel = <span class="keyword">new</span> GamePanel();
+                        frame.add(gamePanel);
+                        frame.pack();
+                        frame.setLocationRelativeTo(<span class="keyword">null</span>); <span class="comment">// Center the window</span>
+                        frame.setVisible(<span class="keyword">true</span>);
+                    }
+                }
             </div>
-
             <h3>How to Play</h3>
             <ol>
                 <li>Open the game and choose the snake color on the welcome screen.</li>
@@ -529,7 +511,6 @@
                 <li>Avoid running into walls or the snake's body.</li>
                 <li>If the game ends, restart from the Game Over screen or quit.</li>
             </ol>
-
             <h3>Development Process</h3>
             <p>This project was developed using Java and the Swing library for creating the graphical interface. The development process included:</p>
             <ul>
@@ -541,18 +522,45 @@
                 <li>Adding audio feedback for enhanced user experience</li>
                 <li>Testing and debugging across different scenarios</li>
             </ul>
-
             <a href="../projects.html" class="cta-button">Back to Projects</a>
         </div>
     </section>
-
     <footer>
         <p>© 2024 Tehj Patel</p>
     </footer>
-
+    <script>
+        // Set the theme before any DOM manipulation
+        document.body.setAttribute('data-theme', localStorage.getItem('theme') || 'custom');
+    </script>
+    <script src="../scripts/global.js"></script>
     <script>
         // Snake Game Demo Implementation
         document.addEventListener('DOMContentLoaded', function() {
+            // Initialize theme toggle functionality
+            const themeToggle = document.querySelector('.theme-toggle');
+            if (themeToggle) {
+                let currentTheme = localStorage.getItem('theme') || 'custom'; // Default theme
+                
+                // Ensure the toggle reflects the current theme
+                themeToggle.className = `theme-toggle ${currentTheme}`;
+                
+                themeToggle.addEventListener('click', () => {
+                    // Toggle themes in sequence
+                    if (currentTheme === 'dark') {
+                        currentTheme = 'custom';
+                    } else if (currentTheme === 'light') {
+                        currentTheme = 'dark';
+                    } else {
+                        currentTheme = 'light';
+                    }
+                    
+                    // Apply the theme
+                    document.body.setAttribute('data-theme', currentTheme);
+                    themeToggle.className = `theme-toggle ${currentTheme}`;
+                    localStorage.setItem('theme', currentTheme); // Save the theme
+                });
+            }
+            
             // Game Canvas Setup
             const canvas = document.getElementById('game-canvas');
             const ctx = canvas.getContext('2d');
@@ -800,7 +808,6 @@
                 if (paused) {
                     ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
                     ctx.fillRect(0, 0, canvas.width, canvas.height);
-                    
                     ctx.fillStyle = '#FFFFFF';
                     ctx.font = '30px Arial';
                     ctx.textAlign = 'center';
@@ -919,7 +926,6 @@
             
             // Button event listeners
             startButton.addEventListener('click', startGame);
-            
             playAgainButton.addEventListener('click', function() {
                 gameOverScreen.style.display = 'none';
                 init();
@@ -939,8 +945,10 @@
                 option.addEventListener('click', function() {
                     // Remove selected class from all options
                     colorOptions.forEach(opt => opt.classList.remove('selected'));
+                    
                     // Add selected class to clicked option
                     this.classList.add('selected');
+                    
                     // Update snake color
                     snakeColor = this.getAttribute('data-color');
                 });

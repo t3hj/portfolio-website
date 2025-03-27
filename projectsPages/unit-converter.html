@@ -246,16 +246,21 @@
         .class { color: #4ec9b0; }
     </style>
 </head>
-<body>
+<body data-theme="custom">
     <nav class="navbar">
         <div class="nav-content">
-            <h1>Tehj Patel</h1>
+            <button class="hamburger-menu" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
             <div class="nav-links">
                 <a href="../index.html">Home</a>
                 <a href="../about.html">About</a>
                 <a href="../projects.html" class="active">Projects</a>
                 <a href="../skills.html">Skills</a>
                 <a href="../contact.html">Contact</a>
+            </div>
+            <div class="theme-toggle custom">
+                <div class="toggle-thumb"></div>
             </div>
         </div>
     </nav>
@@ -561,6 +566,9 @@
                 resultDisplay.textContent = 'Conversion result will appear here';
             });
         });
+
+        document.body.setAttribute('data-theme', localStorage.getItem('theme') || 'custom');
     </script>
+    <script src="../scripts/global.js"></script>
 </body>
 </html>
