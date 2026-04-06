@@ -1,211 +1,496 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - Tehj Patel</title>
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/about.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Tehj Patel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    :root {
+      --navy:       #050d1a;
+      --navy-mid:   #0a1628;
+      --navy-light: #0f2040;
+      --gold:       #f5c842;
+      --gold-dim:   rgba(245,200,66,0.10);
+      --cyan:       #4dd9f0;
+      --cyan-dim:   rgba(77,217,240,0.08);
+      --white:      #f0f4ff;
+      --muted:      #8899bb;
+      --border:     rgba(245,200,66,0.16);
+      --border-sub: rgba(255,255,255,0.06);
+    }
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body {
+      background: var(--navy);
+      color: var(--white);
+      font-family: 'Syne', sans-serif;
+      overflow-x: hidden;
+      cursor: none;
+    }
+
+    /* Cursor */
+    .cursor { position:fixed; width:10px; height:10px; background:var(--gold); border-radius:50%; pointer-events:none; z-index:9999; transform:translate(-50%,-50%); transition:transform .1s; }
+    .cursor-ring { position:fixed; width:34px; height:34px; border:1.5px solid var(--gold); border-radius:50%; pointer-events:none; z-index:9998; transform:translate(-50%,-50%); transition:all .18s; opacity:.5; }
+
+    /* Grid bg */
+    body::before {
+      content:''; position:fixed; inset:0;
+      background-image: linear-gradient(rgba(245,200,66,.022) 1px,transparent 1px), linear-gradient(90deg,rgba(245,200,66,.022) 1px,transparent 1px);
+      background-size:60px 60px; pointer-events:none; z-index:0;
+    }
+
+    /* Nav */
+    nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:24px 60px; display:flex; justify-content:space-between; align-items:center; background:linear-gradient(to bottom,rgba(5,13,26,.92),transparent); backdrop-filter:blur(6px); }
+    .nav-logo { font-family:'Space Mono',monospace; font-size:.85rem; color:var(--gold); letter-spacing:.12em; text-decoration:none; }
+    .nav-logo span { color:var(--muted); }
+    .nav-links { display:flex; gap:36px; list-style:none; }
+    .nav-links a { font-family:'Space Mono',monospace; font-size:.72rem; letter-spacing:.15em; color:var(--muted); text-decoration:none; text-transform:uppercase; transition:color .2s; }
+    .nav-links a:hover, .nav-links a.active { color:var(--gold); }
+    .nav-cta { font-family:'Space Mono',monospace; font-size:.72rem; letter-spacing:.1em; padding:10px 20px; border:1.5px solid var(--gold); color:var(--gold); text-decoration:none; text-transform:uppercase; transition:all .2s; }
+    .nav-cta:hover { background:var(--gold); color:var(--navy); }
+
+    /* Page header */
+    .page-header { position:relative; z-index:1; padding:140px 60px 60px; max-width:1200px; margin:0 auto; }
+    .ph-eyebrow { display:flex; align-items:center; gap:14px; margin-bottom:24px; opacity:0; animation:fadeUp .6s .15s ease forwards; }
+    .ph-line { width:40px; height:1.5px; background:var(--gold); }
+    .ph-eyebrow span { font-family:'Space Mono',monospace; font-size:.72rem; letter-spacing:.2em; color:var(--gold); text-transform:uppercase; }
+    .ph-title { font-size:clamp(2.8rem,5vw,4.8rem); font-weight:800; letter-spacing:-.02em; line-height:1.05; margin-bottom:20px; opacity:0; animation:fadeUp .6s .28s ease forwards; }
+    .ph-title em { color:var(--gold); font-style:normal; }
+    .ph-sub { font-family:'Space Mono',monospace; font-size:.82rem; color:var(--muted); line-height:1.7; max-width:520px; opacity:0; animation:fadeUp .6s .4s ease forwards; }
+
+    /* Wrapper */
+    .content-wrap { position:relative; z-index:1; max-width:1200px; margin:0 auto; padding:0 60px 120px; }
+
+    /* Section heading */
+    .sec { margin-bottom:80px; }
+    .sec-header { display:flex; align-items:center; gap:16px; margin-bottom:44px; }
+    .sec-num { font-family:'Space Mono',monospace; font-size:.72rem; color:var(--gold); letter-spacing:.15em; }
+    .sec-title { font-size:1.9rem; font-weight:800; letter-spacing:-.01em; }
+    .sec-line { flex:1; height:1px; background:var(--border); }
+
+    /* ── STORY ── */
+    .story-grid { display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:start; }
+    .story-text p { font-size:.97rem; line-height:1.82; color:var(--muted); margin-bottom:18px; }
+    .story-text p strong { color:var(--white); }
+    .story-text p em { color:var(--cyan); font-style:normal; font-weight:600; }
+
+    .profile-block { position:relative; }
+    .profile-img-wrap {
+      position:relative; background:var(--navy-mid); border:1px solid var(--border);
+      padding:28px; margin-bottom:24px;
+    }
+    .profile-img-wrap::before { content:''; position:absolute; top:0; left:0; width:3px; height:60px; background:var(--gold); }
+    .profile-img-wrap::after { content:''; position:absolute; top:0; left:0; width:60px; height:3px; background:var(--gold); }
+    .profile-img-wrap img {
+      width:100%; aspect-ratio:1/1; object-fit:cover; object-position:top;
+      display:block; filter:grayscale(20%) contrast(1.05);
+    }
+    /* Fallback if no image */
+    .profile-placeholder {
+      width:100%; aspect-ratio:1/1; background:var(--navy-light);
+      display:flex; flex-direction:column; align-items:center; justify-content:center;
+      gap:12px;
+    }
+    .profile-placeholder i { font-size:4rem; color:var(--gold); opacity:.3; }
+    .profile-placeholder span { font-family:'Space Mono',monospace; font-size:.65rem; color:var(--muted); letter-spacing:.1em; }
+
+    .quick-facts { display:flex; flex-direction:column; gap:1px; }
+    .fact-row {
+      display:flex; justify-content:space-between; align-items:center;
+      padding:12px 16px; background:var(--navy-mid); border:1px solid var(--border-sub);
+      transition:border-color .2s;
+    }
+    .fact-row:hover { border-color:var(--border); }
+    .fact-key { font-family:'Space Mono',monospace; font-size:.65rem; color:var(--muted); letter-spacing:.1em; text-transform:uppercase; }
+    .fact-val { font-family:'Space Mono',monospace; font-size:.72rem; color:var(--gold); }
+
+    /* ── EDUCATION ── */
+    .edu-stack { display:flex; flex-direction:column; gap:2px; }
+    .edu-card {
+      background:var(--navy-mid); border:1px solid var(--border-sub); padding:36px 40px;
+      position:relative; overflow:hidden; transition:all .25s;
+    }
+    .edu-card::before { content:''; position:absolute; top:0; left:0; width:3px; height:100%; background:var(--gold); transform:scaleY(0); transform-origin:top; transition:transform .3s; }
+    .edu-card:hover { background:var(--navy-light); border-color:var(--border); }
+    .edu-card:hover::before { transform:scaleY(1); }
+    .edu-meta { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:12px; flex-wrap:wrap; gap:10px; }
+    .edu-period { font-family:'Space Mono',monospace; font-size:.65rem; color:var(--muted); letter-spacing:.1em; }
+    .edu-badge { font-family:'Space Mono',monospace; font-size:.62rem; padding:4px 12px; background:var(--gold-dim); border:1px solid rgba(245,200,66,.3); color:var(--gold); }
+    .edu-inst { font-size:1.25rem; font-weight:700; margin-bottom:4px; }
+    .edu-qual { font-family:'Space Mono',monospace; font-size:.75rem; color:var(--cyan); letter-spacing:.05em; margin-bottom:16px; }
+    .edu-modules { display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:20px; }
+    .mod-col h4 { font-family:'Space Mono',monospace; font-size:.65rem; color:var(--gold); letter-spacing:.15em; text-transform:uppercase; margin-bottom:10px; }
+    .mod-col ul { list-style:none; }
+    .mod-col li { font-family:'Space Mono',monospace; font-size:.68rem; color:var(--muted); line-height:1.7; padding-left:12px; position:relative; }
+    .mod-col li::before { content:'·'; position:absolute; left:0; color:var(--gold); }
+
+    /* ── EMPLOYMENT ── */
+    .emp-stack { display:flex; flex-direction:column; gap:2px; }
+    .emp-card {
+      background:var(--navy-mid); border:1px solid var(--border-sub);
+      padding:36px 40px; position:relative; overflow:hidden; transition:all .25s;
+      display:grid; grid-template-columns:1fr auto; gap:24px; align-items:start;
+    }
+    .emp-card::after { content:''; position:absolute; bottom:0; left:0; right:0; height:2px; background:var(--gold); transform:scaleX(0); transform-origin:left; transition:transform .3s; }
+    .emp-card:hover { background:var(--navy-light); border-color:var(--border); }
+    .emp-card:hover::after { transform:scaleX(1); }
+    .emp-role { font-size:1.15rem; font-weight:700; margin-bottom:4px; }
+    .emp-company { font-family:'Space Mono',monospace; font-size:.75rem; color:var(--cyan); letter-spacing:.05em; margin-bottom:16px; }
+    .emp-points { list-style:none; }
+    .emp-points li { font-size:.88rem; color:var(--muted); line-height:1.7; padding:5px 0 5px 18px; position:relative; border-bottom:1px solid var(--border-sub); }
+    .emp-points li:last-child { border-bottom:none; }
+    .emp-points li::before { content:'→'; position:absolute; left:0; color:var(--gold); font-size:.75rem; top:6px; }
+    .emp-period { font-family:'Space Mono',monospace; font-size:.65rem; color:var(--muted); letter-spacing:.08em; white-space:nowrap; background:var(--border-sub); padding:6px 12px; height:fit-content; }
+
+    /* ── AWARDS ── */
+    .awards-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; }
+    .award-card {
+      background:var(--navy-mid); border:1px solid var(--border-sub); padding:32px;
+      position:relative; overflow:hidden; transition:all .25s;
+    }
+    .award-card::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:var(--gold); transform:scaleX(0); transform-origin:left; transition:transform .3s; }
+    .award-card:hover { background:var(--navy-light); border-color:var(--border); }
+    .award-card:hover::before { transform:scaleX(1); }
+    .award-icon { font-size:1.6rem; color:var(--gold); margin-bottom:18px; }
+    .award-name { font-size:1rem; font-weight:700; margin-bottom:8px; }
+    .award-issuer { font-family:'Space Mono',monospace; font-size:.65rem; color:var(--cyan); letter-spacing:.08em; margin-bottom:12px; }
+    .award-desc { font-size:.83rem; color:var(--muted); line-height:1.65; }
+
+    /* ── INTERESTS ── */
+    .interests-row { display:flex; gap:2px; flex-wrap:wrap; }
+    .interest-item {
+      flex:1; min-width:180px; background:var(--navy-mid); border:1px solid var(--border-sub);
+      padding:28px 24px; display:flex; flex-direction:column; align-items:center;
+      text-align:center; gap:12px; transition:all .25s; cursor:default;
+    }
+    .interest-item:hover { background:var(--navy-light); border-color:var(--border); }
+    .interest-item i { font-size:1.6rem; color:var(--gold); }
+    .interest-item span { font-family:'Space Mono',monospace; font-size:.68rem; color:var(--muted); letter-spacing:.08em; }
+
+    /* Social bar */
+    .social-bar { position:fixed; left:28px; bottom:0; display:flex; flex-direction:column; align-items:center; gap:18px; z-index:50; }
+    .social-bar a { color:var(--muted); font-size:1rem; transition:color .2s,transform .2s; text-decoration:none; }
+    .social-bar a:hover { color:var(--gold); transform:translateX(3px); }
+    .social-bar::after { content:''; width:1px; height:80px; background:linear-gradient(to bottom,var(--muted),transparent); }
+
+    /* Footer */
+    footer { position:relative; z-index:1; background:var(--navy-mid); border-top:1px solid var(--border); padding:40px 60px; display:flex; justify-content:space-between; align-items:center; }
+    .footer-copy { font-family:'Space Mono',monospace; font-size:.68rem; color:var(--muted); letter-spacing:.08em; }
+    .footer-links { display:flex; gap:28px; }
+    .footer-links a { font-family:'Space Mono',monospace; font-size:.68rem; color:var(--muted); text-decoration:none; letter-spacing:.1em; text-transform:uppercase; transition:color .2s; }
+    .footer-links a:hover { color:var(--gold); }
+
+    /* Scroll reveal */
+    .reveal { opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+
+    @keyframes fadeUp {
+      from { opacity:0; transform:translateY(22px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+
+    @media (max-width:900px) {
+      nav { padding:20px 24px; }
+      .nav-links, .nav-cta { display:none; }
+      .page-header, .content-wrap { padding-left:24px; padding-right:24px; }
+      .story-grid { grid-template-columns:1fr; }
+      .edu-modules { grid-template-columns:1fr; }
+      .emp-card { grid-template-columns:1fr; }
+      .awards-grid { grid-template-columns:1fr; }
+      .interests-row { flex-direction:column; }
+      footer { padding:28px 24px; flex-direction:column; gap:16px; text-align:center; }
+      .social-bar { display:none; }
+    }
+  </style>
 </head>
-<body data-theme="custom">
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-content">
-            <button class="hamburger-menu" aria-label="Menu">
-                <i class="fas fa-bars"></i>
-            </button>
-            <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="about.html" class="active">About</a>
-                <a href="projects.html">Projects</a>
-                <a href="skills.html">Skills</a>
-                <a href="contact.html">Contact</a>
-            </div>
-            <div class="theme-toggle custom">
-                <div class="toggle-thumb"></div>
-            </div>
+<body>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <div class="social-bar">
+    <a href="https://github.com/t3hj" target="_blank"><i class="fab fa-github"></i></a>
+    <a href="https://www.linkedin.com/in/tehjpatel" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="mailto:tehjpatel@gmail.com"><i class="fas fa-envelope"></i></a>
+  </div>
+
+  <nav>
+    <a class="nav-logo" href="index.html">T<span>.</span>PATEL</a>
+    <ul class="nav-links">
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a class="nav-cta" href="contact.html">Hire Me</a>
+  </nav>
+
+  <div class="page-header">
+    <div class="ph-eyebrow"><div class="ph-line"></div><span>The Person Behind the Code</span></div>
+    <h1 class="ph-title">About<br><em>Me.</em></h1>
+    <p class="ph-sub">Final-year CS student, robotics instructor, Taekwondo black belt — and genuinely excited about building things that matter.</p>
+  </div>
+
+  <div class="content-wrap">
+
+    <!-- 01 Story -->
+    <section class="sec reveal">
+      <div class="sec-header">
+        <span class="sec-num">01 /</span>
+        <h2 class="sec-title">My Story</h2>
+        <div class="sec-line"></div>
+      </div>
+      <div class="story-grid">
+        <div class="story-text">
+          <p>
+            I'm a <strong>final-year BSc Computer Science student at Brunel University London</strong>,
+            graduating June 2026. My academic path has been deliberately broad — covering
+            <em>Cybersecurity</em>, <em>Artificial Intelligence</em>, and <em>Software Engineering</em>
+            in my final year — because I believe the best engineers understand systems holistically,
+            not just the layer they happen to code in.
+          </p>
+          <p>
+            My Final Year Project, <strong>Local Lens</strong>, is a full-stack AI civic-reporting
+            platform integrating Claude Vision, Supabase, geolocation pipelines, and a custom
+            priority-scoring engine. It's the most complex thing I've built — and it works.
+          </p>
+          <p>
+            Outside of university, I've spent <strong>three years teaching robotics and Python</strong>
+            at RoboThink to 30+ students aged 4–14. That experience taught me that the ability
+            to explain something clearly is just as valuable as the ability to build it.
+            I brought that same clarity to redesigned lesson plans that measurably improved
+            student engagement.
+          </p>
+          <p>
+            I hold Brunel's <strong>READY Certificate of Employability Skills</strong> and
+            <strong>READY Leadership Award</strong> — both issued competitively to a select
+            cohort across the university. I'm actively targeting graduate roles in
+            <em>software engineering</em> and <em>cybersecurity</em>.
+          </p>
         </div>
-    </nav>
+        <div class="profile-block">
+          <div class="profile-img-wrap">
+            <div class="profile-placeholder">
+              <i class="fas fa-user"></i>
+              <span>tehj patel</span>
+            </div>
+          </div>
+          <div class="quick-facts">
+            <div class="fact-row"><span class="fact-key">Location</span><span class="fact-val">Stanmore, London</span></div>
+            <div class="fact-row"><span class="fact-key">Degree</span><span class="fact-val">BSc Computer Science</span></div>
+            <div class="fact-row"><span class="fact-key">University</span><span class="fact-val">Brunel University London</span></div>
+            <div class="fact-row"><span class="fact-key">Graduating</span><span class="fact-val">June 2026</span></div>
+            <div class="fact-row"><span class="fact-key">Available</span><span class="fact-val">From June 2026</span></div>
+            <div class="fact-row"><span class="fact-key">Email</span><span class="fact-val">tehjpatel@gmail.com</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <!-- Parallax Hero Section -->
-    <div class="parallax-wrapper">
-        <!-- Hero Section -->
-        <section class="parallax-group" id="hero">
-            <div class="parallax-layer parallax-layer-back">
-                <!-- Background image added in CSS -->
-            </div>
-            <div class="parallax-layer parallax-layer-base">
-                <div class="content">
-                    <h2 class="animate-fade-in">About Me</h2>
-                </div>
-            </div>
-        </section>
+    <!-- 02 Education -->
+    <section class="sec reveal">
+      <div class="sec-header">
+        <span class="sec-num">02 /</span>
+        <h2 class="sec-title">Education</h2>
+        <div class="sec-line"></div>
+      </div>
+      <div class="edu-stack">
 
-        <!-- About Content -->
-        <section class="parallax-group" id="about">
-            <div class="parallax-layer parallax-layer-back">
-                <!-- Background image added in CSS -->
+        <div class="edu-card">
+          <div class="edu-meta">
+            <span class="edu-period">Sept 2023 — June 2026</span>
+            <span class="edu-badge">Current</span>
+          </div>
+          <h3 class="edu-inst">Brunel University London</h3>
+          <p class="edu-qual">BSc Computer Science — Predicted 2:1</p>
+          <div class="edu-modules">
+            <div class="mod-col">
+              <h4>Year 3 Modules</h4>
+              <ul>
+                <li>Cybersecurity</li>
+                <li>Artificial Intelligence</li>
+                <li>Software Engineering</li>
+                <li>Advanced Topics in CS</li>
+                <li>Final Year Project</li>
+              </ul>
             </div>
-            <div class="parallax-layer parallax-layer-base">
-                <div class="content">
-                    <div class="about-content">
-                        <div class="about-text animate-fade-in">
-                            <h3>About Me</h3>
-                            <p>I'm a passionate computer science enthusiast with hands-on experience in programming, robotics, and app development. 
-                            I've developed solutions like a QR code navigation program for a SwiftBot in Year 1 and a snake game in Java. 
-                            At Robothink UK, our team empowers young minds through interactive robotics and programming sessions, leveraging my expertise 
-                            in Python and algorithmic thinking. As a current Computer Science student at Brunel University London, I blend academic insights with
-                             practical teaching to demystify STEM subjects for budding innovators. My dedication to education stems from a belief that technology is the keystone
-                              for future problem solvers.
-                            </p>
-                        </div>
-                    </div>
-                </div>
+            <div class="mod-col">
+              <h4>Notable Results</h4>
+              <ul>
+                <li>Software Implementation Event — A+</li>
+                <li>Software Design — A</li>
+                <li>Group Project Reflection — A</li>
+                <li>Logic and Computation — A–</li>
+                <li>Group Project — A–</li>
+              </ul>
             </div>
-        </section>
+          </div>
+        </div>
 
-        <!-- Education Section -->
-        <section class="parallax-group" id="education">
-            <div class="parallax-layer parallax-layer-back">
-                <!-- Background image added in CSS -->
+        <div class="edu-card">
+          <div class="edu-meta">
+            <span class="edu-period">Sept 2021 — June 2023</span>
+            <span class="edu-badge">D*D*D* — Highest Grade</span>
+          </div>
+          <h3 class="edu-inst">Stanmore College</h3>
+          <p class="edu-qual">BTEC Level 3 Extended Diploma — IT</p>
+          <div class="edu-modules">
+            <div class="mod-col">
+              <h4>Key Modules</h4>
+              <ul>
+                <li>Cyber Security &amp; Incident Management</li>
+                <li>Programming</li>
+                <li>Data Modelling</li>
+                <li>Website Development</li>
+                <li>Mobile Apps Development</li>
+              </ul>
             </div>
-            <div class="parallax-layer parallax-layer-base">
-                <div class="content">
-                    <div class="about-details animate-fade-in">
-                        <h3>Education</h3>
-                        <p><strong>Brunel University London</strong><br>
-                        BSc Computer Science (September 2023 – Expected Graduation: 2027)<br>
-                        Grade: <strong>Predicted 2:1</strong> </p><br>
-                        <div class="education-modules">
-                            <div>
-                                <h4>Year 1 Modules:</h4>
-                                <ul>
-                                    <li>Introductory Programming</li>
-                                    <li>Year 1 Group Project</li>
-                                    <li>Data and Information</li>
-                                    <li>Logic and Computation</li>
-                                    <li>Information Systems and Organisations</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h4>Year 2 Modules:</h4>
-                                <ul>
-                                    <li>Software Development and Management</li>
-                                    <li>Year 2 Group Project</li>
-                                    <li>Usability Engineering</li>
-                                    <li>Algorithms and their Applications</li>
-                                    <li>Networks and Operating Systems</li>
-                                </ul>
-                            </div>
-                        </div><br>
-                        
-                        <p><strong>Stanmore College</strong><br>
-                        BTEC – Level 3 Extended Diploma in ICT (September 2021 – June 2023)<br>
-                        Grade:
-                        <strong> D*D*D*</strong></p><br>
-                        <div class="education-modules">
-                            <div>
-                                <h4>Year 1 Modules:</h4>
-                                <ul>
-                                    <li>Information Technology Systems</li>
-                                    <li>Creating Systems to Manage Information</li>
-                                    <li>Using Social Media in Business</li>
-                                    <li>Project Management</li>
-                                    <li>Cyber Security & Incident Management</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h4>Year 2 Modules:</h4>
-                                <ul>
-                                    <li>Programming</li>
-                                    <li>Data Modelling</li>
-                                    <li>Website Development</li>
-                                    <li>Mobile Apps Development</li>
-                                    <li>Computer Games Development</li>
-                                    <li>IT Technical Support & Management</li>
-                                    <li>Software Testing</li>
-                                    <li>IT Service Delivery</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="mod-col">
+              <h4>Also Covered</h4>
+              <ul>
+                <li>Software Testing</li>
+                <li>Computer Games Development</li>
+                <li>IT Technical Support &amp; Management</li>
+                <li>Project Management</li>
+                <li>IT Service Delivery</li>
+              </ul>
             </div>
-        </section>
+          </div>
+        </div>
 
-        <!-- Employment Section -->
-        <section class="parallax-group" id="employment">
-            <div class="parallax-layer parallax-layer-back">
-                <!-- Background image added in CSS -->
-            </div>
-            <div class="parallax-layer parallax-layer-base">
-                <div class="content">
-                    <div class="employment animate-fade-in">
-                        <h3>Employment</h3>
-                        <p><strong>RoboThink, Stanmore</strong> - Robotics and Coding Instructor (October 2022 – Present)<br>
-                        • Facilitated workshops and educational sessions on robotics and programming for young students.<br>
-                        • Assisted in developing curriculum and managing class activities, showcasing organisational skills and adaptability.</p>
-                        
-                        <p><strong>Chilled Gelato, Belmont</strong> - Team Member (August 2022 – September 2022)<br>
-                        • Managed daily operations, including customer service and inventory management.<br>
-                        • Processed transactions and maintained a clean and welcoming environment.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <div class="edu-card">
+          <div class="edu-meta">
+            <span class="edu-period">2016 — 2021</span>
+            <span class="edu-badge">9 GCSEs</span>
+          </div>
+          <h3 class="edu-inst">Park High School, Stanmore</h3>
+          <p class="edu-qual">9 GCSEs including Mathematics (7), Computer Science (7), Combined Science (6/6)</p>
+        </div>
 
-        <!-- Hobbies & Interests Section -->
-        <section class="parallax-group" id="hobbies">
-            <div class="parallax-layer parallax-layer-back">
-                <!-- Background image added in CSS -->
-            </div>
-            <div class="parallax-layer parallax-layer-base">
-                <div class="content">
-                    <div class="hobbies-interests animate-fade-in">
-                        <h3>Hobbies & Interests</h3>
-                        <ul>
-                            <li>I've climbed Ben Nevis, which shows my love for adventure.
-                            </li>
-                            <li>I enjoy playing football and appreciate the teamwork it brings.</li>
-                            <li>Exploring new cities and cultures is something I love, as it broadens my perspective.</li>
-                            <li>I hold a black belt in Taekwondo, reflecting my commitment to discipline and focus.</li>
-                            <li>I'm passionate about gaming and have a goal to design my own games someday.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
+      </div>
+    </section>
+
+    <!-- 03 Employment -->
+    <section class="sec reveal">
+      <div class="sec-header">
+        <span class="sec-num">03 /</span>
+        <h2 class="sec-title">Employment</h2>
+        <div class="sec-line"></div>
+      </div>
+      <div class="emp-stack">
+
+        <div class="emp-card">
+          <div>
+            <h3 class="emp-role">Robotics &amp; Coding Instructor</h3>
+            <p class="emp-company">RoboThink · Stanmore</p>
+            <ul class="emp-points">
+              <li>Deliver Python and RoCode workshops to 30+ students aged 4–14, covering programming fundamentals through to hardware integration with LEDs, IR sensors, and AI modules</li>
+              <li>Redesigned lesson plans and coding challenges to improve clarity and progression, resulting in measurably higher student engagement</li>
+              <li>Practised communicating complex technical ideas accessibly — directly transferable to code reviews, technical writing, and team collaboration</li>
+            </ul>
+          </div>
+          <span class="emp-period">Oct 2022 — Present</span>
+        </div>
+
+        <div class="emp-card">
+          <div>
+            <h3 class="emp-role">Team Member</h3>
+            <p class="emp-company">Chilled Gelato · Belmont</p>
+            <ul class="emp-points">
+              <li>Handled customer transactions, stock management, and complaint resolution in a fast-paced environment</li>
+              <li>Maintained operational standards under pressure, demonstrating reliability and teamwork</li>
+            </ul>
+          </div>
+          <span class="emp-period">Aug — Sept 2022</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 04 Awards -->
+    <section class="sec reveal">
+      <div class="sec-header">
+        <span class="sec-num">04 /</span>
+        <h2 class="sec-title">Awards &amp; Achievements</h2>
+        <div class="sec-line"></div>
+      </div>
+      <div class="awards-grid">
+        <div class="award-card">
+          <div class="award-icon"><i class="fas fa-certificate"></i></div>
+          <h3 class="award-name">READY Certificate of Employability Skills</h3>
+          <p class="award-issuer">Brunel University London · 2025</p>
+          <p class="award-desc">Awarded through Brunel's competitive READY Programme, recognising commercial awareness, communication, and problem-solving assessed under real conditions. Issued to a select cohort across the university.</p>
+        </div>
+        <div class="award-card">
+          <div class="award-icon"><i class="fas fa-star"></i></div>
+          <h3 class="award-name">READY Leadership Award</h3>
+          <p class="award-issuer">Brunel University London · 2025</p>
+          <p class="award-desc">Separately awarded for demonstrated leadership capability assessed across the READY Programme. Both credentials issued to a select cohort — not awarded to all programme participants.</p>
+        </div>
+        <div class="award-card">
+          <div class="award-icon"><i class="fas fa-trophy"></i></div>
+          <h3 class="award-name">Software Implementation Event — A+</h3>
+          <p class="award-issuer">Brunel University London · 2023–24</p>
+          <p class="award-desc">Highest grade in a timed software implementation assessment — demonstrating ability to deliver functional, well-structured code under time pressure.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 Interests -->
+    <section class="sec reveal">
+      <div class="sec-header">
+        <span class="sec-num">05 /</span>
+        <h2 class="sec-title">Beyond the Screen</h2>
+        <div class="sec-line"></div>
+      </div>
+      <div class="interests-row">
+        <div class="interest-item">
+          <i class="fas fa-person-falling-burst"></i>
+          <span>Taekwondo Black Belt</span>
+        </div>
+        <div class="interest-item">
+          <i class="fas fa-mountain"></i>
+          <span>Climbed Ben Nevis</span>
+        </div>
+        <div class="interest-item">
+          <i class="fas fa-futbol"></i>
+          <span>Football</span>
+        </div>
+        <div class="interest-item">
+          <i class="fas fa-shield-halved"></i>
+          <span>TryHackMe — SOC Level 1</span>
+        </div>
+        <div class="interest-item">
+          <i class="fas fa-gamepad"></i>
+          <span>Game Design Enthusiast</span>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    <span class="footer-copy">© 2025 Tehj Patel — Stanmore, London</span>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="skills.html">Skills</a>
+      <a href="contact.html">Contact</a>
     </div>
+  </footer>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div>© 2024 Tehj Patel Crafting code with passion and precision.</div>
-            <div class="footer-social">
-                <a href="https://github.com/t3hj" class="social-icon" aria-label="GitHub">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/tehj-patel-56a5562a2/" class="social-icon" aria-label="LinkedIn">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="https://discord.com/users/nightslash" class="social-icon" aria-label="Discord">
-                    <i class="fab fa-discord"></i>
-                </a>
-                <a href="https://www.instagram.com/t3hj_p/profilecard/" class="social-icon" aria-label="Instagram">
-                    <i class="fab fa-instagram"></i>
-                </a>
-            </div>
-            <button class="back-to-top" aria-label="Back to top">
-                <i class="fas fa-arrow-up"></i>
-            </button>
-        </div>
-    </footer>
+  <script>
+    const cursor = document.getElementById('cursor'), ring = document.getElementById('cursorRing');
+    let mx=0,my=0,rx=0,ry=0;
+    document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;});
+    (function tick(){cursor.style.left=mx+'px';cursor.style.top=my+'px';rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(tick);})();
 
-    <script>
-        document.body.setAttribute('data-theme', localStorage.getItem('theme') || 'custom');
-    </script>
-    <script src="scripts/global.js"></script>
-    <script src="scripts/about.js"></script>
+    const io = new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  </script>
 </body>
 </html>
