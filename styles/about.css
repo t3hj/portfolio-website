@@ -1,0 +1,172 @@
+/* Parallax Styles */
+.parallax-wrapper {
+    min-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    perspective: 1px;
+}
+
+.parallax-group {
+    position: relative;
+    min-height: 100vh; /* Change from height to min-height */
+    transform-style: preserve-3d;
+    display: flex;
+    align-items: center; /* Center content vertically */
+}
+
+.parallax-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.parallax-layer-base {
+    transform: translateZ(0);
+    z-index: 4;
+}
+
+.parallax-layer-back {
+    transform: translateZ(-1px) scale(2);
+    z-index: 3;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    width: 80%;
+    max-width: 1200px;
+    padding: 2rem;
+    background-color: rgba(10, 26, 51, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Hero section with background */
+#hero .parallax-layer-back {
+    background-image: url('../images/parallax-background.jpg');
+    opacity: 0.8;
+}
+
+/* About Content Styling */
+.about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.about-text {
+    flex: 1;
+    text-align: left;
+}
+
+.about-details {
+    text-align: left;
+    width: 100%;
+}
+
+.about-text h3, .about-details h3, .employment h3, .hobbies-interests h3 {
+    color: #ffdd57;
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+.about-text p, .about-details p {
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.education-modules {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.education-modules h4 {
+    color: #ffdd57;
+    margin-bottom: 0.8rem;
+}
+
+.education-modules ul {
+    padding-left: 20px;
+}
+
+.education-modules li {
+    margin-bottom: 0.5rem;
+}
+
+.employment p, .hobbies-interests li {
+    margin-bottom: 1rem;
+}
+
+/* Animation for fade-in */
+.animate-fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.animate-fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive adjustment */
+@media screen and (max-width: 768px) {
+    .content {
+        width: 90%;
+        padding: 1rem;
+    }
+    
+    .parallax-group {
+        min-height: auto;
+        padding: 3rem 0;
+    }
+    
+    .education-modules {
+        grid-template-columns: 1fr;
+    }
+}
+
+body[data-theme="dark"] .parallax-layer-base {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+}
+
+body[data-theme="dark"] .about-content, body[data-theme="dark"] .about-details, body[data-theme="dark"] .employment, body[data-theme="dark"] .hobbies-interests {
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+}
+
+body[data-theme="dark"] .about-text {
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+}
+
+body[data-theme="light"] .parallax-layer-base {
+    background-color: #ffffff;
+    color: #0a1a33;
+}
+
+body[data-theme="light"] .about-content, body[data-theme="light"] .about-details, body[data-theme="light"] .employment, body[data-theme="light"] .hobbies-interests {
+    background-color: #f5f5f5;
+    color: #0a1a33;
+}
+
+body[data-theme="light"] .about-text {
+    background-color: #f5f5f5;
+    color: #0a1a33;
+}
+
+body[data-theme="light"] .about-text h3 {
+    color: #0a1a33;
+}

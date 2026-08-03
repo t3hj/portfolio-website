@@ -1,0 +1,205 @@
+/* Contact Page Specific Styles */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0a1a33;
+    color: #f5f5f5;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.hero-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #ffdd57;
+}
+
+.contact-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.contact-text, 
+.contact-form, 
+.social-links {
+    background: rgba(13, 59, 102, 0.8);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-text:hover, 
+.contact-form:hover, 
+.social-links:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.contact-text h3, 
+.contact-form h3, 
+.social-links h3 {
+    color: #ffdd57;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+
+.contact-form .form-group {
+    margin-bottom: 1rem;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #f5f5f5;
+    font-weight: bold;
+}
+
+.contact-form input, 
+.contact-form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #2c3e50;
+    border-radius: 5px;
+    background-color: #1a2b3c;
+    color: #f5f5f5;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus, 
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #1a73e8;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    background-color: #ffdd57;
+    color: #0a1a33;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.contact-form button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    background-color: #1a73e8;
+    color: white;
+}
+
+.social-links ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.social-links li {
+    margin-bottom: 0.5rem;
+}
+
+.social-links a {
+    color: #ffdd57;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 1.1rem;
+}
+
+.social-links a:hover {
+    color: #1a73e8;
+    text-decoration: underline;
+}
+
+/* Animation delays for staggered effect */
+.contact-text { animation-delay: 0.1s; }
+.contact-form { animation-delay: 0.2s; }
+.social-links { animation-delay: 0.3s; }
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+@media (max-width: 768px) {
+    .contact-content {
+        padding: 1rem;
+        gap: 1rem;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-text, 
+    .contact-form, 
+    .social-links {
+        padding: 1.5rem;
+    }
+
+    .contact-form {
+        padding: 1rem;
+    }
+
+    .social-links ul {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+body[data-theme="light"] .hero-section {
+    background-color: #ffffff;
+    color: #0a1a33;
+}
+
+body[data-theme="dark"] .hero-section {
+    background-color: #0a1a33;
+    color: #f5f5f5;
+}
+
+body[data-theme="light"] .contact-content,
+body[data-theme="light"] .contact-text,
+body[data-theme="light"] .contact-form,
+body[data-theme="light"] .social-links {
+    background: rgba(255, 255, 255, 0.8);
+    color: #0a1a33;
+}
+
+body[data-theme="dark"] .contact-content,
+body[data-theme="dark"] .contact-text,
+body[data-theme="dark"] .contact-form,
+body[data-theme="dark"] .social-links {
+    background: rgba(13, 59, 102, 0.8);
+    color: #f5f5f5;
+}
+
+body[data-theme="dark"] .container {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+}
+
+body[data-theme="dark"] .contact-content, body[data-theme="dark"] .contact-form, body[data-theme="dark"] .social-links {
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+}
+
+body[data-theme="dark"] .contact-text {
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+}
+
+body[data-theme="light"] .contact-content, body[data-theme="light"] .contact-text, body[data-theme="light"] .contact-form, body[data-theme="light"] .social-links {
+    background-color: #f5f5f5;
+    color: #0a1a33;
+}

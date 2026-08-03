@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Generator - Tehj Patel</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/projects.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #f5f5f5;
+            background-color: #0a1a33;
+        }
+    </style>
+</head>
+<body data-theme="custom">
+    <nav class="navbar">
+        <div class="nav-content">
+            <button class="hamburger-menu" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="../about.html">About</a>
+                <a href="../projects.html" class="active">Projects</a>
+                <a href="../skills.html">Skills</a>
+                <a href="../contact.html">Contact</a>
+            </div>
+            <div class="theme-toggle custom">
+                <div class="toggle-thumb"></div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="project-detail">
+        <div class="container">
+            <h2 class="animate-fade-in">Portfolio Generator</h2>
+            <div class="project-details animate-fade-in">
+                <p>This project is a JavaScript-based portfolio generator that allows users to input their details and generate a downloadable portfolio. It provides a user-friendly interface for adding personal information, professional experience, education, skills, and more.</p>
+                <h3>Features</h3>
+                <ul>
+                    <li>Interactive form for entering personal and professional details.</li>
+                    <li>Dynamic addition of multiple experiences and education entries.</li>
+                    <li>Option to upload a profile image.</li>
+                    <li>Generates a downloadable PDF of the portfolio.</li>
+                </ul>
+                <h3>Technical Details</h3>
+                <p>The Portfolio Generator uses JavaScript for handling user inputs and dynamically generating the portfolio content. It leverages the <code>html2pdf</code> library to create a downloadable PDF of the generated portfolio.</p>
+                <h3>How to Use</h3>
+                <ol>
+                    <li>Fill in the form with your personal information, professional experience, education, skills, and other details.</li>
+                    <li>Click the "Generate Portfolio" button to create the portfolio.</li>
+                    <li>Review the generated portfolio and click the "Download Portfolio" button to save it as a PDF.</li>
+                </ol>
+                <h3>Code Snippet</h3>
+                <pre><code>
+document.getElementById('addExperience').addEventListener('click', function() {
+    const experienceList = document.getElementById('experienceList');
+    const newExperience = document.createElement('div');
+    newExperience.innerHTML = `
+        <input type="text" placeholder="Job Title (e.g., Junior Accountant)">
+        <input type="text" placeholder="Company (e.g., ABC Company, Marseilles, France)">
+        <input type="text" placeholder="Duration (e.g., Jan 2017 – Sept 2019)">
+        <textarea placeholder="Description"></textarea>
+    `;
+    experienceList.appendChild(newExperience);
+});
+                </code></pre>
+                <p>For the full code and more details, visit the <a href="https://github.com/your-repo/portfolio-generator" target="_blank">GitHub repository</a>.</p>
+            
+                <a href="../projects.html" class="cta-button">Back to Projects</a>
+
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 Tehj Patel</p>
+    </footer>
+
+    <script>
+        document.body.setAttribute('data-theme', localStorage.getItem('theme') || 'custom');
+    </script>
+    <script src="../scripts/global.js"></script>
+</body>
+</html>
