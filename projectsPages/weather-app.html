@@ -191,20 +191,14 @@
             <img src="images/weather-app.png" alt="Weather App Screenshot">
 
             <h3>Project Overview</h3>
-            <p>This Weather App is a dynamic web application that provides real-time weather forecasts for locations worldwide. Built with JavaScript, HTML, and CSS, the app integrates with multiple APIs to fetch current weather data, forecast information, and location-based images. The app demonstrates modern web development practices including API integration, asynchronous JavaScript, and responsive design.</p>
-            
-            <h3>Interactive Demo</h3>
-            <p>Try out a simplified version of the weather app below. Enter a city name to see what weather information would be displayed.</p>
-            
-            <div class="weather-demo">
-                <div class="weather-search">
-                    <input type="text" id="demo-city" placeholder="Enter city name (e.g. London, Tokyo, New York)">
-                    <button id="demo-get-weather">Get Weather</button>
-                </div>
-                <div class="weather-display" id="demo-weather">
-                    <p>Enter a city name and click "Get Weather" to see the forecast.</p>
-                </div>
-            </div>
+            <p>This Weather App is a minimalist Python command-line tool that fetches current weather data from the OpenWeatherMap API. It accepts one or more comma-separated city names, supports Celsius or Fahrenheit units, and prints temperature, humidity, wind speed and a short weather description for each city. The script focuses on clear, resilient API usage with basic input validation and error messages.</p>
+
+            <h3>How to Run</h3>
+            <p>Run the script from the command line and follow the prompts:</p>
+            <pre style="background:#111;padding:12px;border-radius:6px;color:#fff;">python main.py
+Choose temperature unit (C for Celsius, F for Fahrenheit): C
+Enter city names separated by commas (e.g., London,New York,Paris): London,Paris</pre>
+            <p>The script will print weather details for each city entered. Ensure you have an OpenWeatherMap API key set in the script or environment before running.</p>
             
             <h3>Features Showcase</h3>
             <p>The app comes with a clean, intuitive interface where users can search for any city and instantly get detailed weather information.</p>

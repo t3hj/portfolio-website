@@ -3,948 +3,516 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tehj Patel — Software Engineer & Cybersecurity</title>
+  <meta name="description" content="Tehj Patel is a graduate software engineer building AI, automation, and full-stack products. View projects, experience, education, and CV download.">
+  <meta name="theme-color" content="#07101d">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Tehj Patel | Graduate Software Engineer">
+  <meta property="og:description" content="Graduate software engineer portfolio with AI projects, Brunel awards, robotics leadership experience, education, and CV download.">
+  <meta property="og:image" content="images/portfolio-preview.png">
+  <title>Tehj Patel | Graduate Software Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <style>
-    :root {
-      --navy: #050d1a;
-      --navy-mid: #0a1628;
-      --navy-light: #0f2040;
-      --gold: #f5c842;
-      --gold-dim: rgba(245,200,66,0.12);
-      --cyan: #4dd9f0;
-      --cyan-dim: rgba(77,217,240,0.08);
-      --white: #f0f4ff;
-      --muted: #8899bb;
-      --border: rgba(245,200,66,0.18);
-    }
-
-    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--navy);
-      color: var(--white);
-      font-family: 'Syne', sans-serif;
-      overflow-x: hidden;
-      cursor: none;
-    }
-
-    /* Custom cursor */
-    .cursor {
-      position: fixed;
-      width: 10px; height: 10px;
-      background: var(--gold);
-      border-radius: 50%;
-      pointer-events: none;
-      z-index: 9999;
-      transform: translate(-50%,-50%);
-      transition: transform 0.1s ease;
-    }
-    .cursor-ring {
-      position: fixed;
-      width: 34px; height: 34px;
-      border: 1.5px solid var(--gold);
-      border-radius: 50%;
-      pointer-events: none;
-      z-index: 9998;
-      transform: translate(-50%,-50%);
-      transition: all 0.18s ease;
-      opacity: 0.5;
-    }
-
-    /* Grid background */
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(245,200,66,0.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(245,200,66,0.025) 1px, transparent 1px);
-      background-size: 60px 60px;
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    /* Glow orbs */
-    .orb {
-      position: fixed;
-      border-radius: 50%;
-      filter: blur(100px);
-      pointer-events: none;
-      z-index: 0;
-    }
-    .orb-1 {
-      width: 500px; height: 500px;
-      background: radial-gradient(circle, rgba(245,200,66,0.08), transparent 70%);
-      top: -150px; right: -100px;
-    }
-    .orb-2 {
-      width: 400px; height: 400px;
-      background: radial-gradient(circle, rgba(77,217,240,0.06), transparent 70%);
-      bottom: 100px; left: -100px;
-    }
-
-    /* ── NAV ── */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      padding: 24px 60px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: linear-gradient(to bottom, rgba(5,13,26,0.9), transparent);
-      backdrop-filter: blur(4px);
-    }
-    .nav-logo {
-      font-family: 'Space Mono', monospace;
-      font-size: 0.85rem;
-      color: var(--gold);
-      letter-spacing: 0.12em;
-      text-decoration: none;
-    }
-    .nav-logo span { color: var(--muted); }
-    .nav-links { display: flex; gap: 36px; list-style: none; }
-    .nav-links a {
-      font-family: 'Space Mono', monospace;
-      font-size: 0.72rem;
-      letter-spacing: 0.15em;
-      color: var(--muted);
-      text-decoration: none;
-      text-transform: uppercase;
-      transition: color 0.2s;
-    }
-    .nav-links a:hover { color: var(--gold); }
-    .nav-cta {
-      font-family: 'Space Mono', monospace;
-      font-size: 0.72rem;
-      letter-spacing: 0.1em;
-      padding: 10px 20px;
-      border: 1.5px solid var(--gold);
-      color: var(--gold);
-      text-decoration: none;
-      text-transform: uppercase;
-      transition: all 0.2s;
-    }
-    .nav-cta:hover { background: var(--gold); color: var(--navy); }
-
-    /* ── HERO ── */
-    .hero {
-      position: relative;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      padding: 120px 60px 80px;
-      z-index: 1;
-    }
-    .hero-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      width: 100%;
-      display: grid;
-      grid-template-columns: 1fr 380px;
-      gap: 80px;
-      align-items: center;
-    }
-
-    .hero-eyebrow {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      margin-bottom: 28px;
-      opacity: 0;
-      animation: fadeUp 0.7s 0.2s ease forwards;
-    }
-    .eyebrow-line {
-      width: 40px; height: 1.5px;
-      background: var(--gold);
-    }
-    .eyebrow-text {
-      font-family: 'Space Mono', monospace;
-      font-size: 0.72rem;
-      letter-spacing: 0.2em;
-      color: var(--gold);
-      text-transform: uppercase;
-    }
-
-    .hero-name {
-      font-size: clamp(3.2rem, 6vw, 5.5rem);
-      font-weight: 800;
-      line-height: 1.02;
-      letter-spacing: -0.02em;
-      margin-bottom: 16px;
-      opacity: 0;
-      animation: fadeUp 0.7s 0.35s ease forwards;
-    }
-    .hero-name .line-2 {
-      color: var(--gold);
-      display: block;
-    }
-
-    .hero-role {
-      font-family: 'Space Mono', monospace;
-      font-size: 0.88rem;
-      color: var(--cyan);
-      letter-spacing: 0.1em;
-      margin-bottom: 28px;
-      opacity: 0;
-      animation: fadeUp 0.7s 0.45s ease forwards;
-    }
-    .hero-role::before { content: '> '; color: var(--muted); }
-
-    .hero-bio {
-      font-size: 1.05rem;
-      line-height: 1.75;
-      color: var(--muted);
-      max-width: 520px;
-      margin-bottom: 44px;
-      opacity: 0;
-      animation: fadeUp 0.7s 0.55s ease forwards;
-    }
-    .hero-bio strong { color: var(--white); font-weight: 600; }
-
-    .hero-actions {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-      opacity: 0;
-      animation: fadeUp 0.7s 0.65s ease forwards;
-    }
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 14px 28px;
-      background: var(--gold);
-      color: var(--navy);
-      font-family: 'Space Mono', monospace;
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      text-decoration: none;
-      transition: all 0.22s;
-    }
-    .btn-primary:hover { background: var(--white); transform: translateY(-2px); }
-    .btn-ghost {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 14px 28px;
-      border: 1.5px solid var(--border);
-      color: var(--muted);
-      font-family: 'Space Mono', monospace;
-      font-size: 0.78rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      text-decoration: none;
-      transition: all 0.22s;
-    }
-    .btn-ghost:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
-
-    /* Hero right card */
-    .hero-card {
-      background: var(--navy-mid);
-      border: 1px solid var(--border);
-      padding: 36px;
-      position: relative;
-      opacity: 0;
-      animation: fadeLeft 0.8s 0.5s ease forwards;
-    }
-    .hero-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0;
-      width: 60px; height: 3px;
-      background: var(--gold);
-    }
-    .card-label {
-      font-family: 'Space Mono', monospace;
-      font-size: 0.65rem;
-      letter-spacing: 0.2em;
-      color: var(--gold);
-      text-transform: uppercase;
-      margin-bottom: 24px;
-    }
-    .stat-row {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-    .stat-item { border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 18px; }
-    .stat-item:last-child { border-bottom: none; padding-bottom: 0; }
-    .stat-value {
-      font-size: 2rem;
-      font-weight: 800;
-      color: var(--white);
-      line-height: 1;
-      margin-bottom: 4px;
-    }
-    .stat-value span { color: var(--gold); }
-    .stat-desc {
-      font-family: 'Space Mono', monospace;
-      font-size: 0.68rem;
-      color: var(--muted);
-      letter-spacing: 0.05em;
-    }
-    .badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 24px;
-      padding-top: 24px;
-      border-top: 1px solid rgba(255,255,255,0.05);
-    }
-    .badge {
-      font-family: 'Space Mono', monospace;
-      font-size: 0.62rem;
-      padding: 5px 10px;
-      background: var(--gold-dim);
-      border: 1px solid rgba(245,200,66,0.25);
-      color: var(--gold);
-      letter-spacing: 0.08em;
-    }
-
-    /* scroll indicator */
-    .scroll-hint {
-      position: absolute;
-      bottom: 40px;
-      left: 60px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      opacity: 0;
-      animation: fadeUp 0.7s 1s ease forwards;
-    }
-    .scroll-hint-line {
-      width: 40px;
-      height: 1px;
-      background: var(--muted);
-    }
-    .scroll-hint span {
-      font-family: 'Space Mono', monospace;
-      font-size: 0.65rem;
-      letter-spacing: 0.2em;
-      color: var(--muted);
-      text-transform: uppercase;
-    }
-
-    /* ── ABOUT STRIP ── */
-    .about-strip {
-      position: relative;
-      z-index: 1;
-      padding: 100px 60px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    .section-header {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 60px;
-    }
-    .section-num {
-      font-family: 'Space Mono', monospace;
-      font-size: 0.72rem;
-      color: var(--gold);
-      letter-spacing: 0.15em;
-    }
-    .section-title {
-      font-size: 2.2rem;
-      font-weight: 800;
-      letter-spacing: -0.01em;
-    }
-    .section-line {
-      flex: 1;
-      height: 1px;
-      background: var(--border);
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: start;
-    }
-    .about-text p {
-      font-size: 1rem;
-      line-height: 1.8;
-      color: var(--muted);
-      margin-bottom: 20px;
-    }
-    .about-text p strong { color: var(--white); }
-    .about-text p em {
-      color: var(--cyan);
-      font-style: normal;
-      font-weight: 600;
-    }
-
-    .skills-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-    .skill-row {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-    .skill-name {
-      font-family: 'Space Mono', monospace;
-      font-size: 0.72rem;
-      color: var(--muted);
-      width: 110px;
-      flex-shrink: 0;
-    }
-    .skill-bar-outer {
-      flex: 1;
-      height: 3px;
-      background: rgba(255,255,255,0.07);
-      position: relative;
-      overflow: hidden;
-    }
-    .skill-bar-fill {
-      position: absolute;
-      top: 0; left: 0;
-      height: 100%;
-      background: var(--gold);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 1.2s cubic-bezier(0.4,0,0.2,1);
-    }
-    .skill-bar-fill.cyan { background: var(--cyan); }
-    .skill-bar-fill.animate { transform: scaleX(1); }
-    .skill-pct {
-      font-family: 'Space Mono', monospace;
-      font-size: 0.65rem;
-      color: var(--gold);
-      width: 36px;
-      text-align: right;
-    }
-
-    /* ── HIGHLIGHTS ── */
-    .highlights {
-      position: relative;
-      z-index: 1;
-      background: var(--navy-mid);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      padding: 80px 60px;
-      overflow: hidden;
-    }
-    .highlights::before {
-      content: '';
-      position: absolute;
-      top: -200px; right: -200px;
-      width: 600px; height: 600px;
-      background: radial-gradient(circle, rgba(245,200,66,0.04), transparent 70%);
-      pointer-events: none;
-    }
-    .highlights-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    .highlights-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2px;
-      margin-top: 60px;
-    }
-    .highlight-card {
-      padding: 36px 32px;
-      background: var(--navy);
-      border: 1px solid var(--border);
-      transition: all 0.25s;
-      position: relative;
-      overflow: hidden;
-    }
-    .highlight-card::after {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      height: 2px;
-      background: var(--gold);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.3s ease;
-    }
-    .highlight-card:hover::after { transform: scaleX(1); }
-    .highlight-card:hover { background: var(--navy-light); }
-    .hc-icon {
-      font-size: 1.6rem;
-      color: var(--gold);
-      margin-bottom: 18px;
-    }
-    .hc-title {
-      font-size: 1.1rem;
-      font-weight: 700;
-      margin-bottom: 10px;
-      color: var(--white);
-    }
-    .hc-desc {
-      font-family: 'Space Mono', monospace;
-      font-size: 0.72rem;
-      line-height: 1.7;
-      color: var(--muted);
-    }
-
-    /* ── FEATURED PROJECT ── */
-    .featured {
-      position: relative;
-      z-index: 1;
-      padding: 100px 60px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    .featured-project {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
-      background: var(--navy-mid);
-      border: 1px solid var(--border);
-      padding: 60px;
-      position: relative;
-    }
-    .featured-project::before {
-      content: 'FEATURED PROJECT';
-      position: absolute;
-      top: -12px; left: 40px;
-      font-family: 'Space Mono', monospace;
-      font-size: 0.65rem;
-      letter-spacing: 0.2em;
-      background: var(--gold);
-      color: var(--navy);
-      padding: 3px 12px;
-      font-weight: 700;
-    }
-    .fp-tag {
-      font-family: 'Space Mono', monospace;
-      font-size: 0.65rem;
-      letter-spacing: 0.15em;
-      color: var(--cyan);
-      text-transform: uppercase;
-      margin-bottom: 16px;
-    }
-    .fp-title {
-      font-size: 2.4rem;
-      font-weight: 800;
-      margin-bottom: 20px;
-      letter-spacing: -0.02em;
-    }
-    .fp-desc {
-      font-size: 0.95rem;
-      line-height: 1.75;
-      color: var(--muted);
-      margin-bottom: 28px;
-    }
-    .fp-tech {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 32px;
-    }
-    .tech-tag {
-      font-family: 'Space Mono', monospace;
-      font-size: 0.62rem;
-      padding: 4px 10px;
-      background: var(--cyan-dim);
-      border: 1px solid rgba(77,217,240,0.2);
-      color: var(--cyan);
-      letter-spacing: 0.06em;
-    }
-    .fp-stats {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-    .fp-stat-item {
-      padding: 20px 24px;
-      background: var(--navy);
-      border-left: 3px solid var(--gold);
-    }
-    .fp-stat-label {
-      font-family: 'Space Mono', monospace;
-      font-size: 0.65rem;
-      color: var(--gold);
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      margin-bottom: 6px;
-    }
-    .fp-stat-text {
-      font-size: 0.9rem;
-      color: var(--muted);
-      line-height: 1.5;
-    }
-
-    /* ── SOCIAL BAR ── */
-    .social-bar {
-      position: fixed;
-      left: 28px;
-      bottom: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 18px;
-      z-index: 50;
-    }
-    .social-bar a {
-      color: var(--muted);
-      font-size: 1rem;
-      transition: color 0.2s, transform 0.2s;
-      text-decoration: none;
-    }
-    .social-bar a:hover { color: var(--gold); transform: translateX(3px); }
-    .social-bar::after {
-      content: '';
-      width: 1px; height: 80px;
-      background: linear-gradient(to bottom, var(--muted), transparent);
-    }
-
-    /* ── FOOTER ── */
-    footer {
-      position: relative;
-      z-index: 1;
-      background: var(--navy-mid);
-      border-top: 1px solid var(--border);
-      padding: 40px 60px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .footer-copy {
-      font-family: 'Space Mono', monospace;
-      font-size: 0.68rem;
-      color: var(--muted);
-      letter-spacing: 0.08em;
-    }
-    .footer-links {
-      display: flex;
-      gap: 28px;
-    }
-    .footer-links a {
-      font-family: 'Space Mono', monospace;
-      font-size: 0.68rem;
-      color: var(--muted);
-      text-decoration: none;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      transition: color 0.2s;
-    }
-    .footer-links a:hover { color: var(--gold); }
-
-    /* Animations */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(24px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeLeft {
-      from { opacity: 0; transform: translateX(30px); }
-      to   { opacity: 1; transform: translateX(0); }
-    }
-
-    /* ── MOBILE ── */
-    @media (max-width: 900px) {
-      nav { padding: 20px 24px; }
-      .nav-links, .nav-cta { display: none; }
-      .hero { padding: 100px 24px 60px; }
-      .hero-inner { grid-template-columns: 1fr; gap: 48px; }
-      .hero-card { display: none; }
-      .about-strip, .featured { padding: 70px 24px; }
-      .about-grid { grid-template-columns: 1fr; gap: 40px; }
-      .highlights { padding: 60px 24px; }
-      .highlights-grid { grid-template-columns: 1fr; gap: 12px; }
-      .featured-project { grid-template-columns: 1fr; padding: 36px 24px; }
-      footer { padding: 28px 24px; flex-direction: column; gap: 16px; text-align: center; }
-      .social-bar { display: none; }
-      .scroll-hint { display: none; }
-    }
-  </style>
+  <link rel="stylesheet" href="styles/home.css">
+  <script defer src="scripts/main.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Tehj Patel",
+    "jobTitle": "Graduate Software Engineer",
+    "url": "./",
+    "sameAs": [
+      "https://github.com/t3hj",
+      "https://www.linkedin.com/in/tehj-k-patel/"
+    ],
+    "knowsAbout": ["Software Engineering", "Artificial Intelligence", "Python", "JavaScript", "Robotics"]
+  }
+  </script>
 </head>
 <body>
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
+  <div class="background-orb orb-a" aria-hidden="true"></div>
+  <div class="background-orb orb-b" aria-hidden="true"></div>
+  <div class="background-grid" aria-hidden="true"></div>
 
-  <!-- Cursor -->
-  <div class="cursor" id="cursor"></div>
-  <div class="cursor-ring" id="cursorRing"></div>
+  <header class="site-header">
+    <nav class="site-nav">
+      <a class="brand" href="#home" aria-label="Tehj Patel home">
+        <span class="brand-mark">TP</span>
+        <span class="brand-name">Tehj Patel</span>
+      </a>
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#github">GitHub</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <a class="nav-button" href="Tehj_Patel_CV.pdf" download>
+        <i class="fa-solid fa-download"></i>
+        Download CV
+      </a>
+    </nav>
+  </header>
 
-  <!-- Background -->
-  <div class="orb orb-1"></div>
-  <div class="orb orb-2"></div>
-
-  <!-- Social bar -->
-  <div class="social-bar">
-    <a href="https://github.com/t3hj" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-    <a href="https://www.linkedin.com/in/tehj-k-patel/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-    <a href="mailto:tehjpatel@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-  </div>
-
-  <!-- Nav -->
-  <nav>
-    <a class="nav-logo" href="index.html">T<span>.</span>PATEL</a>
-    <ul class="nav-links">
-      <li><a href="about.html">About</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="skills.html">Skills</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <a class="nav-cta" href="contact.html">Hire Me</a>
-  </nav>
-
-  <!-- Hero -->
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-left">
-        <div class="hero-eyebrow">
-          <div class="eyebrow-line"></div>
-          <span class="eyebrow-text">Available for Graduate Roles · June 2026</span>
+  <main id="home">
+    <section class="hero section-shell">
+      <div class="hero-copy" data-reveal>
+        <div class="eyebrow">
+          <span class="eyebrow-pill">Available for Graduate Software Engineering roles</span>
         </div>
-        <h1 class="hero-name">
-          TEHJ<br>
-          <span class="line-2">PATEL</span>
-        </h1>
-        <p class="hero-role">Software Engineer &amp; Cybersecurity · Brunel University London</p>
-        <p class="hero-bio">
-          Final-year Computer Science student building <strong>AI-powered civic tech</strong>, 
-          securing systems, and teaching the next generation of engineers. 
-          Recipient of Brunel's <em>READY Leadership Award</em>. 
-          Graduating June 2026 — actively seeking graduate roles in software engineering and cybersecurity.
+        <p class="terminal-line"><span>tehj@portfolio:~$</span> <strong data-typing>building polished software for real users</strong></p>
+        <h1>Hi, I&apos;m <span>Tehj Patel</span><br>Software Engineer</h1>
+        <p class="hero-text">
+          I build AI-powered applications, full-stack web platforms, and automation tools that solve real problems.
+          I graduated with a BSc (Hons) in Computer Science, achieving Second Class (Upper Division) Honours (2:1), and I&apos;m now looking for graduate software engineering opportunities across the UK.
         </p>
         <div class="hero-actions">
-          <a class="btn-primary" href="projects.html">
-            <i class="fas fa-code"></i> View Projects
-          </a>
-          <a class="btn-ghost" href="contact.html">
-            <i class="fas fa-paper-plane"></i> Get in Touch
-          </a>
+          <a class="button button-primary" href="#projects">View My Work</a>
+          <a class="button button-secondary" href="#contact">Contact Me</a>
+        </div>
+        <div class="hero-meta">
+          <span><i class="fa-solid fa-graduation-cap"></i> BSc (Hons) Computer Science, 2:1</span>
+          <span><i class="fa-solid fa-location-dot"></i> Based in London, UK</span>
+          <span><i class="fa-brands fa-github"></i> 500+ commits and growing</span>
         </div>
       </div>
 
-      <div class="hero-card">
-        <p class="card-label">// quick stats</p>
-        <div class="stat-row">
-          <div class="stat-item">
-            <div class="stat-value">3<span>+</span></div>
-            <div class="stat-desc">Years teaching code &amp; robotics</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-value">30<span>+</span></div>
-            <div class="stat-desc">Students taught per workshop</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-value">D<span>*</span>D<span>*</span>D<span>*</span></div>
-            <div class="stat-desc">BTEC IT — triple distinction star</div>
+      <div class="hero-portrait" data-reveal>
+        <div class="portrait-frame">
+          <div class="portrait-blur" style="background-image:url('images/hero-photo.jpeg')"></div>
+          <img src="images/hero-photo.jpeg" alt="Tehj Patel at a restaurant">
+          <div class="portrait-chip">
+            <i class="fa-solid fa-location-pin"></i>
+            Based in London, UK
           </div>
         </div>
-        <div class="badges">
-          <span class="badge">READY Certificate</span>
-          <span class="badge">Leadership Award</span>
-          <span class="badge">TryHackMe Active</span>
-          <span class="badge">Final Year Project</span>
+        <div class="portrait-card">
+          <div>
+            <p class="card-label">Currently building</p>
+            <h2>AI tools, graduate applications, and portfolio improvements</h2>
+          </div>
+          <ul>
+            <li>Local Lens AI civic reporting platform</li>
+            <li>SwiftBot navigation and robotics work</li>
+            <li>Interview prep and system design practice</li>
+          </ul>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="scroll-hint">
-      <div class="scroll-hint-line"></div>
-      <span>Scroll to explore</span>
-    </div>
-  </section>
+    <section class="stats-strip section-shell" aria-label="Portfolio highlights" data-reveal>
+      <article class="stat-card">
+        <i class="fa-solid fa-graduation-cap"></i>
+        <strong>2:1 Graduate</strong>
+        <span>Computer Science · Brunel University London</span>
+      </article>
+      <article class="stat-card">
+        <i class="fa-solid fa-code"></i>
+        <strong>20+ projects</strong>
+        <span>Built across web, AI, and automation</span>
+      </article>
+      <article class="stat-card">
+        <i class="fa-brands fa-github"></i>
+        <strong>500+ commits</strong>
+        <span>Consistent development and iteration</span>
+      </article>
+      <article class="stat-card">
+        <i class="fa-solid fa-robot"></i>
+        <strong>Robotics Instructor</strong>
+        <span>Teaching and mentoring experience</span>
+      </article>
+      <article class="stat-card">
+        <i class="fa-solid fa-mug-hot"></i>
+        <strong>Problem solver</strong>
+        <span>Focused on useful, shippable work</span>
+      </article>
+    </section>
 
-  <!-- About -->
-  <section class="about-strip">
-    <div class="section-header">
-      <span class="section-num">01 /</span>
-      <h2 class="section-title">About</h2>
-      <div class="section-line"></div>
-    </div>
-    <div class="about-grid">
-      <div class="about-text">
-        <p>
-          I'm a <strong>final-year BSc Computer Science student at Brunel University London</strong>, 
-          graduating June 2026. My Final Year Project — <em>Local Lens</em> — is a full-stack 
-          AI civic-reporting platform that uses Claude vision AI to analyse photographs and 
-          auto-fill structured council issue reports, complete with a priority-scoring engine 
-          and anti-abuse controls.
-        </p>
-        <p>
-          Alongside development, I've spent <strong>three years as a Robotics &amp; Coding Instructor</strong> 
-          at RoboThink, teaching Python and hardware integration to 120+ students weekly aged 4–14. 
-          That experience sharpened my ability to communicate complex ideas clearly — 
-          something I bring directly to code reviews and collaboration.
-        </p>
-        <p>
-          I'm pursuing graduate roles in <strong>software engineering and cybersecurity</strong>, 
-          backed by Year 3 modules in both disciplines, active TryHackMe practice (Pre-Security 
-          and SOC Level 1), and a black belt in Taekwondo — because discipline in the dojo 
-          transfers directly to debugging at 2am.
-        </p>
+    <section id="about" class="content-section section-shell" data-reveal>
+      <div class="section-heading">
+        <span>01</span>
+        <h2>About Me</h2>
       </div>
-      <div>
-        <div class="skills-grid" id="skillsGrid">
-          <div class="skill-row">
-            <span class="skill-name">Python</span>
-            <div class="skill-bar-outer"><div class="skill-bar-fill" data-w="0.9"></div></div>
-            <span class="skill-pct">Adv.</span>
+      <div class="about-grid">
+        <article class="panel">
+          <p>
+            I&apos;m a computer science graduate with a strong interest in AI, full-stack development, and systems that make everyday tasks easier.
+            I graduated from Brunel University London with Second Class (Upper Division) Honours (2:1), and my final year work focused on practical, user-facing software rather than theory for theory&apos;s sake.
+          </p>
+          <p>
+            I enjoy turning complex problems into simple, clean experiences. I like building products that are useful, accessible, and clear enough that a recruiter or engineer can understand them quickly.
+          </p>
+          <p>
+            Alongside development, I&apos;ve spent time teaching robotics and coding, which strengthened how I communicate, explain ideas, and support other people in a team environment.
+          </p>
+        </article>
+        <article class="panel compact-card">
+          <p class="card-label">Quick facts</p>
+          <div class="fact-list">
+            <div><span>Role</span><strong>Graduate Software Engineer</strong></div>
+            <div><span>Degree</span><strong>Computer Science, 2:1</strong></div>
+            <div><span>Focus</span><strong>AI, full-stack, automation</strong></div>
+            <div><span>Experience</span><strong>Robotics Instructor</strong></div>
+            <div><span>Location</span><strong>London</strong></div>
           </div>
-          <div class="skill-row">
-            <span class="skill-name">Java</span>
-            <div class="skill-bar-outer"><div class="skill-bar-fill" data-w="0.7"></div></div>
-            <span class="skill-pct">Int.</span>
-          </div>
-          <div class="skill-row">
-            <span class="skill-name">JavaScript</span>
-            <div class="skill-bar-outer"><div class="skill-bar-fill" data-w="0.7"></div></div>
-            <span class="skill-pct">Int.</span>
-          </div>
-          <div class="skill-row">
-            <span class="skill-name">C#</span>
-            <div class="skill-bar-outer"><div class="skill-bar-fill" data-w="0.6"></div></div>
-            <span class="skill-pct">Int.</span>
-          </div>
-          <div class="skill-row">
-            <span class="skill-name">React / Node</span>
-            <div class="skill-bar-outer"><div class="skill-bar-fill cyan" data-w="0.65"></div></div>
-            <span class="skill-pct">Int.</span>
-          </div>
-          <div class="skill-row">
-            <span class="skill-name">Docker</span>
-            <div class="skill-bar-outer"><div class="skill-bar-fill cyan" data-w="0.6"></div></div>
-            <span class="skill-pct">Int.</span>
-          </div>
-          <div class="skill-row">
-            <span class="skill-name">Supabase / SQL</span>
-            <div class="skill-bar-outer"><div class="skill-bar-fill cyan" data-w="0.65"></div></div>
-            <span class="skill-pct">Int.</span>
-          </div>
-          <div class="skill-row">
-            <span class="skill-name">Cybersecurity</span>
-            <div class="skill-bar-outer"><div class="skill-bar-fill" data-w="0.6"></div></div>
-            <span class="skill-pct">Int.</span>
-          </div>
-        </div>
+        </article>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Highlights -->
-  <section class="highlights">
-    <div class="highlights-inner">
-      <div class="section-header">
-        <span class="section-num">02 /</span>
-        <h2 class="section-title">What I Bring</h2>
-        <div class="section-line"></div>
+    <section id="skills" class="content-section section-shell" data-reveal>
+      <div class="section-heading">
+        <span>02</span>
+        <h2>Skills</h2>
       </div>
-      <div class="highlights-grid">
-        <div class="highlight-card">
-          <div class="hc-icon"><i class="fas fa-brain"></i></div>
-          <h3 class="hc-title">AI-First Builder</h3>
-          <p class="hc-desc">Built a full production system integrating Claude Vision API, geolocation pipelines, SHA-256 anti-duplicate controls, and a custom 0–100 priority-scoring engine.</p>
-        </div>
-        <div class="highlight-card">
-          <div class="hc-icon"><i class="fas fa-shield-halved"></i></div>
-          <h3 class="hc-title">Security Mindset</h3>
-          <p class="hc-desc">Year 3 Cybersecurity module, active TryHackMe learner (SOC Level 1), and practical experience implementing secure credential management and hashing in real projects.</p>
-        </div>
-        <div class="highlight-card">
-          <div class="hc-icon"><i class="fas fa-people-group"></i></div>
-          <h3 class="hc-title">Communicator & Leader</h3>
-          <p class="hc-desc">Brunel READY Leadership Award recipient. Three years teaching technical concepts to students aged 4–14 — proven ability to explain, inspire, and lead.</p>
-        </div>
+      <div class="skills-grid">
+        <article class="panel">
+          <h3>Languages</h3>
+          <div class="icon-grid">
+            <span><i class="fa-brands fa-java"></i>Java</span>
+            <span><i class="fa-brands fa-python"></i>Python</span>
+            <span><i class="fa-brands fa-js"></i>JavaScript</span>
+            <span><i class="fa-solid fa-code"></i>TypeScript</span>
+            <span><i class="fa-solid fa-database"></i>SQL</span>
+            <span><i class="fa-brands fa-html5"></i>HTML</span>
+            <span><i class="fa-brands fa-css3-alt"></i>CSS</span>
+          </div>
+        </article>
+        <article class="panel">
+          <h3>Frameworks and tools</h3>
+          <div class="icon-grid">
+            <span><i class="fa-brands fa-react"></i>React</span>
+            <span><i class="fa-brands fa-node-js"></i>Node.js</span>
+            <span><i class="fa-brands fa-bootstrap"></i>Bootstrap</span>
+            <span><i class="fa-solid fa-wand-magic-sparkles"></i>Tailwind</span>
+            <span><i class="fa-brands fa-github"></i>GitHub</span>
+            <span><i class="fa-brands fa-docker"></i>Docker</span>
+            <span><i class="fa-solid fa-server"></i>Supabase</span>
+            <span><i class="fa-solid fa-shield-halved"></i>Cybersecurity</span>
+          </div>
+        </article>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Featured project -->
-  <section class="featured">
-    <div class="section-header">
-      <span class="section-num">03 /</span>
-      <h2 class="section-title">Flagship Work</h2>
-      <div class="section-line"></div>
-    </div>
-    <div class="featured-project">
-      <div>
-        <p class="fp-tag">Final Year Project · 2025–26</p>
-        <h3 class="fp-title">Local Lens</h3>
-        <p class="fp-desc">
-          An AI-powered civic reporting platform where residents photograph local council issues 
-          — potholes, broken lighting, fly-tipping — and Claude Vision AI automatically fills 
-          in category, severity, and recommended action. The council dashboard surfaces the most 
-          urgent cases via a custom priority engine combining AI severity, open time, community 
-          upvotes, and local density.
-        </p>
-        <div class="fp-tech">
-          <span class="tech-tag">Python</span>
-          <span class="tech-tag">Streamlit</span>
-          <span class="tech-tag">Claude API</span>
-          <span class="tech-tag">Supabase</span>
-          <span class="tech-tag">Docker</span>
-          <span class="tech-tag">Folium</span>
-          <span class="tech-tag">Pandas</span>
-          <span class="tech-tag">pytest</span>
+    <section id="projects" class="content-section section-shell" data-reveal>
+      <div class="section-heading split">
+        <div>
+          <span>03</span>
+          <h2>Featured Projects</h2>
         </div>
-        <a class="btn-primary" href="projects.html">
-          <i class="fas fa-arrow-right"></i> See All Projects
-        </a>
-      </div>
-      <div class="fp-stats">
-        <div class="fp-stat-item">
-          <div class="fp-stat-label">Priority Engine</div>
-          <div class="fp-stat-text">Custom 0–100 scoring combining AI severity, time-open, upvotes &amp; report density</div>
-        </div>
-        <div class="fp-stat-item">
-          <div class="fp-stat-label">Anti-Abuse Controls</div>
-          <div class="fp-stat-text">SHA-256 image hashing, Haversine proximity detection, 4-day reporter cooldown</div>
-        </div>
-        <div class="fp-stat-item">
-          <div class="fp-stat-label">Geolocation Pipeline</div>
-          <div class="fp-stat-text">EXIF GPS extraction, Nominatim geocoding fallback, interactive Folium heatmaps</div>
+        <div class="filter-bar" role="tablist" aria-label="Project filters">
+          <button class="filter-button is-active" type="button" data-filter="all">All</button>
+          <button class="filter-button" type="button" data-filter="ai">AI</button>
+          <button class="filter-button" type="button" data-filter="web">Web</button>
+          <button class="filter-button" type="button" data-filter="tools">Tools</button>
+          <button class="filter-button" type="button" data-filter="robotics">Robotics</button>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- Footer -->
-  <footer>
-    <span class="footer-copy">© 2025 Tehj Patel — Stanmore, London</span>
+      <div class="project-grid">
+        <!-- 1. Local Lens (AI) -->
+        <article class="project-card" data-tags="ai web">
+          <div class="project-topline">
+            <span>AI project</span>
+            <span>Local Lens</span>
+          </div>
+          <h3>AI civic reporting platform</h3>
+          <p>Turns resident photos into structured council reports, with prioritisation, deduplication, and a dashboard for managing submissions.</p>
+          <div class="project-tags">
+            <span>Claude Vision</span><span>Supabase</span><span>Python</span><span>Streamlit</span>
+          </div>
+          <img src="images/local-lens/preview.svg" alt="Local Lens preview" style="width:100%;margin-top:12px;border-radius:6px;">
+          <div class="project-actions">
+            <a href="https://github.com/t3hj" target="_blank" rel="noreferrer">GitHub</a>
+            <a href="projects.html">Live Demo</a>
+          </div>
+        </article>
+
+        <!-- 2. Sillage App (React) -->
+        <article class="project-card" data-tags="web react">
+          <div class="project-topline">
+            <span>Web app</span>
+            <span>Sillage App</span>
+          </div>
+          <h3>React single-page app (PWA-ready)</h3>
+          <p>React-based application with PWA manifest and modern frontend tooling. Includes an interactive UI in `src/App.js`, static assets in `public/`, and a build setup via `package.json`.</p>
+          <div class="project-tags">
+            <span>React</span><span>PWA</span><span>JavaScript</span>
+          </div>
+          <img src="images/sillage-app/preview.svg" alt="Sillage App preview" style="width:100%;margin-top:12px;border-radius:6px;">
+          <div class="project-actions">
+            <a href="https://github.com/t3hj" target="_blank" rel="noreferrer">GitHub</a>
+            <a href="https://github.com/t3hj/sillage-app" target="_blank" rel="noreferrer">Repo</a>
+          </div>
+        </article>
+
+        <!-- 3. Portfolio Generator -->
+        <article class="project-card" data-tags="web generator">
+          <div class="project-topline">
+            <span>Web tool</span>
+            <span>Portfolio Generator</span>
+          </div>
+          <h3>Browser-based portfolio generator</h3>
+          <p>Client-side tool that assembles a portfolio from user inputs and exports a downloadable PDF. Built with vanilla JavaScript and `html2pdf.js` for easy sharing and export.</p>
+          <div class="project-tags">
+            <span>JavaScript</span><span>HTML/CSS</span><span>html2pdf.js</span>
+          </div>
+          <img src="images/portfolio-generator/preview.svg" alt="Portfolio Generator preview" style="width:100%;margin-top:12px;border-radius:6px;">
+          <div class="project-actions">
+            <a href="https://github.com/t3hj" target="_blank" rel="noreferrer">GitHub</a>
+            <a href="projectsPages/portfolio-generator.html">Live Demo</a>
+          </div>
+        </article>
+
+        <!-- 4. SwiftBot (Robotics) -->
+        <article class="project-card" data-tags="robotics web">
+          <div class="project-topline">
+            <span>Robotics</span>
+            <span>SwiftBot</span>
+          </div>
+          <h3>Navigation and retracing system</h3>
+          <p>A Java project that parses QR code commands and drives a physical robot through a validated movement sequence.</p>
+          <div class="project-tags">
+            <span>Java</span><span>OOP</span><span>QR Code</span><span>Hardware</span>
+          </div>
+          <img src="images/swiftbot/preview.svg" alt="SwiftBot preview" style="width:100%;margin-top:12px;border-radius:6px;">
+          <div class="project-actions">
+            <a href="https://github.com/t3hj" target="_blank" rel="noreferrer">GitHub</a>
+            <a href="projectsPages/portfolio-generator.html">Live Demo</a>
+          </div>
+        </article>
+
+        <!-- 5. Snake Game (Java) -->
+        <article class="project-card" data-tags="java game">
+          <div class="project-topline">
+            <span>Game</span>
+            <span>Snake Game</span>
+          </div>
+          <h3>Java Swing arcade Snake</h3>
+          <p>Classic Snake built with Java Swing: welcome screen, color chooser, pause/resume (P key), sound effects, food spawning that avoids the snake body, and persistent high-score tracking.</p>
+          <div class="project-tags">
+            <span>Java</span><span>Swing</span><span>Game Loop</span>
+          </div>
+          <img src="images/SnakeGame/preview.svg" alt="Snake Game preview" style="width:100%;margin-top:12px;border-radius:6px;">
+          <div class="project-actions">
+            <a href="https://github.com/t3hj" target="_blank" rel="noreferrer">GitHub</a>
+            <a href="projectsPages/snake-game.html">Live Demo</a>
+          </div>
+        </article>
+
+        <!-- 6. Password Generator -->
+        <article class="project-card" data-tags="python tools">
+          <div class="project-topline">
+            <span>Tool</span>
+            <span>Password Generator</span>
+          </div>
+          <h3>Cryptographically secure password tool</h3>
+          <p>Tkinter desktop utility using Python's <em>secrets</em> module. Configurable length and minimum character types, live strength indicator, copy-to-clipboard and save-to-file with expiration reminders.</p>
+          <div class="project-tags">
+            <span>Python</span><span>secrets</span><span>Tkinter</span><span>Security</span>
+          </div>
+          <img src="images/passwordGenerator/savedToExternalFile.png" alt="Password Generator screenshot" style="width:100%;margin-top:12px;border-radius:6px;">
+          <div class="project-actions">
+            <a href="https://github.com/t3hj" target="_blank" rel="noreferrer">GitHub</a>
+            <a href="projectsPages/password-generator.html">Live Demo</a>
+          </div>
+        </article>
+
+        <!-- 7. Rock Paper Scissors -->
+        <article class="project-card" data-tags="python game">
+          <div class="project-topline">
+            <span>Game</span>
+            <span>Rock Paper Scissors</span>
+          </div>
+          <h3>Tkinter GUI — quick best-of-3 matches</h3>
+          <p>GUI Rock Paper Scissors with player name entry, score tracking persisted to JSON, best-of-3 win condition, and save/restart/reset controls for fast desktop play.</p>
+          <div class="project-tags">
+            <span>Python</span><span>Tkinter</span><span>JSON</span>
+          </div>
+          <img src="images/rock-paper-scissors/preview.svg" alt="Rock Paper Scissors preview" style="width:100%;margin-top:12px;border-radius:6px;">
+          <div class="project-actions">
+            <a href="https://github.com/t3hj" target="_blank" rel="noreferrer">GitHub</a>
+            <a href="projectsPages/rock-paper-scissors.html">Live Demo</a>
+          </div>
+        </article>
+
+        <!-- 8. Weather App -->
+        <article class="project-card" data-tags="web tools">
+          <div class="project-topline">
+            <span>Web app</span>
+            <span>Weather App</span>
+          </div>
+          <h3>Forecast app with dynamic imagery</h3>
+          <p>API-driven weather experience with changing visuals, forecast views, and a responsive interface that works well on mobile.</p>
+          <div class="project-tags">
+            <span>JavaScript</span><span>OpenWeatherMap</span><span>Unsplash</span><span>Responsive UI</span>
+          </div>
+          <img src="images/weatherApp/farenheit.png" alt="Weather App screenshot" style="width:100%;margin-top:12px;border-radius:6px;">
+          <div class="project-actions">
+            <a href="https://github.com/t3hj" target="_blank" rel="noreferrer">GitHub</a>
+            <a href="projectsPages/weather-app.html">Live Demo</a>
+          </div>
+        </article>
+
+        <!-- 9. Music Organiser -->
+        <article class="project-card" data-tags="python tools">
+          <div class="project-topline">
+            <span>Tool</span>
+            <span>Music Organiser</span>
+          </div>
+          <h3>Organises downloaded music by metadata</h3>
+          <p>Desktop Python script to tidy downloaded music collections: reads file metadata, sorts into artist/album folders, handles duplicates, and offers a simple CLI for batch runs.</p>
+          <div class="project-tags">
+            <span>Python</span><span>File IO</span><span>Metadata</span>
+          </div>
+          <img src="images/music-organiser/preview.svg" alt="Music Organiser preview" style="width:100%;margin-top:12px;border-radius:6px;">
+          <div class="project-actions">
+            <a href="https://github.com/t3hj" target="_blank" rel="noreferrer">GitHub</a>
+          </div>
+        </article>
+
+        <!-- 10. CLIGame -->
+        <article class="project-card" data-tags="python cli">
+          <div class="project-topline">
+            <span>CLI</span>
+            <span>CLIGame</span>
+          </div>
+          <h3>Terminal-based Python game</h3>
+          <p>Text-based CLI game implemented in Python across multiple level scripts (`main.py`, `level1.py`, `level2.py`). Simple input-driven gameplay, state progression across levels, and lightweight file-based saves for progress.</p>
+          <div class="project-tags">
+            <span>Python</span><span>CLI</span><span>Game</span>
+          </div>
+          <img src="images/cli-game/preview.svg" alt="CLIGame preview" style="width:100%;margin-top:12px;border-radius:6px;">
+          <div class="project-actions">
+            <a href="https://github.com/t3hj" target="_blank" rel="noreferrer">GitHub</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="experience" class="content-section section-shell" data-reveal>
+      <div class="section-heading">
+        <span>04</span>
+        <h2>Experience</h2>
+      </div>
+      <div class="timeline">
+        <article class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content panel">
+            <p class="timeline-meta">RoboThink, London | Oct 2022 - Present</p>
+            <h3>Robotics and Coding Instructor</h3>
+            <p>Delivered programming, robotics, and engineering workshops to 500+ students aged 4–14, helping build confidence through hands-on learning and structured lesson delivery.</p>
+          </div>
+        </article>
+        <article class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content panel">
+            <p class="timeline-meta">Independent | 2023 - Present</p>
+            <h3>Software Projects Developer</h3>
+            <p>Built personal projects across automation, AI, and web development, including portfolio tooling, generators, translators, and project showcases.</p>
+          </div>
+        </article>
+        <article class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content panel">
+            <p class="timeline-meta">Brunel University London | 2023 - 2026</p>
+            <h3>Computer Science Graduate</h3>
+            <p>Completed final-year study with a focus on AI, cybersecurity, and software engineering, graduating with Second Class (Upper Division) Honours (2:1).</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="education" class="content-section section-shell" data-reveal>
+      <div class="section-heading">
+        <span>05</span>
+        <h2>Education</h2>
+      </div>
+      <div class="timeline education-timeline">
+        <article class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content panel">
+            <p class="timeline-meta">2023 - 2026</p>
+            <h3>Brunel University London</h3>
+            <p>BSc (Hons) Computer Science. Final year modules focused on software engineering, AI, and cybersecurity.</p>
+          </div>
+        </article>
+        <article class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content panel">
+            <p class="timeline-meta">2021 - 2023</p>
+            <h3>Stanmore College</h3>
+            <p>BTEC Level 3 Extended Diploma in IT. Graduated with D*D*D* and built a strong foundation in programming and technical problem solving.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="github" class="content-section section-shell" data-reveal>
+      <div class="section-heading split">
+        <div>
+          <span>06</span>
+          <h2>GitHub Statistics</h2>
+        </div>
+      </div>
+      <div class="github-grid">
+        <article class="panel stats-panel">
+          <div class="stats-mini">
+            <div><strong data-count="20">0</strong><span>projects</span></div>
+            <div><strong data-count="500">0</strong><span>commits</span></div>
+            <div><strong data-count="8">0</strong><span>core stacks</span></div>
+          </div>
+          <div class="github-tags">
+            <span>AI</span><span>Full-stack</span><span>Automation</span><span>Robotics</span><span>Java</span><span>Python</span><span>JavaScript</span>
+          </div>
+        </article>
+        <article class="panel graph-panel">
+          <div class="graph-header">
+            <span>Contribution activity</span>
+            <a href="https://github.com/t3hj" target="_blank" rel="noreferrer">github.com/t3hj</a>
+          </div>
+          <div class="contrib-graph" data-contrib-graph aria-label="GitHub contribution style graph"></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="content-section section-shell contact-section" data-reveal>
+      <div class="section-heading">
+        <span>07</span>
+        <h2>Contact</h2>
+      </div>
+      <div class="contact-grid">
+        <article class="panel contact-panel">
+          <h3>Let&apos;s talk about graduate roles, AI projects, or collaboration.</h3>
+          <p>If you&apos;re hiring, I&apos;d be glad to discuss how I can contribute as a graduate software engineer. You can also reach me on LinkedIn or GitHub.</p>
+          <div class="contact-links">
+            <a href="mailto:tehjpatel@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
+            <a href="https://www.linkedin.com/in/tehj-k-patel/" target="_blank" rel="noreferrer"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+            <a href="https://github.com/t3hj" target="_blank" rel="noreferrer"><i class="fa-brands fa-github"></i> GitHub</a>
+            <a href="Tehj_Patel_CV.pdf" download><i class="fa-solid fa-file-arrow-down"></i> CV</a>
+          </div>
+        </article>
+        <article class="panel contact-panel accent">
+          <p class="card-label">Availability</p>
+          <h3>Open to graduate software engineering roles now.</h3>
+          <p>Strongly interested in engineering teams working on product, AI, automation, and platform work.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Copyright <span id="year"></span> Tehj Patel. Built for graduate applications.</p>
     <div class="footer-links">
-      <a href="about.html">About</a>
-      <a href="projects.html">Projects</a>
-      <a href="skills.html">Skills</a>
-      <a href="contact.html">Contact</a>
+      <a href="#home">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
     </div>
   </footer>
-
-  <script>
-    // Cursor
-    const cursor = document.getElementById('cursor');
-    const ring = document.getElementById('cursorRing');
-    let mx = 0, my = 0, rx = 0, ry = 0;
-    document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
-    function animateCursor() {
-      cursor.style.left = mx + 'px'; cursor.style.top = my + 'px';
-      rx += (mx - rx) * 0.12; ry += (my - ry) * 0.12;
-      ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
-      requestAnimationFrame(animateCursor);
-    }
-    animateCursor();
-
-    // Skill bars on scroll
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.querySelectorAll('.skill-bar-fill').forEach(bar => {
-            bar.style.transform = `scaleX(${bar.dataset.w})`;
-          });
-        }
-      });
-    }, { threshold: 0.3 });
-    const sg = document.getElementById('skillsGrid');
-    if (sg) observer.observe(sg);
-  </script>
 </body>
 </html>

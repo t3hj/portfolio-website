@@ -382,7 +382,7 @@
       <p class="proj-type">Java · Game Dev · Swing</p>
       <h2 class="proj-title">Snake Game</h2>
       <p class="proj-desc">
-        Classic arcade Snake implemented in Java Swing with full game-state management, collision detection, high-score persistence, sound effects, customisable snake colour, and a pause system. Built from scratch as a Year 1 project.
+        Classic arcade Snake built with Java Swing. Features a welcome screen, color chooser for the snake, pause/resume, sound effects, on-screen scoreboard, and a play-again flow. Designed with an explicit game loop and collision detection for a smooth desktop experience.
       </p>
       <div class="proj-tech">
         <span class="t-tag">Java</span>
@@ -390,6 +390,11 @@
         <span class="t-tag">OOP</span>
         <span class="t-tag">Game Loop</span>
       </div>
+      <ul class="proj-highlights">
+        <li>Welcome + start screen with instructions and a color chooser for the snake</li>
+        <li>Arrow-key controls, `P` to pause/resume, and responsive game loop timing</li>
+        <li>Food spawning that avoids the snake body, sound effects for eat/game-over, and an on-screen high-score</li>
+      </ul>
     </article>
 
     <!-- 06 Currency Converter -->
@@ -415,7 +420,7 @@
       <p class="proj-type">Python · Security · Desktop Tool</p>
       <h2 class="proj-title">Password Generator</h2>
       <p class="proj-desc">
-        Cryptographically secure password generator using Python's <code style="color:var(--cyan);font-family:'Space Mono',monospace;font-size:0.85em">secrets</code> module. Customisable length, character-type minimums, visual strength indicator, clipboard integration, and expiry-dated password saving.
+        Tkinter desktop utility using Python's `secrets` for cryptographic-strength passwords. Offers configurable length and minimum counts per character type, a live strength progress bar, copy-to-clipboard and save-to-file features, plus a simple expiration reminder entry.
       </p>
       <div class="proj-tech">
         <span class="t-tag">Python</span>
@@ -424,8 +429,9 @@
         <span class="t-tag">Security</span>
       </div>
       <ul class="proj-highlights">
-        <li>Uses Python <code style="color:var(--cyan);font-family:'Space Mono',monospace">secrets</code> (not random) for cryptographic quality</li>
-        <li>Minimum character-type enforcement prevents weak outputs</li>
+        <li>Cryptographic randomness via `secrets` with minimum-type enforcement to avoid weak passwords</li>
+        <li>GUI features: tooltips, strength progress bar, copy-to-clipboard and save-to-`passwords.txt` with timestamp</li>
+        <li>Generates a simple expiration reminder entry when a password is produced</li>
       </ul>
     </article>
 
@@ -448,17 +454,22 @@
     <!-- 09 Weather App -->
     <article class="proj-card third" data-categories="web" style="animation-delay:0.5s">
       <p class="proj-num">09</p>
-      <p class="proj-type">JavaScript · API · Web App</p>
+      <p class="proj-type">Python · CLI · API</p>
       <h2 class="proj-title">Weather App</h2>
       <p class="proj-desc">
-        Real-time weather app integrating OpenWeatherMap (forecasts) and Unsplash (location imagery). Dynamic backgrounds update to match current conditions; 5-day forecast with weather icons.
+        Lightweight CLI weather lookup using the OpenWeatherMap API. Accepts multiple comma-separated city names, supports Celsius or Fahrenheit units, and prints temperature, humidity, wind speed and a short weather description per city with basic error handling.
       </p>
       <div class="proj-tech">
-        <span class="t-tag">JavaScript</span>
-        <span class="t-tag">HTML/CSS</span>
+        <span class="t-tag">Python</span>
+        <span class="t-tag">requests</span>
         <span class="t-tag">OpenWeatherMap API</span>
-        <span class="t-tag">Unsplash API</span>
+        <span class="t-tag">CLI</span>
       </div>
+      <ul class="proj-highlights">
+        <li>Batch queries for multiple cities with unit selection (°C / °F)</li>
+        <li>Parses and displays temp, humidity, wind speed and human-readable weather text</li>
+        <li>Handles API errors and invalid city names with clear messages</li>
+      </ul>
     </article>
 
     <!-- 10 Simple Translator -->
@@ -483,13 +494,18 @@
       <p class="proj-type">Python · Game · Persistence</p>
       <h2 class="proj-title">Rock Paper Scissors</h2>
       <p class="proj-desc">
-        GUI-based Rock Paper Scissors game using Tkinter with player name customisation, score tracking persisted via JSON, a best-of-3 win condition, and save/reset functionality.
+        Tkinter GUI Rock Paper Scissors with player name customisation, live score tracking, JSON persistence (`scores.json`), best-of-3 win condition, and save/restart/reset controls. Includes simple UX touches like emoji buttons and champion messages.
       </p>
       <div class="proj-tech">
         <span class="t-tag">Python</span>
         <span class="t-tag">Tkinter</span>
         <span class="t-tag">JSON</span>
       </div>
+      <ul class="proj-highlights">
+        <li>Best-of-3 match logic with automatic disabling of choice buttons on match end</li>
+        <li>Persistent scores saved to `scores.json` and player-name entry with save/reset features</li>
+        <li>Simple UI polish: emoji-labelled buttons and champion notifications</li>
+      </ul>
     </article>
 
     <!-- 12 Portfolio Generator -->
