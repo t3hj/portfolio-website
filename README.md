@@ -1,14 +1,13 @@
-# 🌐 Tehj Patel - Portfolio Website
+# Tehj Patel — Portfolio Website
 
-Welcome to my personal portfolio website! This site showcases my projects, skills, and experiences as an aspiring software developer with a passion for cybersecurity and innovation.
+A static portfolio website showcasing Tehj Patel's software projects, experience, skills, and CV.
 
 ## Features
 
 - **Responsive Design** 📱: Optimized for all devices, ensuring a seamless experience on desktops, tablets, and mobile phones.
-- **Theme Toggle** 🌓: Switch between light, dark, and custom themes for comfortable viewing.
 - **Interactive Navigation** 🧭: Easy-to-use navigation bar to access different sections of the website.
 - **Parallax Effects** ✨: Engaging parallax scrolling effects for an interactive experience.
-- **Project Showcase** 💻: Detailed descriptions and interactive demos of my projects.
+- **Project Showcase** 💻: Confirmed repository links and clear project availability states.
 - **Skills Section** 🛠️: Comprehensive overview of my technical skills with proficiency levels.
 - **Contact Form** 📬: Reach out to me directly through the website.
 - **Social Media Links** 🌐: Connect with me on GitHub, LinkedIn, Discord, and Instagram.
@@ -56,8 +55,8 @@ Welcome to my personal portfolio website! This site showcases my projects, skill
 
 3. **Projects Page:**
    - Showcase of my projects with descriptions and animations
-   - Interactive demos for many projects
-   - Links to individual project pages with comprehensive details
+   - Project filters, animations, and confirmed GitHub repository links
+   - Unavailable live demos and videos are shown as accessible **In Progress** controls
 
 4. **Skills Page:**
    - Categorized skills (Programming Languages, Web Development, Tools & Platforms, etc.)

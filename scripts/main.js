@@ -149,4 +149,24 @@ window.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+
+  const comingSoonControls = document.querySelectorAll('[data-coming-soon]');
+  if (comingSoonControls.length > 0) {
+    const message = document.createElement('div');
+    message.className = 'coming-soon-message';
+    message.setAttribute('role', 'status');
+    message.setAttribute('aria-live', 'polite');
+    message.hidden = true;
+    document.body.appendChild(message);
+
+    let dismissTimer;
+    const showComingSoonMessage = () => {
+      message.textContent = 'Live demo/video coming soon. This project is currently in progress.';
+      message.hidden = false;
+      window.clearTimeout(dismissTimer);
+      dismissTimer = window.setTimeout(() => { message.hidden = true; }, 4500);
+    };
+
+    comingSoonControls.forEach((control) => control.addEventListener('click', showComingSoonMessage));
+  }
 });

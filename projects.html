@@ -199,6 +199,11 @@
       transition:opacity 0.2s;
     }
     .proj-link:hover { opacity:0.7; }
+    .proj-actions { display:flex; flex-wrap:wrap; gap:16px; align-items:center; }
+    button.proj-link { background:transparent; cursor:pointer; }
+    .proj-link.is-disabled { color:var(--muted); border-color:var(--border-subtle); cursor:not-allowed; }
+    .proj-link.is-disabled:focus-visible { outline:2px solid var(--gold); outline-offset:4px; }
+    .coming-soon-message { position:fixed; right:24px; bottom:24px; z-index:1000; max-width:min(360px,calc(100vw - 48px)); padding:12px 16px; border:1px solid var(--border); background:var(--navy-light); color:var(--white); font-family:'Space Mono',monospace; font-size:0.72rem; line-height:1.5; }
 
     /* ── SOCIAL BAR ── */
     .social-bar {
@@ -303,9 +308,12 @@
           <span class="t-tag">Pillow</span>
           <span class="t-tag">pytest</span>
         </div>
-        <a class="proj-link" href="https://github.com/t3hj" target="_blank">
+        <div class="proj-actions">
+        <a class="proj-link" href="https://github.com/t3hj/Local-Lens" target="_blank" rel="noreferrer">
           <i class="fab fa-github"></i> View on GitHub
         </a>
+        <button class="proj-link is-disabled" type="button" aria-disabled="true" data-coming-soon>In Progress</button>
+        </div>
       </div>
       <div>
         <ul class="proj-highlights">
@@ -337,6 +345,7 @@
         <li>T-command for movement retracing (reversal logic)</li>
         <li>Command logging to file for audit trails and debugging</li>
       </ul>
+      <div class="proj-actions"><a class="proj-link" href="https://github.com/t3hj/SwiftBotNavigation" target="_blank" rel="noreferrer"><i class="fab fa-github"></i> View on GitHub</a><button class="proj-link is-disabled" type="button" aria-disabled="true" data-coming-soon>In Progress</button></div>
     </article>
 
     <!-- 03 File Organiser Bot -->
@@ -359,6 +368,7 @@
         <li>Live progress bar with real-time feedback on files processed</li>
         <li>Sub-category sorting: Word, PDF, Excel, PowerPoint, and more</li>
       </ul>
+      <div class="proj-actions"><a class="proj-link" href="https://github.com/t3hj/file-organiser" target="_blank" rel="noreferrer"><i class="fab fa-github"></i> View on GitHub</a><button class="proj-link is-disabled" type="button" aria-disabled="true" data-coming-soon>In Progress</button></div>
     </article>
 
     <!-- 04 College Mobile App Mock-Up -->
@@ -374,6 +384,7 @@
         <span class="t-tag">XAML</span>
         <span class="t-tag">Windows UWP</span>
       </div>
+      <div class="proj-actions"><a class="proj-link" href="https://github.com/t3hj/StanmoreCollegeApp" target="_blank" rel="noreferrer"><i class="fab fa-github"></i> View on GitHub</a><button class="proj-link is-disabled" type="button" aria-disabled="true" data-coming-soon>In Progress</button></div>
     </article>
 
     <!-- 05 Snake Game -->
@@ -395,6 +406,7 @@
         <li>Arrow-key controls, `P` to pause/resume, and responsive game loop timing</li>
         <li>Food spawning that avoids the snake body, sound effects for eat/game-over, and an on-screen high-score</li>
       </ul>
+      <div class="proj-actions"><a class="proj-link" href="https://github.com/t3hj/SnakeGame" target="_blank" rel="noreferrer"><i class="fab fa-github"></i> View on GitHub</a><button class="proj-link is-disabled" type="button" aria-disabled="true" data-coming-soon>In Progress</button></div>
     </article>
 
     <!-- 06 Currency Converter -->
@@ -412,6 +424,7 @@
         <span class="t-tag">requests</span>
         <span class="t-tag">JSON Caching</span>
       </div>
+      <div class="proj-actions"><a class="proj-link" href="https://github.com/t3hj/currency-converter" target="_blank" rel="noreferrer"><i class="fab fa-github"></i> View on GitHub</a><button class="proj-link is-disabled" type="button" aria-disabled="true" data-coming-soon>In Progress</button></div>
     </article>
 
     <!-- 07 Password Generator -->
@@ -433,6 +446,7 @@
         <li>GUI features: tooltips, strength progress bar, copy-to-clipboard and save-to-`passwords.txt` with timestamp</li>
         <li>Generates a simple expiration reminder entry when a password is produced</li>
       </ul>
+      <div class="proj-actions"><a class="proj-link" href="https://github.com/t3hj/password-generator" target="_blank" rel="noreferrer"><i class="fab fa-github"></i> View on GitHub</a><button class="proj-link is-disabled" type="button" aria-disabled="true" data-coming-soon>In Progress</button></div>
     </article>
 
     <!-- 08 QR Code Generator -->
@@ -449,6 +463,7 @@
         <span class="t-tag">Pillow</span>
         <span class="t-tag">Tkinter</span>
       </div>
+      <div class="proj-actions"><a class="proj-link" href="https://github.com/t3hj/qr-code-generator" target="_blank" rel="noreferrer"><i class="fab fa-github"></i> View on GitHub</a><button class="proj-link is-disabled" type="button" aria-disabled="true" data-coming-soon>In Progress</button></div>
     </article>
 
     <!-- 09 Weather App -->
@@ -470,6 +485,7 @@
         <li>Parses and displays temp, humidity, wind speed and human-readable weather text</li>
         <li>Handles API errors and invalid city names with clear messages</li>
       </ul>
+      <div class="proj-actions"><a class="proj-link" href="https://github.com/t3hj/weather-app" target="_blank" rel="noreferrer"><i class="fab fa-github"></i> View on GitHub</a><button class="proj-link is-disabled" type="button" aria-disabled="true" data-coming-soon>In Progress</button></div>
     </article>
 
     <!-- 10 Simple Translator -->
@@ -486,6 +502,7 @@
         <span class="t-tag">CLI / Interactive</span>
         <span class="t-tag">Caching</span>
       </div>
+      <div class="proj-actions"><a class="proj-link" href="https://github.com/t3hj/SimpleTranslator" target="_blank" rel="noreferrer"><i class="fab fa-github"></i> View on GitHub</a><button class="proj-link is-disabled" type="button" aria-disabled="true" data-coming-soon>In Progress</button></div>
     </article>
 
     <!-- 11 Rock Paper Scissors -->
@@ -506,6 +523,7 @@
         <li>Persistent scores saved to `scores.json` and player-name entry with save/reset features</li>
         <li>Simple UI polish: emoji-labelled buttons and champion notifications</li>
       </ul>
+      <div class="proj-actions"><a class="proj-link" href="https://github.com/t3hj/RockPaperScissorsGUI" target="_blank" rel="noreferrer"><i class="fab fa-github"></i> View on GitHub</a><button class="proj-link is-disabled" type="button" aria-disabled="true" data-coming-soon>In Progress</button></div>
     </article>
 
     <!-- 12 Portfolio Generator -->
@@ -522,6 +540,7 @@
         <span class="t-tag">html2pdf.js</span>
         <span class="t-tag">Dynamic DOM</span>
       </div>
+      <div class="proj-actions"><a class="proj-link" href="https://github.com/t3hj/portfolio-generator" target="_blank" rel="noreferrer"><i class="fab fa-github"></i> View on GitHub</a><button class="proj-link is-disabled" type="button" aria-disabled="true" data-coming-soon>In Progress</button></div>
     </article>
 
   </div>
@@ -568,6 +587,23 @@
         });
       });
     });
+
+    const comingSoonControls = document.querySelectorAll('[data-coming-soon]');
+    if (comingSoonControls.length > 0) {
+      const message = document.createElement('div');
+      message.className = 'coming-soon-message';
+      message.setAttribute('role', 'status');
+      message.setAttribute('aria-live', 'polite');
+      message.hidden = true;
+      document.body.appendChild(message);
+      let dismissTimer;
+      comingSoonControls.forEach(control => control.addEventListener('click', () => {
+        message.textContent = 'Live demo/video coming soon. This project is currently in progress.';
+        message.hidden = false;
+        clearTimeout(dismissTimer);
+        dismissTimer = setTimeout(() => { message.hidden = true; }, 4500);
+      }));
+    }
   </script>
 </body>
 </html>
