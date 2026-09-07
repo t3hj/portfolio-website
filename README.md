@@ -32,11 +32,9 @@ A static portfolio website showcasing Tehj Patel's software projects, experience
 
 - `index.html`: Home page with an introduction and links to other sections.
 - `about.html`: About Me page with detailed information about my background, education, and experiences.
-- `projects.html`: Main projects page showcasing my work.
+- `projects.html`: Compatibility redirect to the Projects section on `index.html`.
 - `skills.html`: Skills page listing my technical skills with proficiency levels.
 - `contact.html`: Contact page with a form to reach out to me.
-- `projectsPages/`: Directory containing detailed pages for each project:
-  - Snake Game, Rock Paper Scissors, Weather App, File Organizer, and more
 - `styles/`: Directory containing CSS files for styling the website.
 - `scripts/`: Directory containing JavaScript files for interactive features.
 - `images/`: Directory containing images used throughout the website.
