@@ -13,7 +13,7 @@ window.addEventListener('DOMContentLoaded', () => {
             observer.unobserve(entry.target);
           }
         });
-      }, { threshold: 0.18 });
+      }, { threshold: 0, rootMargin: '0px 0px -80px 0px' });
 
       revealItems.forEach((item) => observer.observe(item));
     }
