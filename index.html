@@ -114,8 +114,8 @@
       </article>
       <article class="stat-card">
         <i class="fa-solid fa-code"></i>
-        <strong>20+ projects</strong>
-        <span>Built across web, AI, and automation</span>
+        <strong>24 projects</strong>
+        <span>Curated across AI, web, security, data, and automation</span>
       </article>
       <article class="stat-card">
         <i class="fa-brands fa-github"></i>
@@ -201,196 +201,88 @@
 
     <section id="projects" class="content-section section-shell" data-reveal>
       <div class="section-heading split">
-        <div>
-          <span>03</span>
-          <h2>Featured Projects</h2>
-        </div>
+        <div><span>03</span><h2>Projects</h2></div>
         <div class="filter-bar" role="tablist" aria-label="Project filters">
           <button class="filter-button is-active" type="button" data-filter="all">All</button>
           <button class="filter-button" type="button" data-filter="ai">AI</button>
           <button class="filter-button" type="button" data-filter="web">Web</button>
           <button class="filter-button" type="button" data-filter="tools">Tools</button>
           <button class="filter-button" type="button" data-filter="robotics">Robotics</button>
+          <button class="filter-button" type="button" data-filter="security">Security</button>
+          <button class="filter-button" type="button" data-filter="data">Data / Analytics</button>
+          <button class="filter-button" type="button" data-filter="games">Games</button>
         </div>
       </div>
 
-      <div class="project-grid">
-        <!-- 1. Local Lens (AI) -->
-        <article class="project-card" data-tags="ai web">
-          <div class="project-topline">
-            <span>AI project</span>
-            <span>Local Lens</span>
-          </div>
-          <h3>AI civic reporting platform</h3>
-          <p>Turns resident photos into structured council reports, with prioritisation, deduplication, and a dashboard for managing submissions.</p>
-          <div class="project-tags">
-            <span>Claude Vision</span><span>Supabase</span><span>Python</span><span>Streamlit</span>
-          </div>
-          <img src="images/local-lens/preview.svg" alt="Local Lens preview" style="width:100%;margin-top:12px;border-radius:6px;">
-          <div class="project-actions">
-            <a href="https://github.com/t3hj/Local-Lens" target="_blank" rel="noreferrer">GitHub</a>
-            <button class="project-action is-disabled" type="button" aria-disabled="true" data-coming-soon>In Progress</button>
-          </div>
+      <div class="project-section-heading">
+        <div><p class="eyebrow-text">Active work</p><h3>Currently Building</h3></div>
+        <p>Projects I’m actively developing, improving and experimenting with.</p>
+      </div>
+      <div class="project-grid project-grid-active">
+        <article class="project-card project-card-primary" data-tags="ai security web">
+          <div class="project-topline"><span>AI Security Platform</span><span>Currently Building</span></div>
+          <h3>Sentinel</h3>
+          <p>An AI-assisted Security Operations and Incident Response platform designed to detect, investigate and respond to security incidents through controlled, auditable workflows.</p>
+          <ul class="project-highlights"><li>Security event simulation, detection and correlation</li><li>Deterministic 0–100 risk scoring and incident investigation</li><li>Controlled AI analyst capabilities and role-based remediation approval</li><li>Row Level Security, audit trails and secure backend workflows</li></ul>
+          <div class="project-tags"><span>React</span><span>TypeScript</span><span>Vite</span><span>Supabase</span><span>PostgreSQL</span><span>AI</span><span>Cybersecurity</span></div>
+          <div class="project-actions"><a href="https://github.com/t3hj/sentinel" target="_blank" rel="noreferrer">GitHub</a><span class="project-status">Currently Building</span></div>
         </article>
+        <article class="project-card project-card-primary" data-tags="tools web">
+          <div class="project-topline"><span>Developer / Automation Platform</span><span>Currently Building</span></div>
+          <h3>ForgeFlow</h3>
+          <p>A developer and automation platform currently under active development. The product direction and implementation are still being shaped, so this portfolio will document its concrete workflow and capabilities as they settle.</p>
+          <div class="project-tags"><span>Software Engineering</span><span>Automation</span></div>
+          <div class="project-actions"><span class="project-status">Currently Building</span></div>
+        </article>
+        <article class="project-card" data-tags="data web">
+          <div class="project-topline"><span>Sports Analytics / Data Platform</span><span>Currently Building</span></div>
+          <h3>Champions League Analytics</h3>
+          <p>An evolving football analytics platform that builds data-driven Champions League squads, analyses player attacking output and evaluates upcoming opponents throughout the competition.</p>
+          <div class="project-tags"><span>Python</span><span>Data Analysis</span><span>APIs</span><span>JavaScript</span><span>Football Analytics</span></div>
+          <div class="project-actions"><span class="project-status">Currently Building</span></div>
+        </article>
+        <article class="project-card" data-tags="tools web">
+          <div class="project-topline"><span>Education / Automation Tool</span><span>Currently Building</span></div>
+          <h3>RoboThink Register</h3>
+          <p>An automation tool designed to streamline student registration and attendance workflows for RoboThink, reducing repetitive administrative work and making session management more efficient.</p>
+          <div class="project-tags"><span>Automation</span><span>Data Handling</span><span>Validation</span><span>User Interface</span></div>
+          <div class="project-actions"><span class="project-status">Currently Building</span></div>
+        </article>
+        <article class="project-card" data-tags="web">
+          <div class="project-topline"><span>Fragrance Discovery Platform</span><span>Currently Building</span></div>
+          <h3>Sillage</h3>
+          <p>A modern fragrance discovery application designed to help users explore and organise fragrances through an interactive, user-focused interface.</p>
+          <div class="project-tags"><span>React</span><span>JavaScript</span><span>PWA</span></div>
+          <img src="images/sillage-app/preview.svg" alt="Sillage preview">
+          <div class="project-actions"><span class="project-status">Currently Building</span></div>
+        </article>
+      </div>
 
-        <!-- 2. Sillage App (React) -->
-        <article class="project-card" data-tags="web react">
-          <div class="project-topline">
-            <span>Web app</span>
-            <span>Sillage App</span>
-          </div>
-          <h3>React single-page app (PWA-ready)</h3>
-          <p>React-based application with PWA manifest and modern frontend tooling. Includes an interactive UI in `src/App.js`, static assets in `public/`, and a build setup via `package.json`.</p>
-          <div class="project-tags">
-            <span>React</span><span>PWA</span><span>JavaScript</span>
-          </div>
-          <img src="images/sillage-app/preview.svg" alt="Sillage App preview" style="width:100%;margin-top:12px;border-radius:6px;">
-          <div class="project-actions">
-            <button class="project-action is-disabled" type="button" aria-disabled="true" data-coming-soon>In Progress</button>
-          </div>
-        </article>
+      <div class="project-section-heading project-section-heading-featured"><div><p class="eyebrow-text">Established work</p><h3>Featured Projects</h3></div><p>Completed projects that show applied AI, robotics, product and security engineering.</p></div>
+      <div class="project-grid project-grid-featured">
+        <article class="project-card project-card-primary" data-tags="ai web"><div class="project-topline"><span>AI Civic Technology</span><span>Featured</span></div><h3>Local Lens</h3><p>An AI-powered civic reporting platform that transforms resident-submitted images into structured reports, prioritises issues and helps organisations manage community problems more efficiently.</p><div class="project-tags"><span>Claude Vision</span><span>Supabase</span><span>Python</span><span>Streamlit</span></div><img src="images/local-lens/preview.svg" alt="Local Lens preview"><div class="project-actions"><a href="https://github.com/t3hj/Local-Lens" target="_blank" rel="noreferrer">GitHub</a></div></article>
+        <article class="project-card" data-tags="robotics"><div class="project-topline"><span>Robotics / Software Engineering</span><span>Featured</span></div><h3>SwiftBot Navigation System</h3><p>A Java-based robotic navigation system that interprets QR-code commands and controls a physical robot through validated movement sequences.</p><div class="project-tags"><span>Java</span><span>Robotics</span><span>QR Processing</span></div><img src="images/swiftbot/preview.svg" alt="SwiftBot Navigation System preview"><div class="project-actions"><a href="https://github.com/t3hj/SwiftBotNavigation" target="_blank" rel="noreferrer">GitHub</a></div></article>
+        <article class="project-card" data-tags="web tools"><div class="project-topline"><span>Developer Tool</span><span>Featured</span></div><h3>Portfolio Generator</h3><p>A browser-based portfolio generator that turns user-provided information into a structured personal portfolio and downloadable PDF.</p><div class="project-tags"><span>JavaScript</span><span>HTML/CSS</span><span>html2pdf.js</span></div><img src="images/portfolio-generator/preview.svg" alt="Portfolio Generator preview"><div class="project-actions"><a href="https://github.com/t3hj/portfolio-generator" target="_blank" rel="noreferrer">GitHub</a></div></article>
+        <article class="project-card" data-tags="web data"><div class="project-topline"><span>Web Application</span><span>Featured</span></div><h3>Weather Dashboard</h3><p>An API-powered weather dashboard providing current conditions and forecasts through a responsive interface with dynamic weather visuals.</p><div class="project-tags"><span>JavaScript</span><span>OpenWeatherMap</span><span>Unsplash</span></div><img src="images/weatherApp/farenheit.png" alt="Weather Dashboard screenshot"><div class="project-actions"><a href="https://github.com/t3hj/weather-app" target="_blank" rel="noreferrer">GitHub</a></div></article>
+        <article class="project-card" data-tags="tools security"><div class="project-topline"><span>Security Tool</span><span>Featured</span></div><h3>Secure Password Generator</h3><p>A desktop password-generation utility using Python’s cryptographically secure secrets module, with configurable password requirements, strength feedback and secure generation.</p><div class="project-tags"><span>Python</span><span>secrets</span><span>Tkinter</span><span>Security</span></div><img src="images/passwordGenerator/savedToExternalFile.png" alt="Secure Password Generator screenshot"><div class="project-actions"><a href="https://github.com/t3hj/password-generator" target="_blank" rel="noreferrer">GitHub</a></div></article>
+      </div>
 
-        <!-- 3. Portfolio Generator -->
-        <article class="project-card" data-tags="web generator">
-          <div class="project-topline">
-            <span>Web tool</span>
-            <span>Portfolio Generator</span>
-          </div>
-          <h3>Browser-based portfolio generator</h3>
-          <p>Client-side tool that assembles a portfolio from user inputs and exports a downloadable PDF. Built with vanilla JavaScript and `html2pdf.js` for easy sharing and export.</p>
-          <div class="project-tags">
-            <span>JavaScript</span><span>HTML/CSS</span><span>html2pdf.js</span>
-          </div>
-          <img src="images/portfolio-generator/preview.svg" alt="Portfolio Generator preview" style="width:100%;margin-top:12px;border-radius:6px;">
-          <div class="project-actions">
-            <a href="https://github.com/t3hj/portfolio-generator" target="_blank" rel="noreferrer">GitHub</a>
-            <button class="project-action is-disabled" type="button" aria-disabled="true" data-coming-soon>In Progress</button>
-          </div>
-        </article>
-
-        <!-- 4. SwiftBot (Robotics) -->
-        <article class="project-card" data-tags="robotics web">
-          <div class="project-topline">
-            <span>Robotics</span>
-            <span>SwiftBot</span>
-          </div>
-          <h3>Navigation and retracing system</h3>
-          <p>A Java project that parses QR code commands and drives a physical robot through a validated movement sequence.</p>
-          <div class="project-tags">
-            <span>Java</span><span>OOP</span><span>QR Code</span><span>Hardware</span>
-          </div>
-          <img src="images/swiftbot/preview.svg" alt="SwiftBot preview" style="width:100%;margin-top:12px;border-radius:6px;">
-          <div class="project-actions">
-            <a href="https://github.com/t3hj/SwiftBotNavigation" target="_blank" rel="noreferrer">GitHub</a>
-            <button class="project-action is-disabled" type="button" aria-disabled="true" data-coming-soon>In Progress</button>
-          </div>
-        </article>
-
-        <!-- 5. Snake Game (Java) -->
-        <article class="project-card" data-tags="java game">
-          <div class="project-topline">
-            <span>Game</span>
-            <span>Snake Game</span>
-          </div>
-          <h3>Java Swing arcade Snake</h3>
-          <p>Classic Snake built with Java Swing: welcome screen, color chooser, pause/resume (P key), sound effects, food spawning that avoids the snake body, and persistent high-score tracking.</p>
-          <div class="project-tags">
-            <span>Java</span><span>Swing</span><span>Game Loop</span>
-          </div>
-          <img src="images/SnakeGame/preview.svg" alt="Snake Game preview" style="width:100%;margin-top:12px;border-radius:6px;">
-          <div class="project-actions">
-            <a href="https://github.com/t3hj/SnakeGame" target="_blank" rel="noreferrer">GitHub</a>
-            <button class="project-action is-disabled" type="button" aria-disabled="true" data-coming-soon>In Progress</button>
-          </div>
-        </article>
-
-        <!-- 6. Password Generator -->
-        <article class="project-card" data-tags="python tools">
-          <div class="project-topline">
-            <span>Tool</span>
-            <span>Password Generator</span>
-          </div>
-          <h3>Cryptographically secure password tool</h3>
-          <p>Tkinter desktop utility using Python's <em>secrets</em> module. Configurable length and minimum character types, live strength indicator, copy-to-clipboard and save-to-file with expiration reminders.</p>
-          <div class="project-tags">
-            <span>Python</span><span>secrets</span><span>Tkinter</span><span>Security</span>
-          </div>
-          <img src="images/passwordGenerator/savedToExternalFile.png" alt="Password Generator screenshot" style="width:100%;margin-top:12px;border-radius:6px;">
-          <div class="project-actions">
-            <a href="https://github.com/t3hj/password-generator" target="_blank" rel="noreferrer">GitHub</a>
-            <button class="project-action is-disabled" type="button" aria-disabled="true" data-coming-soon>In Progress</button>
-          </div>
-        </article>
-
-        <!-- 7. Rock Paper Scissors -->
-        <article class="project-card" data-tags="python game">
-          <div class="project-topline">
-            <span>Game</span>
-            <span>Rock Paper Scissors</span>
-          </div>
-          <h3>Tkinter GUI — quick best-of-3 matches</h3>
-          <p>GUI Rock Paper Scissors with player name entry, score tracking persisted to JSON, best-of-3 win condition, and save/restart/reset controls for fast desktop play.</p>
-          <div class="project-tags">
-            <span>Python</span><span>Tkinter</span><span>JSON</span>
-          </div>
-          <img src="images/rock-paper-scissors/preview.svg" alt="Rock Paper Scissors preview" style="width:100%;margin-top:12px;border-radius:6px;">
-          <div class="project-actions">
-            <a href="https://github.com/t3hj/RockPaperScissorsGUI" target="_blank" rel="noreferrer">GitHub</a>
-            <button class="project-action is-disabled" type="button" aria-disabled="true" data-coming-soon>In Progress</button>
-          </div>
-        </article>
-
-        <!-- 8. Weather App -->
-        <article class="project-card" data-tags="web tools">
-          <div class="project-topline">
-            <span>Web app</span>
-            <span>Weather App</span>
-          </div>
-          <h3>Forecast app with dynamic imagery</h3>
-          <p>API-driven weather experience with changing visuals, forecast views, and a responsive interface that works well on mobile.</p>
-          <div class="project-tags">
-            <span>JavaScript</span><span>OpenWeatherMap</span><span>Unsplash</span><span>Responsive UI</span>
-          </div>
-          <img src="images/weatherApp/farenheit.png" alt="Weather App screenshot" style="width:100%;margin-top:12px;border-radius:6px;">
-          <div class="project-actions">
-            <a href="https://github.com/t3hj/weather-app" target="_blank" rel="noreferrer">GitHub</a>
-            <button class="project-action is-disabled" type="button" aria-disabled="true" data-coming-soon>In Progress</button>
-          </div>
-        </article>
-
-        <!-- 9. Music Organiser -->
-        <article class="project-card" data-tags="python tools">
-          <div class="project-topline">
-            <span>Tool</span>
-            <span>Music Organiser</span>
-          </div>
-          <h3>Organises downloaded music by metadata</h3>
-          <p>Desktop Python script to tidy downloaded music collections: reads file metadata, sorts into artist/album folders, handles duplicates, and offers a simple CLI for batch runs.</p>
-          <div class="project-tags">
-            <span>Python</span><span>File IO</span><span>Metadata</span>
-          </div>
-          <img src="images/music-organiser/preview.svg" alt="Music Organiser preview" style="width:100%;margin-top:12px;border-radius:6px;">
-          <div class="project-actions">
-            <span class="project-action is-disabled" aria-disabled="true">Repository unavailable</span>
-          </div>
-        </article>
-
-        <!-- 10. CLIGame -->
-        <article class="project-card" data-tags="python cli">
-          <div class="project-topline">
-            <span>CLI</span>
-            <span>CLIGame</span>
-          </div>
-          <h3>Terminal-based Python game</h3>
-          <p>Text-based CLI game implemented in Python across multiple level scripts (`main.py`, `level1.py`, `level2.py`). Simple input-driven gameplay, state progression across levels, and lightweight file-based saves for progress.</p>
-          <div class="project-tags">
-            <span>Python</span><span>CLI</span><span>Game</span>
-          </div>
-          <img src="images/cli-game/preview.svg" alt="CLIGame preview" style="width:100%;margin-top:12px;border-radius:6px;">
-          <div class="project-actions">
-            <span class="project-action is-disabled" aria-disabled="true">Repository unavailable</span>
-          </div>
-        </article>
+      <div class="project-section-heading project-section-heading-featured"><div><p class="eyebrow-text">Smaller builds</p><h3>Other Projects</h3></div><p>Focused tools, games and experiments that helped build breadth across languages and problem domains.</p></div>
+      <div class="project-grid project-grid-other">
+        <article class="project-card" data-tags="tools"><div class="project-topline"><span>Automation Tool</span><span>Other</span></div><h3>Music Organiser</h3><p>Organises downloaded music into artist and album folders using file metadata, duplicate handling and a simple batch workflow.</p><div class="project-tags"><span>Python</span><span>File IO</span><span>Metadata</span></div><img src="images/music-organiser/preview.svg" alt="Music Organiser preview"></article>
+        <article class="project-card" data-tags="games"><div class="project-topline"><span>Game</span><span>Other</span></div><h3>Snake</h3><p>A Java Swing arcade game with pause and resume controls, sound effects, collision detection and persistent high scores.</p><div class="project-tags"><span>Java</span><span>Swing</span><span>Game Loop</span></div><img src="images/SnakeGame/preview.svg" alt="Snake preview"><div class="project-actions"><a href="https://github.com/t3hj/SnakeGame" target="_blank" rel="noreferrer">GitHub</a></div></article>
+        <article class="project-card" data-tags="games"><div class="project-topline"><span>Game</span><span>Other</span></div><h3>Rock Paper Scissors</h3><p>A Tkinter game with best-of-three matches, player names, score tracking and JSON persistence.</p><div class="project-tags"><span>Python</span><span>Tkinter</span><span>JSON</span></div><img src="images/rock-paper-scissors/preview.svg" alt="Rock Paper Scissors preview"><div class="project-actions"><a href="https://github.com/t3hj/RockPaperScissorsGUI" target="_blank" rel="noreferrer">GitHub</a></div></article>
+        <article class="project-card" data-tags="tools games"><div class="project-topline"><span>CLI Game</span><span>Other</span></div><h3>CLI Adventure Game</h3><p>A multi-level terminal adventure with input-driven gameplay, state progression and lightweight file-based saves.</p><div class="project-tags"><span>Python</span><span>CLI</span><span>Game</span></div><img src="images/cli-game/preview.svg" alt="CLI Adventure Game preview"></article>
+        <article class="project-card" data-tags="tools"><div class="project-topline"><span>Automation Tool</span><span>Other</span></div><h3>File Organiser</h3><p>Sorts files into useful folders by extension and date, with duplicate handling and progress feedback.</p><div class="project-tags"><span>Python</span><span>Automation</span><span>File IO</span></div><div class="project-actions"><a href="https://github.com/t3hj/file-organiser" target="_blank" rel="noreferrer">GitHub</a></div></article>
+        <article class="project-card" data-tags="web"><div class="project-topline"><span>Education App</span><span>Other</span></div><h3>Stanmore College App</h3><p>A C# and XAML college application with authentication, timetables, cafeteria information and student-facing resource screens.</p><div class="project-tags"><span>C#</span><span>XAML</span><span>Windows UWP</span></div><div class="project-actions"><a href="https://github.com/t3hj/StanmoreCollegeApp" target="_blank" rel="noreferrer">GitHub</a></div></article>
+        <article class="project-card" data-tags="games"><div class="project-topline"><span>Game</span><span>Other</span></div><h3>Card Game</h3><p>A two-player Python card game with score tracking, authentication and external-file history for winners and leaderboards.</p><div class="project-tags"><span>Python</span><span>Persistence</span></div><div class="project-actions"><a href="https://github.com/t3hj/CardGame" target="_blank" rel="noreferrer">GitHub</a></div></article>
+        <article class="project-card" data-tags="tools"><div class="project-topline"><span>NLP / CLI Tool</span><span>Other</span></div><h3>Simple Translator</h3><p>A command-line translation tool with automatic language detection, caching and saved results.</p><div class="project-tags"><span>Python</span><span>Translation API</span><span>Caching</span></div><div class="project-actions"><a href="https://github.com/t3hj/SimpleTranslator" target="_blank" rel="noreferrer">GitHub</a></div></article>
+        <article class="project-card" data-tags="tools"><div class="project-topline"><span>Image Tool</span><span>Other</span></div><h3>QR Code Generator</h3><p>Creates customisable QR codes with logos, frames, colour schemes and image export.</p><div class="project-tags"><span>Python</span><span>qrcode</span><span>Pillow</span></div><div class="project-actions"><a href="https://github.com/t3hj/qr-code-generator" target="_blank" rel="noreferrer">GitHub</a></div></article>
+        <article class="project-card" data-tags="tools data"><div class="project-topline"><span>Data Tool</span><span>Other</span></div><h3>Currency Converter</h3><p>Converts currencies using live and historical exchange rates, with trend charts and cached API data.</p><div class="project-tags"><span>Python</span><span>API Integration</span><span>Matplotlib</span></div><div class="project-actions"><a href="https://github.com/t3hj/currency-converter" target="_blank" rel="noreferrer">GitHub</a></div></article>
+        <article class="project-card" data-tags="tools"><div class="project-topline"><span>Utility</span><span>Other</span></div><h3>Unit Converter</h3><p>A Tkinter desktop utility for converting between common units through a straightforward interface.</p><div class="project-tags"><span>Python</span><span>Tkinter</span></div><div class="project-actions"><a href="https://github.com/t3hj/unit-converter" target="_blank" rel="noreferrer">GitHub</a></div></article>
+        <article class="project-card" data-tags="web tools"><div class="project-topline"><span>Web Utility</span><span>Other</span></div><h3>Age Calculator App</h3><p>A focused browser utility that calculates a user’s age from a supplied date through a clear, responsive interface.</p><div class="project-tags"><span>JavaScript</span><span>HTML/CSS</span></div><div class="project-actions"><a href="https://github.com/t3hj/age-calculator-app-main" target="_blank" rel="noreferrer">GitHub</a></div></article>
+        <article class="project-card" data-tags="tools data"><div class="project-topline"><span>CLI Utility</span><span>Other</span></div><h3>Basic Weather App</h3><p>A command-line weather lookup for multiple cities with unit selection and current conditions from OpenWeatherMap.</p><div class="project-tags"><span>Python</span><span>OpenWeatherMap API</span><span>CLI</span></div><div class="project-actions"><a href="https://github.com/t3hj/BasicWeatherApp" target="_blank" rel="noreferrer">GitHub</a></div></article>
+        <article class="project-card" data-tags="web"><div class="project-topline"><span>Profile Page</span><span>Other</span></div><h3>Social Links Profile</h3><p>A responsive profile page for presenting social links with a clean, accessible layout.</p><div class="project-tags"><span>HTML</span><span>CSS</span></div><div class="project-actions"><a href="https://github.com/t3hj/social-links-profile-main" target="_blank" rel="noreferrer">GitHub</a></div></article>
       </div>
     </section>
 
@@ -462,7 +354,7 @@
       <div class="github-grid">
         <article class="panel stats-panel">
           <div class="stats-mini">
-            <div><strong data-count="20">0</strong><span>projects</span></div>
+            <div><strong data-count="24">0</strong><span>projects</span></div>
             <div><strong data-count="500">0</strong><span>commits</span></div>
             <div><strong data-count="8">0</strong><span>core stacks</span></div>
           </div>
