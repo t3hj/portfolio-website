@@ -724,10 +724,6 @@ main,
 .project-grid-secondary .project-card p {
   font-size: 0.9rem;
   line-height: 1.65;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
 }
 
 .other-projects {
@@ -854,11 +850,25 @@ main,
 
 .project-card img {
   width: 100%;
-  height: 150px;
-  object-fit: cover;
+  height: auto;
+  object-fit: contain;
   margin-top: 2px;
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+/* Two-image side-by-side gallery (Local Lens) */
+.project-image-pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 2px;
+}
+
+.project-image-pair img {
+  margin-top: 0;
+  height: 100%;
 }
 
 .project-highlights {
@@ -1165,6 +1175,10 @@ main,
 
   .project-grid-active .project-card-primary {
     grid-column: span 2;
+  }
+
+  .project-image-pair {
+    grid-template-columns: 1fr;
   }
 }
 
