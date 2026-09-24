@@ -130,6 +130,28 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  const otherProjects = document.querySelector('[data-other-projects]');
+  const otherToggle = document.querySelector('.other-projects-toggle');
+  const otherPanel = document.getElementById('otherProjectsPanel');
+
+  if (otherToggle && otherPanel) {
+    const countNode = document.querySelector('[data-other-count]');
+    if (countNode) {
+      const otherCount = otherPanel.querySelectorAll('.project-card').length;
+      countNode.textContent = `(${otherCount})`;
+    }
+
+    const setOtherOpen = (open) => {
+      otherToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      otherProjects.classList.toggle('is-open', open);
+    };
+
+    otherToggle.addEventListener('click', () => {
+      const isOpen = otherToggle.getAttribute('aria-expanded') === 'true';
+      setOtherOpen(!isOpen);
+    });
+  }
+
   const filterButtons = document.querySelectorAll('[data-filter]');
   const projectCards = document.querySelectorAll('.project-card');
 
@@ -141,11 +163,25 @@ window.addEventListener('DOMContentLoaded', () => {
         filterButtons.forEach((item) => item.classList.remove('is-active'));
         button.classList.add('is-active');
 
+        let matchesHiddenPanel = false;
         projectCards.forEach((card) => {
           const tags = (card.getAttribute('data-tags') || '').split(/\s+/).filter(Boolean);
           const shouldShow = filter === 'all' || tags.includes(filter);
           card.classList.toggle('is-hidden', !shouldShow);
+          if (shouldShow && otherPanel && otherPanel.contains(card)) {
+            matchesHiddenPanel = true;
+          }
         });
+
+        if (otherToggle && otherPanel) {
+          if (filter !== 'all' && matchesHiddenPanel) {
+            otherToggle.setAttribute('aria-expanded', 'true');
+            otherProjects.classList.add('is-open');
+          } else if (filter === 'all') {
+            otherToggle.setAttribute('aria-expanded', 'false');
+            otherProjects.classList.remove('is-open');
+          }
+        }
       });
     });
   }

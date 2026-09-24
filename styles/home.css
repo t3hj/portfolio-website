@@ -434,7 +434,7 @@ main,
 
 .stats-strip {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 14px;
   margin-top: 8px;
 }
@@ -671,6 +671,152 @@ main,
   grid-column: span 3;
 }
 
+.project-grid-featured .project-card-hero {
+  grid-column: 1 / -1;
+  grid-template-columns: 1.15fr 1fr;
+  align-items: center;
+  gap: 34px;
+  padding: 34px;
+  background:
+    radial-gradient(circle at top left, rgba(126, 140, 255, 0.14), transparent 55%),
+    linear-gradient(145deg, rgba(24, 44, 58, 0.95), var(--panel));
+  border-color: rgba(141, 223, 209, 0.32);
+}
+
+.project-card-hero h3 {
+  font-size: clamp(2rem, 3.4vw, 3rem);
+  background: linear-gradient(135deg, #b8f1ff 0%, #7e8cff 55%, #9f71ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.project-hero-main {
+  display: grid;
+  gap: 14px;
+  min-width: 0;
+}
+
+.project-hero-side {
+  display: grid;
+  gap: 12px;
+  padding: 20px 22px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  min-width: 0;
+}
+
+.project-grid-secondary {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.project-grid-secondary .project-card {
+  padding: 20px;
+  gap: 10px;
+  border-radius: 18px;
+}
+
+.project-grid-secondary .project-card h3 {
+  font-size: 1.08rem;
+}
+
+.project-grid-secondary .project-card p {
+  font-size: 0.9rem;
+  line-height: 1.65;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.other-projects {
+  margin-top: 60px;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: var(--panel);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.other-projects-title {
+  margin: 0;
+}
+
+.other-projects-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 20px 26px;
+  border: none;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  cursor: pointer;
+  text-align: left;
+}
+
+.other-projects-toggle:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -4px;
+  border-radius: 24px;
+}
+
+.other-projects-toggle:hover {
+  color: #fff;
+}
+
+.other-projects-label {
+  font-size: 1.1rem;
+}
+
+.other-projects-count {
+  color: var(--muted);
+  font-family: 'Space Mono', monospace;
+  font-size: 0.78rem;
+}
+
+.other-projects-toggle i {
+  margin-left: auto;
+  color: #8ddfd1;
+  transition: transform 0.3s ease;
+}
+
+.other-projects.is-open .other-projects-toggle i {
+  transform: rotate(180deg);
+}
+
+.other-projects-hint {
+  margin: 0;
+  padding: 0 26px 18px;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.other-projects-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.4s ease, visibility 0.4s ease;
+  visibility: hidden;
+}
+
+.other-projects.is-open .other-projects-panel {
+  grid-template-rows: 1fr;
+  visibility: visible;
+}
+
+.other-projects-inner {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.other-projects .project-grid-other {
+  padding: 6px 18px 20px;
+}
+
 .project-grid-other {
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 12px;
@@ -856,7 +1002,7 @@ main,
 
 .stats-mini {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
 }
 
@@ -1003,9 +1149,18 @@ main,
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .project-grid-secondary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .project-grid-featured .project-card,
   .project-grid-featured .project-card-primary {
     grid-column: span 1;
+  }
+
+  .project-grid-featured .project-card-hero {
+    grid-column: 1 / -1;
+    grid-template-columns: 1fr;
   }
 
   .project-grid-active .project-card-primary {
@@ -1053,7 +1208,8 @@ main,
 
   .project-grid-active,
   .project-grid-featured,
-  .project-grid-other {
+  .project-grid-other,
+  .project-grid-secondary {
     grid-template-columns: 1fr;
   }
 
@@ -1087,6 +1243,10 @@ main,
   [data-reveal] {
     opacity: 1;
     transform: none;
+  }
+
+  .other-projects-panel {
+    transition: none;
   }
 }
 
