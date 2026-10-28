@@ -131,7 +131,7 @@ window.addEventListener('DOMContentLoaded', () => {
       const bounds = track.getBoundingClientRect();
       const inView = cards.map((card, index) => ({card, index})).filter(({card}) => {
         const rect = card.getBoundingClientRect();
-        return rect.left < bounds.right - 24 && rect.right > bounds.left + 24;
+        return rect.left >= bounds.left - 2 && rect.right <= bounds.right + 2;
       });
       if (inView.length) {
         const first = inView[0].index + 1;
