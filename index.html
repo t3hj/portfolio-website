@@ -15,8 +15,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="styles/home.css?v=porcelain-1">
-  <link rel="stylesheet" href="styles/layout.css?v=2">
-  <script defer src="scripts/main.js?v=layout-2"></script>
+  <link rel="stylesheet" href="styles/layout.css?v=carousel-1">
+  <script defer src="scripts/main.js?v=carousel-1"></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -153,8 +153,17 @@
         <article class="project-card project-card-primary" data-tags="robotics tools web"><div class="project-topline"><span>Education / Automation Tool</span><span>Featured</span></div><h3>RoboThink Register</h3><p>An automation tool designed to streamline student registration and attendance workflows for RoboThink, reducing repetitive administrative work and making session management more efficient.</p><div class="project-tags"><span>Automation</span><span>Data Handling</span><span>Validation</span><span>User Interface</span></div><div class="project-actions"><a href="https://github.com/t3hj/RoboThink-Register" target="_blank" rel="noreferrer">View on GitHub</a><span class="project-status">Currently Building</span></div></article>
       </div>
 
-      <div class="project-section-heading project-section-heading-featured"><div><p class="eyebrow-text">Also in progress</p><h3>More in the making</h3></div><p>Explorations in automation, fragrance discovery and football analytics.</p></div>
-      <div class="project-grid project-grid-secondary">
+      <div class="project-section-heading project-section-heading-featured"><div><p class="eyebrow-text">Also in progress</p><h3 id="inProgressHeading">More in the making</h3></div><p>Explorations in automation, fragrance discovery and football analytics.</p></div>
+      <section class="project-carousel" data-carousel aria-labelledby="inProgressHeading" aria-roledescription="carousel">
+        <div class="carousel-toolbar">
+          <p id="carouselHint" class="carousel-hint">Scroll or swipe to explore</p>
+          <div class="carousel-controls" data-carousel-controls hidden>
+            <button type="button" class="carousel-arrow" data-carousel-prev aria-label="Previous projects" aria-controls="inProgressTrack">←</button>
+            <span class="carousel-position" data-carousel-position aria-live="polite" aria-atomic="true"></span>
+            <button type="button" class="carousel-arrow" data-carousel-next aria-label="Next projects" aria-controls="inProgressTrack">→</button>
+          </div>
+        </div>
+        <div id="inProgressTrack" class="project-grid project-grid-secondary carousel-track" tabindex="0" aria-label="Projects in development" aria-describedby="carouselHint">
         <article class="project-card" data-tags="tools web">
           <div class="project-topline"><span>Developer / Automation Platform</span><span>Currently Building</span></div>
           <h3>ForgeFlow</h3>
@@ -178,6 +187,8 @@
           <div class="project-actions"><span class="project-status">Currently Building</span></div>
         </article>
       </div>
+
+      </section>
 
       <div class="other-projects" data-other-projects>
         <h3 class="other-projects-title">

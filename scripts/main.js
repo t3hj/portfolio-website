@@ -110,6 +110,75 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+
+  const carousel = document.querySelector('[data-carousel]');
+  let refreshCarousel = () => {};
+  if (carousel) {
+    const track = carousel.querySelector('.carousel-track');
+    const previous = carousel.querySelector('[data-carousel-prev]');
+    const next = carousel.querySelector('[data-carousel-next]');
+    const controls = carousel.querySelector('[data-carousel-controls]');
+    const position = carousel.querySelector('[data-carousel-position]');
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const visibleCards = () => [...track.querySelectorAll('.project-card:not(.is-hidden)')];
+    const cardLeft = (card) => card.getBoundingClientRect().left - track.getBoundingClientRect().left + track.scrollLeft;
+    const update = () => {
+      const cards = visibleCards();
+      const overflow = track.scrollWidth - track.clientWidth > 2;
+      controls.hidden = !overflow || cards.length < 2;
+      previous.disabled = track.scrollLeft <= 2;
+      next.disabled = track.scrollLeft >= track.scrollWidth - track.clientWidth - 2;
+      const bounds = track.getBoundingClientRect();
+      const inView = cards.map((card, index) => ({card, index})).filter(({card}) => {
+        const rect = card.getBoundingClientRect();
+        return rect.left < bounds.right - 24 && rect.right > bounds.left + 24;
+      });
+      if (inView.length) {
+        const first = inView[0].index + 1;
+        const last = inView[inView.length - 1].index + 1;
+        const label = first === last ? String(first) : first + '–' + last;
+        const text = label + ' of ' + cards.length;
+        if (position.textContent !== text) position.textContent = text;
+      } else position.textContent = '';
+    };
+    const navigate = (direction) => {
+      const cards = visibleCards();
+      const left = track.scrollLeft;
+      const target = direction > 0
+        ? cards.find((card) => cardLeft(card) > left + 4)
+        : [...cards].reverse().find((card) => cardLeft(card) < left - 4);
+      if (target) track.scrollTo({left: cardLeft(target), behavior: reducedMotion.matches ? 'instant' : 'smooth'});
+    };
+    previous.addEventListener('click', () => navigate(-1));
+    next.addEventListener('click', () => navigate(1));
+    track.addEventListener('keydown', (event) => {
+      if (event.target !== track) return;
+      if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
+        event.preventDefault();
+        navigate(event.key === 'ArrowRight' ? 1 : -1);
+      } else if (event.key === 'Home' || event.key === 'End') {
+        event.preventDefault();
+        track.scrollTo({left: event.key === 'Home' ? 0 : track.scrollWidth, behavior: reducedMotion.matches ? 'instant' : 'smooth'});
+      }
+    });
+    let frame;
+    track.addEventListener('scroll', () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(update);
+    }, {passive: true});
+    refreshCarousel = () => {
+      const hasCards = visibleCards().length > 0;
+      carousel.hidden = !hasCards;
+      const heading = carousel.previousElementSibling;
+      if (heading?.classList.contains('project-section-heading')) heading.hidden = !hasCards;
+      track.scrollTo({left: 0, behavior: 'instant'});
+      requestAnimationFrame(update);
+    };
+    if ('ResizeObserver' in window) new ResizeObserver(update).observe(track);
+    else window.addEventListener('resize', update);
+    refreshCarousel();
+  }
+
   const filterButtons = document.querySelectorAll('[data-filter]');
   const projectCards = document.querySelectorAll('.project-card');
 
@@ -138,6 +207,7 @@ window.addEventListener('DOMContentLoaded', () => {
           const heading = grid.previousElementSibling;
           if (heading?.classList.contains('project-section-heading')) heading.hidden = !hasMatches;
         });
+        refreshCarousel();
         if (otherProjects && otherPanel) {
           otherProjects.hidden = !matchesHiddenPanel;
         }
