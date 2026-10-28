@@ -1,65 +1,9 @@
 window.addEventListener('DOMContentLoaded', () => {
-  const revealItems = document.querySelectorAll('[data-reveal]');
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  if (revealItems.length > 0) {
-    if (reducedMotion) {
-      revealItems.forEach((item) => item.classList.add('is-visible'));
-    } else {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0, rootMargin: '0px 0px -80px 0px' });
-
-      revealItems.forEach((item) => observer.observe(item));
-    }
-  }
 
   const year = document.getElementById('year');
   if (year) {
     year.textContent = new Date().getFullYear();
-  }
-
-  const typingNode = document.querySelector('[data-typing]');
-  if (typingNode && !reducedMotion) {
-    const lines = [
-      'building polished software for real users',
-      'available for graduate software engineering roles',
-      'shipping AI, automation, and web projects'
-    ];
-    let lineIndex = 0;
-    let charIndex = 0;
-    let deleting = false;
-
-    const tick = () => {
-      const current = lines[lineIndex];
-      typingNode.textContent = current.slice(0, charIndex);
-
-      if (!deleting && charIndex < current.length) {
-        charIndex += 1;
-      } else if (deleting && charIndex > 0) {
-        charIndex -= 1;
-      }
-
-      if (!deleting && charIndex === current.length) {
-        deleting = true;
-        window.setTimeout(tick, 1500);
-        return;
-      }
-
-      if (deleting && charIndex === 0) {
-        deleting = false;
-        lineIndex = (lineIndex + 1) % lines.length;
-      }
-
-      window.setTimeout(tick, deleting ? 40 : 55);
-    };
-
-    tick();
   }
 
   const progressBar = document.querySelector('.scroll-progress span');
@@ -144,6 +88,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const setOtherOpen = (open) => {
       otherToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
       otherProjects.classList.toggle('is-open', open);
+      otherPanel.inert = !open;
     };
 
     otherToggle.addEventListener('click', () => {
@@ -162,6 +107,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
         filterButtons.forEach((item) => item.classList.remove('is-active'));
         button.classList.add('is-active');
+        filterButtons.forEach((item) => item.setAttribute('aria-pressed', String(item === button)));
 
         let matchesHiddenPanel = false;
         projectCards.forEach((card) => {
@@ -173,13 +119,25 @@ window.addEventListener('DOMContentLoaded', () => {
           }
         });
 
+        document.querySelectorAll('#projects .project-grid').forEach((grid) => {
+          const hasMatches = [...grid.querySelectorAll('.project-card')].some((card) => !card.classList.contains('is-hidden'));
+          grid.hidden = !hasMatches;
+          const heading = grid.previousElementSibling;
+          if (heading?.classList.contains('project-section-heading')) heading.hidden = !hasMatches;
+        });
+        if (otherProjects && otherPanel) {
+          otherProjects.hidden = !matchesHiddenPanel;
+        }
+
         if (otherToggle && otherPanel) {
           if (filter !== 'all' && matchesHiddenPanel) {
             otherToggle.setAttribute('aria-expanded', 'true');
             otherProjects.classList.add('is-open');
+            otherPanel.inert = false;
           } else if (filter === 'all') {
             otherToggle.setAttribute('aria-expanded', 'false');
             otherProjects.classList.remove('is-open');
+            otherPanel.inert = true;
           }
         }
       });
