@@ -15,6 +15,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="styles/home.css?v=porcelain-1">
+  <link rel="stylesheet" href="styles/layout.css?v=2">
   <script defer src="scripts/main.js"></script>
   <script type="application/ld+json">
   {
@@ -64,8 +65,8 @@
           <span class="eyebrow-pill">Open to graduate opportunities</span>
         </div>
         <p class="hero-kicker">SOFTWARE ENGINEER · LONDON</p>
-        <h1>Tehj Patel<span class="hero-statement">Ideas into software.<br>Built for people.</span></h1>
-        <p class="hero-text">I build AI-powered applications, full-stack platforms and automation tools that make everyday work easier.</p>
+        <h1>Tehj Patel<span class="hero-statement">Useful software.<br>Thoughtfully built.</span></h1>
+        <p class="hero-text">I’m a software engineer in London, building AI-powered applications and automation tools around real people and practical problems.</p>
         <div class="hero-actions">
           <a class="button button-primary" href="#projects">Explore my work <span aria-hidden="true">↗</span></a>
           <a class="button button-secondary" href="#contact">Let&apos;s talk <span aria-hidden="true">→</span></a>
@@ -118,7 +119,7 @@
 
     <section id="projects" class="content-section section-shell" data-reveal>
       <div class="section-heading split">
-        <div><span>01 / SELECTED WORK</span><h2>Things I&apos;ve built.</h2></div>
+        <div><span>01 / SELECTED WORK</span><h2>A closer look at the work.</h2></div>
         <div class="filter-bar" role="group" aria-label="Filter projects by category">
           <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">All</button>
           <button class="filter-button" type="button" data-filter="ai" aria-pressed="false">AI</button>
@@ -131,26 +132,24 @@
         </div>
       </div>
 
-      <div class="project-section-heading">
-        <div><p class="eyebrow-text">Featured work</p><h3>Key Projects</h3></div>
-        <p>The projects that best show how I design, build and ship real software.</p>
-      </div>
+      <p class="projects-intro">From security workflows to everyday admin: explore the problems, the interfaces and the code behind my projects.</p>
       <div class="project-grid project-grid-featured">
         <article class="project-card project-card-hero" data-tags="ai security web">
+          <div class="project-featured-media"><img loading="lazy" decoding="async" src="assets/projects/sentinel dashboard.png" alt="Sentinel security platform dashboard showing security events, incident statistics and an incident list"><span>Sentinel / Security operations dashboard</span></div>
           <div class="project-hero-main">
             <div class="project-topline"><span>AI Security Platform</span><span>Currently Building</span></div>
             <h3>Sentinel</h3>
             <p>An AI-assisted Security Operations and Incident Response platform designed to detect, investigate and respond to security incidents through controlled, auditable workflows.</p>
             <div class="project-tags"><span>React</span><span>TypeScript</span><span>Vite</span><span>Supabase</span><span>PostgreSQL</span><span>AI</span><span>Cybersecurity</span></div>
-            <img loading="lazy" decoding="async" src="assets/projects/sentinel dashboard.png" alt="Sentinel security platform dashboard showing security events, incident statistics and an incident list">
+
             <div class="project-actions"><a href="https://github.com/t3hj/sentinel" target="_blank" rel="noreferrer">View on GitHub</a><span class="project-status">Currently Building</span></div>
-          </div>
           <div class="project-hero-side">
             <p class="card-label">What it does</p>
             <ul class="project-highlights"><li>Security event simulation, detection and correlation</li><li>Deterministic 0–100 risk scoring and incident investigation</li><li>Controlled AI analyst capabilities and role-based remediation approval</li><li>Row Level Security, audit trails and secure backend workflows</li></ul>
           </div>
+          </div>
         </article>
-        <article class="project-card project-card-primary" data-tags="ai web"><div class="project-topline"><span>AI Civic Technology</span><span>Featured</span></div><h3>Local Lens</h3><p>An AI-powered civic reporting platform that transforms resident-submitted images into structured reports, prioritises issues and helps organisations manage community problems more efficiently.</p><div class="project-tags"><span>Claude Vision</span><span>Supabase</span><span>Python</span><span>Streamlit</span></div><div class="project-image-pair"><img loading="lazy" decoding="async" src="assets/projects/local lens dashboard.png" alt="Local Lens dashboard showing reported civic issues on a priority queue with status, severity and map view"><img loading="lazy" decoding="async" src="assets/projects/local lens ai analysis.png" alt="Local Lens AI analysis screen where a submitted photo of a local issue is analysed by Claude Vision AI to pre-fill a structured report"></div><div class="project-actions"><a href="https://github.com/t3hj/Local-Lens" target="_blank" rel="noreferrer">View on GitHub</a></div></article>
+        <article class="project-card project-card-primary" data-tags="ai web"><div class="project-image-pair"><img loading="lazy" decoding="async" src="assets/projects/local lens dashboard.png" alt="Local Lens dashboard showing reported civic issues on a priority queue with status, severity and map view"><img loading="lazy" decoding="async" src="assets/projects/local lens ai analysis.png" alt="Local Lens AI analysis screen where a submitted photo of a local issue is analysed by Claude Vision AI to pre-fill a structured report"></div><div class="project-topline"><span>AI Civic Technology</span><span>Featured</span></div><h3>Local Lens</h3><p>An AI-powered civic reporting platform that transforms resident-submitted images into structured reports, prioritises issues and helps organisations manage community problems more efficiently.</p><div class="project-tags"><span>Claude Vision</span><span>Supabase</span><span>Python</span><span>Streamlit</span></div><div class="project-actions"><a href="https://github.com/t3hj/Local-Lens" target="_blank" rel="noreferrer">View on GitHub</a></div></article>
         <article class="project-card project-card-primary" data-tags="robotics tools web"><div class="project-topline"><span>Education / Automation Tool</span><span>Featured</span></div><h3>RoboThink Register</h3><p>An automation tool designed to streamline student registration and attendance workflows for RoboThink, reducing repetitive administrative work and making session management more efficient.</p><div class="project-tags"><span>Automation</span><span>Data Handling</span><span>Validation</span><span>User Interface</span></div><div class="project-actions"><a href="https://github.com/t3hj/RoboThink-Register" target="_blank" rel="noreferrer">View on GitHub</a><span class="project-status">Currently Building</span></div></article>
       </div>
 
@@ -228,7 +227,7 @@
             I graduated from Brunel University London with Second Class (Upper Division) Honours (2:1), and my final year work focused on practical, user-facing software rather than theory for theory&apos;s sake.
           </p>
           <p>
-            I enjoy turning complex problems into simple, clean experiences. I like building products that are useful, accessible, and clear enough that a recruiter or engineer can understand them quickly.
+            I enjoy turning complex problems into simple, clean experiences. I care about usable interfaces, readable code and making complex workflows easier to navigate.
           </p>
           <p>
             Alongside development, I&apos;ve spent time teaching robotics and coding, which strengthened how I communicate, explain ideas, and support other people in a team environment.
@@ -391,10 +390,12 @@
       </div>
       <div class="contact-grid">
         <article class="panel contact-panel">
-          <h3>Let&apos;s talk about graduate roles, AI projects, or collaboration.</h3>
+          <h3>Have a role or project in mind?</h3>
           <p>If you&apos;re hiring, I&apos;d be glad to discuss how I can contribute as a graduate software engineer. You can also reach me on LinkedIn or GitHub.</p>
+          <p class="contact-email">tehjpatel@gmail.com <button type="button" class="copy-email" data-copy-email hidden>Copy email</button></p>
+          <p class="copy-status" role="status" aria-live="polite"></p>
           <div class="contact-links">
-            <a href="mailto:tehjpatel@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
+            <a href="mailto:tehjpatel@gmail.com"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Email me ↗</a>
             <a href="https://www.linkedin.com/in/tehj-k-patel/" target="_blank" rel="noreferrer"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
             <a href="https://github.com/t3hj" target="_blank" rel="noreferrer"><i class="fa-brands fa-github"></i> GitHub</a>
             <a href="Tehj_Patel_CV.pdf" download><i class="fa-solid fa-file-arrow-down"></i> CV</a>
@@ -409,6 +410,11 @@
     </section>
   </main>
 
+  <div class="mobile-contact-bar" aria-label="Quick contact">
+    <a href="mailto:tehjpatel@gmail.com">Let’s talk <span aria-hidden="true">↗</span></a>
+    <a href="Tehj_Patel_CV.pdf" download>Download CV <span aria-hidden="true">↓</span></a>
+  </div>
+
   <footer class="site-footer">
     <p>Copyright <span id="year"></span> Tehj Patel. Built for graduate applications.</p>
     <div class="footer-links">
@@ -419,3 +425,4 @@
   </footer>
 </body>
 </html>
+

@@ -1,5 +1,18 @@
 window.addEventListener('DOMContentLoaded', () => {
-  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const copyEmail = document.querySelector('[data-copy-email]');
+  if (copyEmail && navigator.clipboard?.writeText) {
+    copyEmail.hidden = false;
+    copyEmail.addEventListener('click', async () => {
+      const status = document.querySelector('.copy-status');
+      try {
+        await navigator.clipboard.writeText('tehjpatel@gmail.com');
+        status.textContent = 'Email address copied.';
+      } catch {
+        status.textContent = 'Please select the email address above to copy it.';
+      }
+    });
+  }
 
   const year = document.getElementById('year');
   if (year) {
@@ -164,3 +177,4 @@ window.addEventListener('DOMContentLoaded', () => {
     comingSoonControls.forEach((control) => control.addEventListener('click', showComingSoonMessage));
   }
 });
+
