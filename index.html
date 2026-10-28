@@ -15,7 +15,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="styles/home.css?v=porcelain-1">
-  <link rel="stylesheet" href="styles/layout.css?v=carousel-1">
+  <link rel="stylesheet" href="styles/layout.css?v=github-1">
   <script defer src="scripts/main.js?v=carousel-2"></script>
   <script type="application/ld+json">
   {
@@ -31,6 +31,7 @@
     "knowsAbout": ["Software Engineering", "Artificial Intelligence", "Python", "JavaScript", "Robotics"]
   }
   </script>
+  <script defer src="scripts/github-stats.js?v=1"></script>
 </head>
 <body>
   <a class="skip-link" href="#projects">Skip to projects</a>
@@ -373,23 +374,25 @@
           <h2>GitHub</h2>
         </div>
       </div>
-      <div class="github-grid">
+      <div class="github-grid" data-github-stats aria-busy="false">
         <article class="panel stats-panel">
+          <p class="card-label">Public GitHub profile / t3hj</p>
           <div class="stats-mini">
-            <div><strong>24</strong><span>projects showcased on this site</span></div>
-            <div><strong>20</strong><span>with links to their public repositories on GitHub</span></div>
+            <div><strong data-github-repos>—</strong><span>Public repositories</span></div>
+            <div><strong data-github-stars>—</strong><span>Stars received</span></div>
+            <div><strong data-github-forks>—</strong><span>Forks of my repositories</span></div>
+            <div><strong data-github-followers>—</strong><span>Followers</span></div>
           </div>
-          <div class="github-tags">
-            <span>AI</span><span>Full-stack</span><span>Automation</span><span>Robotics</span><span>Java</span><span>Python</span><span>JavaScript</span>
-          </div>
+          <p class="github-data-note">Counts cover public repositories owned by this account.</p>
+          <p class="github-data-status" data-github-status role="status" aria-live="polite">Live stats load as you reach this section.</p>
+          <noscript><p>Enable JavaScript to load live statistics, or view my GitHub profile.</p></noscript>
+          <div class="project-actions"><a href="https://github.com/t3hj" target="_blank" rel="noreferrer">View GitHub profile ↗</a></div>
         </article>
         <article class="panel graph-panel">
-          <div class="graph-header">
-            <span>My work on GitHub</span>
-            <a href="https://github.com/t3hj" target="_blank" rel="noreferrer">github.com/t3hj</a>
-          </div>
-          <p>Explore the source code, implementation decisions and development history behind my projects on GitHub.</p>
-          <div class="project-actions"><a class="button button-secondary" href="https://github.com/t3hj" target="_blank" rel="noreferrer"><i class="fa-brands fa-github"></i> View GitHub profile</a></div>
+          <div class="graph-header"><span>Recently updated projects</span><a href="https://github.com/t3hj?tab=repositories" target="_blank" rel="noreferrer">All repositories ↗</a></div>
+          <p>Explore the code and development history behind my latest work.</p>
+          <ul class="github-recent-list" data-github-recent></ul>
+          <p class="github-data-note">Latest code pushes to original, non-archived public repositories.</p>
         </article>
       </div>
     </section>
