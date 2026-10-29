@@ -46,5 +46,11 @@
     "sourcePath": "web/",
     "commit": "5095d3c1645a7ff42143bc8f83a85be1610a8644",
     "hostedPath": "demos/SnakeGame/"
+  },
+  {
+    "repo": "t3hj/qr-code-generator",
+    "sourcePath": "web/",
+    "commit": "abb5dec2ebfbdd0034f2dd968853ccfdfbc8500f",
+    "hostedPath": "demos/qr-code-generator/"
   }
 ]
