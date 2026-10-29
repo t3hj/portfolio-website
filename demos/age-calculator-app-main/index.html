@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <title>Age calculator app</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="app">
+    <h1 class="sr-only">Age Calculator</h1>
+
+    <section class="card">
+      <form id="age-form" novalidate>
+        <div class="inputs">
+          <div class="input-group">
+            <label for="day">Day</label>
+            <input id="day" name="day" type="number" inputmode="numeric" placeholder="DD" min="1" max="31">
+            <span class="error" data-for="day"></span>
+          </div>
+
+          <div class="input-group">
+            <label for="month">Month</label>
+            <input id="month" name="month" type="number" inputmode="numeric" placeholder="MM" min="1" max="12">
+            <span class="error" data-for="month"></span>
+          </div>
+
+          <div class="input-group">
+            <label for="year">Year</label>
+            <input id="year" name="year" type="number" inputmode="numeric" placeholder="YYYY">
+            <span class="error" data-for="year"></span>
+          </div>
+        </div>
+
+        <div class="divider">
+          <button type="submit" id="calculate">Calculate</button>
+        </div>
+      </form>
+
+      <div class="results" role="status" aria-live="polite">
+        <div class="result-item">
+          <span class="result-value" id="years">--</span>
+          <span class="result-label">years</span>
+        </div>
+        <div class="result-item">
+          <span class="result-value" id="months">--</span>
+          <span class="result-label">months</span>
+        </div>
+        <div class="result-item">
+          <span class="result-value" id="days">--</span>
+          <span class="result-label">days</span>
+        </div>
+      </div>
+    </section>
+
+    <p class="attribution"><a href="https://t3hj.github.io/portfolio-website/#projects">← Portfolio</a> · <a href="https://github.com/t3hj/age-calculator-app-main">Source code</a></p>
+    <div class="attribution">
+      Coded by <a href="#">Tehj Patel</a>.
+    </div>
+  </main>
+
+  <script src="./script.js?v=2"></script>
+</body>
+</html>

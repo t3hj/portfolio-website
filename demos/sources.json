@@ -1,0 +1,50 @@
+[
+  {
+    "repo": "t3hj/portfolio-generator",
+    "sourcePath": "/",
+    "commit": "413cd8d8826c763aa5aee384bd34286ce41caed9",
+    "hostedPath": "demos/portfolio-generator/"
+  },
+  {
+    "repo": "t3hj/age-calculator-app-main",
+    "sourcePath": "/",
+    "commit": "a5aa142c3e75f0f87f9b49fd2b3ee0823fa2a7cd",
+    "hostedPath": "demos/age-calculator-app-main/"
+  },
+  {
+    "repo": "t3hj/weather-app",
+    "sourcePath": "/",
+    "commit": "3b10afc3784a060baab994c0f1249837f8805227",
+    "hostedPath": "demos/weather-app/"
+  },
+  {
+    "repo": "t3hj/currency-converter",
+    "sourcePath": "web/",
+    "commit": "b9eeb38e19b5d07f2667989514f44122babd49f8",
+    "hostedPath": "demos/currency-converter/"
+  },
+  {
+    "repo": "t3hj/password-generator",
+    "sourcePath": "web/",
+    "commit": "956576725547765434bae7ee7776b7f1aa9253fc",
+    "hostedPath": "demos/password-generator/"
+  },
+  {
+    "repo": "t3hj/unit-converter",
+    "sourcePath": "web/",
+    "commit": "a5faa90fada63a542ec96ec705377c0473c47e04",
+    "hostedPath": "demos/unit-converter/"
+  },
+  {
+    "repo": "t3hj/RockPaperScissorsGUI",
+    "sourcePath": "web/",
+    "commit": "3db777c4f5515ef550252f97feb143cc6366c732",
+    "hostedPath": "demos/RockPaperScissorsGUI/"
+  },
+  {
+    "repo": "t3hj/SnakeGame",
+    "sourcePath": "web/",
+    "commit": "5095d3c1645a7ff42143bc8f83a85be1610a8644",
+    "hostedPath": "demos/SnakeGame/"
+  }
+]

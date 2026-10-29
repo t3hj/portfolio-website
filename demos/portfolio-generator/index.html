@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Generator</title>
+    <style>
+ * {box-sizing:border-box}
+ @media(max-width:600px){.personal-info{flex-direction:column;align-items:start}.portfolio-content{padding:8px}.container{margin:12px;padding:16px}}
+ @media print{body *{visibility:hidden}#portfolioDisplay,#portfolioDisplay *{visibility:visible}#portfolioDisplay{position:absolute;left:0;top:0;width:100%;border:0}#downloadPortfolio{display:none!important}}
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            color: #555;
+        }
+        input, textarea, button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .hidden {
+            display: none;
+        }
+        .portfolio {
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            margin-top: 20px;
+        }
+        .portfolio-content {
+            padding: 20px;
+        }
+        .portfolio-content h3 {
+            margin-top: 20px;
+            font-size: 14pt;
+            font-weight: bold;
+            background-color: #007bff;
+            color: #fff;
+            padding: 5px;
+        }
+        .portfolio-content p, .portfolio-content li {
+            font-size: 12pt;
+            margin: 5px 0;
+        }
+        .portfolio-content ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+        .box {
+            border: 2px solid #007bff;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #f9f9f9;
+        }
+        .box h3 {
+            margin-top: 0;
+            background-color: #007bff;
+            color: #fff;
+            padding: 5px;
+        }
+        .social-media-box {
+            border: 2px solid #007bff;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #f9f9f9;
+        }
+        .personal-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .personal-info img {
+            max-width: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p><a href="https://t3hj.github.io/portfolio-website/#projects">← Portfolio</a> · <a href="https://github.com/t3hj/portfolio-generator">Source code</a></p>
+        <h1>Portfolio Generator</h1>
+        <p>Build a portfolio preview and download a PDF. Your entries stay in this page; they are not uploaded.</p>
+        <div class="section">
+            <h2>Personal Information</h2>
+            <label for="profileImage">Profile Image:</label>
+            <input type="file" id="profileImage" accept="image/*">
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="Enter your name">
+            <label for="role">Role:</label>
+            <input type="text" id="role" placeholder="Enter your role">
+            <label for="phone">Phone:</label>
+            <input type="text" id="phone" placeholder="Enter your phone number">
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Enter your email">
+            <label for="address">Address:</label>
+            <input type="text" id="address" placeholder="Enter your address">
+            <label for="linkedin">LinkedIn URL:</label>
+            <input type="text" id="linkedin" placeholder="Enter your LinkedIn URL">
+            <label for="github">GitHub URL:</label>
+            <input type="text" id="github" placeholder="Enter your GitHub URL">
+        </div>
+        <div class="section">
+            <h2>Skills & Interests</h2>
+            <label for="languages">Languages (separate with commas):</label>
+            <input type="text" id="languages" placeholder="Enter languages you know">
+            <label for="hobbies">Hobbies (separate with commas):</label>
+            <input type="text" id="hobbies" placeholder="Enter your hobbies">
+        </div>
+        <div class="section">
+            <h2>Profile Summary</h2>
+            <label for="summary">Brief description about yourself:</label>
+            <textarea id="summary" placeholder="Write a brief description about yourself"></textarea>
+        </div>
+        <div class="section">
+            <h2>Professional Experience</h2>
+            <button id="addExperience">+ Add Experience</button>
+            <div id="experienceList"></div>
+        </div>
+        <div class="section">
+            <h2>Education</h2>
+            <button id="addEducation">+ Add Education</button>
+            <div id="educationList"></div>
+        </div>
+        <div class="section">
+            <h2>Certificates</h2>
+            <label for="certificates">Certificates (separate with commas):</label>
+            <input type="text" id="certificates" placeholder="Enter your certificates">
+        </div>
+        <button id="generatePortfolio">Generate Portfolio</button>
+        <div id="portfolioDisplay" class="hidden portfolio">
+            <h1 id="portfolioName" style="text-align: center; font-size: 24pt; font-weight: bold;">Full Name</h1>
+            <div class="portfolio-content" id="portfolioContent"></div>
+            <button id="downloadPortfolio">Download Portfolio</button>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+    <script src="portfolio.js?v=2"></script>
+</body>
+</html>
+
