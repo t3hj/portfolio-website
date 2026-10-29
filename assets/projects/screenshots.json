@@ -1,0 +1,79 @@
+[
+  {
+    "project": "Weather Dashboard",
+    "image": "assets/projects/weather-preview.jpg",
+    "caption": "Live weather results",
+    "captured": "2026-10-29",
+    "source": "https://t3hj.github.io/portfolio-website/demos/weather-app/"
+  },
+  {
+    "project": "Portfolio Generator",
+    "image": "assets/projects/generator-preview.jpg",
+    "caption": "Portfolio builder \u00b7 example inputs",
+    "captured": "2026-10-29",
+    "source": "https://t3hj.github.io/portfolio-website/demos/portfolio-generator/"
+  },
+  {
+    "project": "Secure Password Generator",
+    "image": "assets/projects/password-preview.jpg",
+    "caption": "Browser edition",
+    "captured": "2026-10-29",
+    "source": "https://t3hj.github.io/portfolio-website/demos/password-generator/"
+  },
+  {
+    "project": "Unit Converter",
+    "image": "assets/projects/units-preview.jpg",
+    "caption": "Browser edition",
+    "captured": "2026-10-29",
+    "source": "https://t3hj.github.io/portfolio-website/demos/unit-converter/"
+  },
+  {
+    "project": "Currency Converter",
+    "image": "assets/projects/currency-preview.jpg",
+    "caption": "Browser edition",
+    "captured": "2026-10-29",
+    "source": "https://t3hj.github.io/portfolio-website/demos/currency-converter/"
+  },
+  {
+    "project": "QR Code Generator",
+    "image": "assets/projects/qr-preview.jpg",
+    "caption": "Browser edition",
+    "captured": "2026-10-29",
+    "source": "https://t3hj.github.io/portfolio-website/demos/qr-code-generator/"
+  },
+  {
+    "project": "Age Calculator App",
+    "image": "assets/projects/age-preview.jpg",
+    "caption": "Live web app \u00b7 example calculation",
+    "captured": "2026-10-29",
+    "source": "https://t3hj.github.io/portfolio-website/demos/age-calculator-app-main/"
+  },
+  {
+    "project": "Rock Paper Scissors",
+    "image": "assets/projects/rps-preview.jpg",
+    "caption": "Browser edition",
+    "captured": "2026-10-29",
+    "source": "https://t3hj.github.io/portfolio-website/demos/RockPaperScissorsGUI/"
+  },
+  {
+    "project": "Snake",
+    "image": "assets/projects/snake-preview.jpg",
+    "caption": "Browser edition",
+    "captured": "2026-10-29",
+    "source": "https://t3hj.github.io/portfolio-website/demos/SnakeGame/"
+  },
+  {
+    "project": "Social Links Profile",
+    "image": "assets/projects/social-preview.jpg",
+    "caption": "Live web page",
+    "captured": "2026-10-29",
+    "source": "https://t3hj.github.io/social-links-profile-main/"
+  },
+  {
+    "project": "ForgeFlow",
+    "image": "assets/projects/forgeflow-preview.jpg",
+    "caption": "Local development prototype",
+    "captured": "2026-10-29",
+    "source": "Local ForgeFlow checkout at dfc452e4fc2d92fa9225be12dcabe485dbbcf05e; API not connected"
+  }
+]
