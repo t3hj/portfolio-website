@@ -248,3 +248,55 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+
+/* Enhance readable native case studies into explicit, keyboard-operated card flips. */
+document.querySelectorAll('.project-case').forEach((details, index) => {
+  const card = details.closest('.project-card');
+  const title = card.querySelector('h3').textContent;
+  const front = document.createElement('div');
+  front.className = 'project-flip-front';
+  const back = document.createElement('div');
+  back.className = 'project-flip-back';
+  back.id = 'project-story-' + index;
+  back.inert = true;
+  back.setAttribute('aria-hidden', 'true');
+  const heading = document.createElement('h3');
+  heading.textContent = title + ' / Behind the build';
+  heading.tabIndex = -1;
+  const open = document.createElement('button');
+  open.type = 'button';
+  open.className = 'project-flip-control';
+  open.innerHTML = 'Behind the build <span aria-hidden="true">↻</span>';
+  open.setAttribute('aria-label', 'Behind the build — ' + title);
+  open.setAttribute('aria-controls', back.id);
+  open.setAttribute('aria-expanded', 'false');
+  const close = document.createElement('button');
+  close.type = 'button';
+  close.className = 'project-flip-control';
+  close.textContent = '← Back to project';
+  close.setAttribute('aria-label', 'Back to ' + title);
+  const content = details.querySelector('.project-case-content');
+  Array.from(card.childNodes).forEach(node => { if (node !== details) front.append(node); });
+  back.append(close, heading, content);
+  details.remove();
+  front.append(open);
+  card.append(front, back);
+  card.classList.add('project-flippable');
+  const flip = (showBack) => {
+    front.inert = showBack;
+    back.inert = !showBack;
+    front.setAttribute('aria-hidden', String(showBack));
+    back.setAttribute('aria-hidden', String(!showBack));
+    open.setAttribute('aria-expanded', String(showBack));
+    card.classList.toggle('is-flipped', showBack);
+    (showBack ? close : open).focus({ preventScroll: true });
+  };
+  open.addEventListener('click', () => flip(true));
+  close.addEventListener('click', () => flip(false));
+  card.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && card.classList.contains('is-flipped')) {
+      event.preventDefault();
+      flip(false);
+    }
+  });
+});

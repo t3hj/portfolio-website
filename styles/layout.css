@@ -163,3 +163,22 @@
 .project-card-hero .project-case-content a { color: #d5dff2; }
 .project-card-hero .project-case summary:focus-visible { outline-color: #b7cdff; }
 @media (prefers-reduced-motion: reduce) { .project-case summary span { transition: none; } }
+
+/* Explicit flips: touch and keyboard controls, automatic height, readable no-script fallback. */
+.project-grid-featured .project-card.project-flippable { display: block; position: relative; perspective: 1600px; }
+.project-flip-front, .project-flip-back { min-width: 0; width: 100%; backface-visibility: hidden; transition: transform .48s ease, opacity .24s ease; transform-origin: center; }
+.project-flip-front { display: flex; flex-direction: column; gap: 18px; transform: rotateY(0); }
+.project-card-hero .project-flip-front { display: grid; grid-template-columns: 1.15fr 1fr; gap: 32px; align-items: center; }
+.project-flip-back { position: absolute; inset: 0; visibility: hidden; opacity: 0; transform: rotateY(-180deg); }
+.project-flippable.is-flipped .project-flip-front { position: absolute; inset: 0; visibility: hidden; opacity: 0; transform: rotateY(180deg); }
+.project-flippable.is-flipped .project-flip-back { position: relative; visibility: visible; opacity: 1; transform: rotateY(0); }
+.project-flip-back h3 { margin: 24px 0 8px; font-size: clamp(1.35rem, 3vw, 2rem); }
+.project-flip-back .project-case-content { max-width: none; }
+.project-flip-control { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 48px; width: 100%; padding: 14px 0; border: 0; border-top: 1px solid var(--line); background: transparent; color: var(--text); font: inherit; font-size: .9rem; font-weight: 700; cursor: pointer; text-align: left; }
+.project-card-hero .project-flip-control { grid-column: 1 / -1; }
+.project-flip-control span { font-size: 1.4rem; }
+.project-flip-control:hover { text-decoration: underline; text-underline-offset: 5px; }
+.project-flip-control:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; border-radius: 4px; }
+.project-card-hero .project-flip-control:focus-visible { outline-color: #b7cdff; }
+@media (max-width: 820px) { .project-card-hero .project-flip-front { grid-template-columns: 1fr; gap: 24px; } }
+@media (prefers-reduced-motion: reduce) { .project-flip-front, .project-flip-back { transition: none; transform: none !important; } }
