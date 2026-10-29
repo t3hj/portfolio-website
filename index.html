@@ -15,7 +15,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="styles/home.css?v=porcelain-1">
-  <link rel="stylesheet" href="styles/layout.css?v=github-1">
+  <link rel="stylesheet" href="styles/layout.css?v=case-studies-1">
   <script defer src="scripts/main.js?v=carousel-2"></script>
   <script type="application/ld+json">
   {
@@ -135,23 +135,38 @@
 
       <p class="projects-intro">From security workflows to everyday admin: explore the problems, the interfaces and the code behind my projects.</p>
       <div class="project-grid project-grid-featured">
-        <article class="project-card project-card-hero" data-tags="ai security web">
+        <article class="project-card project-card-hero" data-tags="security web">
           <div class="project-featured-media"><img loading="lazy" decoding="async" src="assets/projects/sentinel dashboard.png" alt="Sentinel security platform dashboard showing security events, incident statistics and an incident list"><span>Sentinel / Security operations dashboard</span></div>
           <div class="project-hero-main">
-            <div class="project-topline"><span>AI Security Platform</span><span>Deployed · account required</span></div>
+            <div class="project-topline"><span>Security Operations Prototype</span><span>Deployed · account required</span></div>
             <h3>Sentinel</h3>
-            <p>An AI-assisted Security Operations and Incident Response platform designed to detect, investigate and respond to security incidents through controlled, auditable workflows.</p>
-            <div class="project-tags"><span>React</span><span>TypeScript</span><span>Vite</span><span>Supabase</span><span>PostgreSQL</span><span>AI</span><span>Cybersecurity</span></div>
+            <p>A security operations prototype for investigating synthetic incidents through evidence-backed, auditable workflows, with deterministic analysis and human-approved simulated remediation.</p>
+            <div class="project-tags"><span>React</span><span>TypeScript</span><span>Vite</span><span>Supabase</span><span>PostgreSQL</span><span>Investigation</span><span>Cybersecurity</span></div>
 
             <div class="project-actions"><a href="https://sentinel-sooty-seven.vercel.app/" target="_blank" rel="noreferrer" aria-label="Open deployed app — Sentinel">Open deployed app ↗</a><a href="https://github.com/t3hj/sentinel" target="_blank" rel="noreferrer">View on GitHub</a><span class="project-status">Deployed · account required</span></div>
           <div class="project-hero-side">
             <p class="card-label">What it does</p>
-            <ul class="project-highlights"><li>Security event simulation, detection and correlation</li><li>Deterministic 0–100 risk scoring and incident investigation</li><li>Controlled AI analyst capabilities and role-based remediation approval</li><li>Row Level Security, audit trails and secure backend workflows</li></ul>
+            <ul class="project-highlights"><li>Security event simulation, detection and correlation</li><li>Deterministic 0–100 risk scoring and incident investigation</li><li>Controlled investigation tools and role-based remediation approval</li><li>Row Level Security, audit trails and secure backend workflows</li></ul>
           </div>
           </div>
-        <p class="project-access-note">An account is required to access the workspace.</p></article>
-        <article class="project-card project-card-primary" data-tags="ai web"><div class="project-image-pair"><img loading="lazy" decoding="async" src="assets/projects/local lens dashboard.png" alt="Local Lens dashboard showing reported civic issues on a priority queue with status, severity and map view"><img loading="lazy" decoding="async" src="assets/projects/local lens ai analysis.png" alt="Local Lens AI analysis screen where a submitted photo of a local issue is analysed by Claude Vision AI to pre-fill a structured report"></div><div class="project-topline"><span>AI Civic Technology</span><span>Featured</span></div><h3>Local Lens</h3><p>An AI-powered civic reporting platform that transforms resident-submitted images into structured reports, prioritises issues and helps organisations manage community problems more efficiently.</p><div class="project-tags"><span>Claude Vision</span><span>Supabase</span><span>Python</span><span>Streamlit</span></div><div class="project-actions"><a href="https://localens.streamlit.app/" target="_blank" rel="noreferrer" aria-label="Try live demo — Local Lens">Try live demo ↗</a><a href="https://github.com/t3hj/Local-Lens" target="_blank" rel="noreferrer">View on GitHub</a></div><p class="project-access-note">Sign in to submit reports. The app may need a moment to wake on Streamlit.</p></article>
-        <article class="project-card project-card-primary" data-tags="robotics tools web"><div class="project-topline"><span>Education / Automation Tool</span><span>Featured</span></div><h3>RoboThink Register</h3><p>A deployed attendance and lesson-progress system for RoboThink instructors, with student tracking, curriculum progression, reports and role-based access. Access is restricted to authorised staff.</p><div class="project-tags"><span>Automation</span><span>Data Handling</span><span>Validation</span><span>User Interface</span></div><div class="project-actions"><a href="https://robothink-register.vercel.app/" target="_blank" rel="noreferrer" aria-label="Open staff app — RoboThink Register">Open staff app ↗</a><a href="https://github.com/t3hj/RoboThink-Register" target="_blank" rel="noreferrer">View on GitHub</a><span class="project-status">Deployed · staff access</span></div><p class="project-access-note">Sign-in is restricted to authorised RoboThink staff.</p></article>
+        <p class="project-access-note">An account is required to access the workspace.</p><details class="project-case"><summary>Behind the build <span aria-hidden="true">↗</span></summary><div class="project-case-content">
+<h4>The problem</h4><p>Security alerts need context, traceable evidence and clear approval steps before an operator takes action.</p>
+<h4>The implementation</h4><p>A React and TypeScript dashboard connects to Supabase Auth, PostgreSQL and narrowly scoped Edge Functions. Synthetic events are scored and correlated into incidents, with investigation findings and audit records kept together.</p>
+<h4>A key decision</h4><p>Privileged state changes happen in server-side functions with role checks. Remediation requires approval and runs as a simulated state transition, keeping the prototype safe to exercise.</p>
+<h4>Current result</h4><p>A deployed, account-based prototype for exploring the incident workflow. Its analyst output is currently deterministic; model-provider integration is a future extension.</p>
+<a href="https://github.com/t3hj/sentinel/blob/master/docs/architecture.md" target="_blank" rel="noreferrer">Explore the architecture ↗</a></div></details></article>
+        <article class="project-card project-card-primary" data-tags="ai web"><div class="project-image-pair"><img loading="lazy" decoding="async" src="assets/projects/local lens dashboard.png" alt="Local Lens dashboard showing reported civic issues on a priority queue with status, severity and map view"><img loading="lazy" decoding="async" src="assets/projects/local lens ai analysis.png" alt="Local Lens AI analysis screen where a submitted photo of a local issue is analysed by Claude Vision AI to pre-fill a structured report"></div><div class="project-topline"><span>AI Civic Technology</span><span>Featured</span></div><h3>Local Lens</h3><p>An AI-powered civic reporting platform that transforms resident-submitted images into structured reports, prioritises issues and helps organisations manage community problems more efficiently.</p><div class="project-tags"><span>Claude Vision</span><span>Supabase</span><span>Python</span><span>Streamlit</span></div><div class="project-actions"><a href="https://localens.streamlit.app/" target="_blank" rel="noreferrer" aria-label="Try live demo — Local Lens">Try live demo ↗</a><a href="https://github.com/t3hj/Local-Lens" target="_blank" rel="noreferrer">View on GitHub</a></div><p class="project-access-note">Sign in to submit reports. The app may need a moment to wake on Streamlit.</p><details class="project-case"><summary>Behind the build <span aria-hidden="true">↗</span></summary><div class="project-case-content">
+<h4>The problem</h4><p>A photo can show a community issue, but reviewers still need a consistent description, category, severity and location.</p>
+<h4>The implementation</h4><p>A Streamlit interface brings together image analysis, an editable report form, Supabase storage, searchable reports, maps and council-focused insights.</p>
+<h4>A key decision</h4><p>Vision output is normalised into defined categories and severity levels, then presented for review. The analysis service supports Claude or a configured local Ollama model, with a manual reporting path when analysis is optional.</p>
+<h4>Current result</h4><p>A deployed beta that lets visitors explore the reporting interface. An account is required to submit reports, and image analysis depends on the configured provider.</p>
+<a href="https://github.com/t3hj/Local-Lens/blob/main/src/services/ai_service.py" target="_blank" rel="noreferrer">See the image-analysis implementation ↗</a></div></details></article>
+        <article class="project-card project-card-primary" data-tags="robotics tools web"><div class="project-topline"><span>Education / Automation Tool</span><span>Featured</span></div><h3>RoboThink Register</h3><p>A deployed attendance and lesson-progress system for RoboThink instructors, with student tracking, curriculum progression, reports and role-based access. Access is restricted to authorised staff.</p><div class="project-tags"><span>React</span><span>TypeScript</span><span>Supabase</span><span>PostgreSQL</span></div><div class="project-actions"><a href="https://robothink-register.vercel.app/" target="_blank" rel="noreferrer" aria-label="Open staff app — RoboThink Register">Open staff app ↗</a><a href="https://github.com/t3hj/RoboThink-Register" target="_blank" rel="noreferrer">View on GitHub</a><span class="project-status">Deployed · staff access</span></div><p class="project-access-note">Sign-in is restricted to authorised RoboThink staff.</p><details class="project-case"><summary>Behind the build <span aria-hidden="true">↗</span></summary><div class="project-case-content">
+<h4>The problem</h4><p>Teaching teams need to track who attended, which lesson was actually taught, whether progression should advance and what feedback still needs completing.</p>
+<h4>The implementation</h4><p>A React and TypeScript application combines the daily register, attended sessions, lesson outcomes, assessment follow-up and feedback reminders. Supabase provides authentication, database policies and server-side progression functions.</p>
+<h4>A key decision</h4><p>Attendance and progression are separate: completing the current progression lesson advances the student, while an unfinished session or another lesson does not. Each attended session keeps its own feedback record.</p>
+<h4>Current result</h4><p>A deployed internal application for authorised RoboThink staff, supported by instructor guides and unit tests covering attendance, progression, assessments and bulk actions.</p>
+<a href="https://github.com/t3hj/RoboThink-Register#how-it-works" target="_blank" rel="noreferrer">Read the workflow documentation ↗</a></div></details></article>
       </div>
 
       <div class="project-section-heading project-section-heading-featured"><div><p class="eyebrow-text">Ongoing work</p><h3 id="inProgressHeading">More in the making</h3></div><p>Active builds and released projects receiving ongoing improvements.</p></div>
@@ -236,7 +251,7 @@
         <article class="panel">
           <p>
             I&apos;m a computer science graduate with a strong interest in AI, full-stack development, and systems that make everyday tasks easier.
-            I graduated from Brunel University London with Second Class (Upper Division) Honours (2:1), and my final year work focused on practical, user-facing software rather than theory for theory&apos;s sake.
+            I graduated from Brunel University London with Second Class (Upper Division) Honours (2:1), and my final year work focused on practical, user-facing software.
           </p>
           <p>
             I enjoy turning complex problems into simple, clean experiences. I care about usable interfaces, readable code and making complex workflows easier to navigate.
@@ -430,7 +445,7 @@
   </div>
 
   <footer class="site-footer">
-    <p>Copyright <span id="year"></span> Tehj Patel. Built for graduate applications.</p>
+    <p>Copyright <span id="year"></span> Tehj Patel. Designed and built by Tehj Patel.</p>
     <div class="footer-links">
       <a href="#home">Home</a>
       <a href="#projects">Projects</a>
