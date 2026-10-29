@@ -15,7 +15,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="styles/home.css?v=porcelain-1">
-  <link rel="stylesheet" href="styles/layout.css?v=flip-1">
+  <link rel="stylesheet" href="styles/layout.css?v=project-refresh-1">
   <script defer src="scripts/main.js?v=flip-1"></script>
   <script type="application/ld+json">
   {
@@ -180,20 +180,22 @@
           </div>
         </div>
         <div id="inProgressTrack" class="project-grid project-grid-secondary carousel-track" tabindex="0" aria-label="Projects in development" aria-describedby="carouselHint">
-        <article class="project-card" data-tags="tools web">
-          <div class="project-topline"><span>Developer / Automation Platform</span><span>Currently Building</span></div>
+        <article class="project-card" data-tags="tools web security">
+          <div class="project-topline"><span>Repository Intelligence</span><span>Working prototype</span></div>
           <h3>ForgeFlow</h3>
-          <p>A developer and automation platform currently under active development. The product direction and implementation are still being shaped, so this portfolio will document its concrete workflow and capabilities as they settle.</p>
-          <div class="project-tags"><span>Software Engineering</span><span>Automation</span></div>
-          <div class="project-actions"><span class="project-status">Currently Building</span></div>
+          <p>A pull request analysis prototype built around evidence-backed findings and transparent risk scoring. Includes a role-checked API, Redis queue and worker abstraction, PostgreSQL persistence, GitHub integration helpers and a React review dashboard.</p>
+          <div class="project-tags"><span>TypeScript</span><span>React</span><span>Node.js</span><span>PostgreSQL</span><span>Redis</span></div>
+          <p class="project-access-note">Static analysis and risk scoring are implemented. End-to-end worker processing, live dashboard results, sandbox execution and model-provider integration are still being connected.</p>
+          <div class="project-actions"><a href="https://github.com/t3hj/ForgeFlow" target="_blank" rel="noreferrer" aria-label="View ForgeFlow on GitHub">View on GitHub ↗</a><span class="project-status">Prototype · in development</span></div>
         </article>
         <article class="project-card" data-tags="web">
           <div class="project-topline"><span>Fragrance Discovery Platform</span><span>Live · improving</span></div>
           <h3>Sillage</h3>
           <p>I’m a fragrance nerd, and I couldn’t find an app that recommended fragrances the way I wanted. I’m a software developer—so I built one. Sillage brings together weather-aware recommendations, collection tracking, wear journaling and comparisons in an installable web app.</p>
-          <div class="project-tags"><span>React</span><span>JavaScript</span><span>PWA</span></div>
-          <img loading="lazy" decoding="async" src="assets/projects/sillage.png" alt="Sillage fragrance discovery app interface showing a list of fragrances with notes and filters">
+          <div class="project-tags"><span>JavaScript</span><span>PWA</span><span>Local storage</span></div>
+          <figure class="project-current-preview"><a href="https://t3hj.github.io/Sillage/#explore" target="_blank" rel="noreferrer" aria-label="Explore Sillage’s current design"><img loading="lazy" decoding="async" src="assets/projects/sillage-current.jpg" width="1348" height="926" alt="Current Sillage fragrance explorer in midnight black, cobalt blue and lime, showing recommendation controls and real fragrance bottles"></a><figcaption>Current design · Fragrance Explorer</figcaption></figure>
           <div class="project-actions"><a href="https://t3hj.github.io/Sillage/" target="_blank" rel="noreferrer" aria-label="Try live demo — Sillage">Try live demo ↗</a><a href="https://github.com/t3hj/Sillage" target="_blank" rel="noreferrer">View on GitHub</a><span class="project-status">Live · improving</span></div>
+          <details class="project-design-history"><summary>See the earlier design <span aria-hidden="true">↗</span></summary><figure><img loading="lazy" decoding="async" src="assets/projects/sillage.png" alt="Earlier Sillage interface, before the current midnight, cobalt and lime redesign"><figcaption>Earlier design · Now evolved into the live Fragrance Explorer above.</figcaption></figure></details>
         </article>
         <article class="project-card" data-tags="data web">
           <div class="project-topline"><span>Sports Analytics / Data Platform</span><span>Currently Building</span></div>
