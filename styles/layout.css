@@ -194,3 +194,5 @@
 .project-design-history figure { margin: 12px 0 0; }
 .project-design-history img { width: 100%; height: auto; max-height: none; object-fit: contain; }
 .project-design-history summary:focus-visible, .project-current-preview a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; border-radius: 4px; }
+
+.project-grid-secondary.carousel-track { align-items: start; }
