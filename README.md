@@ -1,85 +1,75 @@
-# Tehj Patel — Portfolio Website
+# Tehj Patel — Software Engineering Portfolio
 
-A static portfolio website showcasing Tehj Patel's software projects, experience, skills, and CV.
+[View the portfolio](https://t3hj.github.io/portfolio-website/)
 
-## Features
+A static HTML, CSS and JavaScript portfolio for graduate and junior software
+engineering applications. It presents project evidence, implementation decisions,
+current limitations, professional experience and a downloadable CV.
 
-- **Responsive Design** 📱: Optimized for all devices, ensuring a seamless experience on desktops, tablets, and mobile phones.
-- **Interactive Navigation** 🧭: Easy-to-use navigation bar to access different sections of the website.
-- **Parallax Effects** ✨: Engaging parallax scrolling effects for an interactive experience.
-- **Project Showcase** 💻: Confirmed repository links and clear project availability states.
-- **Skills Section** 🛠️: Comprehensive overview of my technical skills with proficiency levels.
-- **Contact Form** 📬: Reach out to me directly through the website.
-- **Social Media Links** 🌐: Connect with me on GitHub, LinkedIn, Discord, and Instagram.
+## Start here
 
-## Prerequisites
+- **Local Lens:** final-year civic reporting project, built with Streamlit,
+  Python, Supabase and optional vision analysis.
+- **RoboThink Register:** operational staff software with React, TypeScript,
+  Supabase and tested attendance/progression rules.
+- **Sillage:** a public, device-local fragrance explorer with offline support.
+- **ForgeFlow:** repository-analysis prototype; incomplete pipeline connections
+  are explicitly labelled.
+- **Sentinel:** deterministic security-operations simulation with controlled,
+  human-approved remediation; not a live AI analyst.
 
-- Basic knowledge of HTML, CSS, and JavaScript.
-- A web server to host the website (optional for local viewing).
+## Preview locally
 
-## Setup
+No npm dependencies, build step or credentials are required for the main website.
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/t3hj/portfolio-website.git
-   cd portfolio-website
-   ```
+```sh
+git clone https://github.com/t3hj/portfolio-website.git
+cd portfolio-website
+python3 -m http.server 4173 --bind 127.0.0.1
+```
 
-2. **Open the website:**
-   - Open `index.html` in your preferred web browser to view the website locally.
+Open `http://localhost:4173`. On Windows, use `python` instead of `python3` if needed.
+A local HTTP server supports demo assets and fetch requests more reliably than
+opening HTML with a `file:` URL.
 
-## Project Structure
+## Structure
 
-- `index.html`: Home page with an introduction and links to other sections.
-- `about.html`: About Me page with detailed information about my background, education, and experiences.
-- `projects.html`: Compatibility redirect to the Projects section on `index.html`.
-- `skills.html`: Skills page listing my technical skills with proficiency levels.
-- `contact.html`: Contact page with a form to reach out to me.
-- `styles/`: Directory containing CSS files for styling the website.
-- `scripts/`: Directory containing JavaScript files for interactive features.
-- `images/`: Directory containing images used throughout the website.
+| Path | Purpose |
+| --- | --- |
+| `index.html` | Main portfolio: work, about, skills, experience, education and contact |
+| `styles/home.css`, `styles/layout.css` | Main page styling and responsive layouts |
+| `scripts/main.js` | Project filters, carousel, disclosure controls and interactions |
+| `scripts/github-stats.js` | Public GitHub statistics with a fallback state |
+| `about.html`, `skills.html`, `contact.html` | Additional pages retained for direct links |
+| `projects.html` | Compatibility redirect to the main projects section |
+| `assets/projects/` | Project captures, provenance notes and screenshot manifest |
+| `demos/` | Browser demos; see the attribution and adaptation notes there |
+| `Tehj_Patel_CV.pdf` | Public CV download |
 
-## Usage
+## Review before publishing
 
-1. **Home Page:**
-   - Introduction with typing animation
-   - Social media icons for easy connection
-   - Profile card with 3D hover effect
+1. Check desktop and phone layouts, keyboard navigation and reduced-motion behaviour.
+2. Exercise each project filter, carousel arrows and the Other Projects disclosure.
+3. Check local links, screenshots and the CV download. Keep LinkedIn URLs consistent.
+4. Verify each demo's access label: public, account required, staff-only or prototype.
+5. Keep claims aligned with repository code. Do not imply model integration,
+   cross-device sync or production readiness where only a prototype exists.
+6. Use only consented images or synthetic data. Staff/student records and private
+   collection backups must never appear in screenshots.
+7. Update the screenshot manifest when replacing a capture, preserving attribution.
 
-2. **About Me Page:**
-   - Detailed information about my background, education, and experiences
-   - Parallax scrolling sections for engagement
-   - Education and employment history
+The homepage uses email and social links; the separate contact page has a form.
+Do not submit test messages to the live form when checking layout.
+Public GitHub stats and externally hosted fonts/icons require network access.
 
-3. **Projects Page:**
-   - Showcase of my projects with descriptions and animations
-   - Project filters, animations, and confirmed GitHub repository links
-   - Unavailable live demos and videos are shown as accessible **In Progress** controls
+## Deployment
 
-4. **Skills Page:**
-   - Categorized skills (Programming Languages, Web Development, Tools & Platforms, etc.)
-   - Skill proficiency indicators (Basic, Intermediate, Advanced)
-   - Animated elements for visual engagement
-
-5. **Contact Page:**
-   - Form to send me a message directly from the website
-   - Links to my email and social media profiles
-
-## Example Screenshots
-
-<!-- Consider adding actual screenshots of your portfolio pages here -->
-
-## Future Improvements
-
-- **Add more projects** to the showcase
-- **Enhance project demos** with additional interactivity
-- **Implement a blog section** to share my thoughts and experiences
-- **Add testimonials** from colleagues and clients
-
-## Contributing
-
-Feel free to fork the repository and submit a pull request if you want to contribute to improving the portfolio website!
+The live website is served by GitHub Pages. Changes on a review branch are
+proposals; merging to the publishing branch can update the live site. Review the
+pull request before merging. No deployment command is needed for local preview.
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+See [LICENSE](LICENSE) for the website licence. Demo and third-party asset licences
+are documented separately in [demos](demos/README.md) and
+[project screenshots](assets/projects/README.md).
