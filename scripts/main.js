@@ -196,6 +196,8 @@ window.addEventListener('DOMContentLoaded', () => {
           const tags = (card.getAttribute('data-tags') || '').split(/\s+/).filter(Boolean);
           const shouldShow = filter === 'all' || tags.includes(filter);
           card.classList.toggle('is-hidden', !shouldShow);
+          // Native hidden also wins over the featured/flip card display rules.
+          card.hidden = !shouldShow;
           if (shouldShow && otherPanel && otherPanel.contains(card)) {
             matchesHiddenPanel = true;
           }
